@@ -1,10 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import HomeView from '../views/HomeView.vue';
+import Welcome from './components/Welcome.vue';
 
-import AboutView from '../views/AboutView.vue';
-
-import Welcome from '/components/Welcome.Vue';
+//import Homescreen from './components/Homescreen.vue';
 
 // 1. Define route components.
 // These are the components that will be rendered when the URL matches the path.
@@ -22,31 +20,12 @@ const routes = [
 
     component: Welcome
 
-  },
+  }
 
-  {
-
-    path: '/about',
-
-    name: 'About',
-
-    component: AboutView
-
-  },
 
   // Example of a dynamic route (e.g., /users/1)
 
-  {
-
-    path: '/users/:id',
-
-    name: 'UserDetail',
-
-    // lazy loading is a good practice for performance
-
-    component: () => import('../views/UserDetail.vue')
-
-  }
+  
 
 ];
 
