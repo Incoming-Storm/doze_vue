@@ -11,9 +11,9 @@ import Homepage from './components/Homepage.vue';
 
 const routes = [
 
-  {path: '/', name: 'Home', component: Welcome}
+  {path: '/', name: 'Homes', component: Welcome}
 
-  ,{path: '/', name: 'Homepage', component: Homepage} 
+  ,{path: '/homepage', name: 'Homepage', component: Homepage} 
 
 
 

@@ -11,8 +11,9 @@ defineProps({
     <body>
         <div class="title">
             <h1>Doze</h1>
-            <a href="homepage.html"><button>Continue</button></a>
-            <router-link name="Home"/>
+            <router-link to="/homepage">
+            <button>Continue</button>
+            </router-link>
         </div>
 
     </body>
