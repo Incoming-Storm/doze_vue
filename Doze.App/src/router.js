@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import Welcome from './components/Welcome.vue';
-
-//import Homescreen from './components/Homescreen.vue';
+import Homepage from './components/Homepage.vue';
 
 // 1. Define route components.
 // These are the components that will be rendered when the URL matches the path.
@@ -12,15 +11,10 @@ import Welcome from './components/Welcome.vue';
 
 const routes = [
 
-  {
+  {path: '/', name: 'Home', component: Welcome}
 
-    path: '/',
+  ,{path: '/', name: 'Homepage', component: Homepage} 
 
-    name: 'Home',
-
-    component: Welcome
-
-  }
 
 
   // Example of a dynamic route (e.g., /users/1)
