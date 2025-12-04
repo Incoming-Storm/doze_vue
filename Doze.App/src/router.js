@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import Welcome from './components/Welcome.vue';
 import Homepage from './components/Homepage.vue';
+import Hotlines from './components/Hotlines.vue';
 
 // 1. Define route components.
 // These are the components that will be rendered when the URL matches the path.
@@ -14,6 +15,7 @@ const routes = [
   {path: '/', name: 'Homes', component: Welcome}
 
   ,{path: '/homepage', name: 'Homepage', component: Homepage} 
+  ,{path: '/hotlines', name: 'Hotlines', component: Hotlines}
 
 
 
