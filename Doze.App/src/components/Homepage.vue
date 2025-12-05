@@ -1,10 +1,24 @@
 <script setup>
+import { ref } from 'vue'
+
 defineProps({
     msg: {
         type: String,
         required: true,
     },
 })
+
+const quotes = [
+    "\"The only way to do great work is to love what you do.\" - Steve Jobs",
+    "\"Success is not the key to happiness. Happiness is the key to success.\" - Albert Schweitzer",
+    "\"Believe you can and you're halfway there.\" - Theodore Roosevelt",
+    "\"Your time is limited, so don't waste it living someone else's life.\" - Steve Jobs",
+    "\"The best way to predict the future is to invent it.\" - Alan Kay"
+];
+
+const quote = ref(quotes[Math.floor(Math.random() * quotes.length)]);
+console.log(quote.value);
+
 </script>
 
 
@@ -18,15 +32,15 @@ defineProps({
       <router-link to="/hotlines"><button>Hotlines</button></router-link>
     </div>
 
-    <div id="quoteDisplay" class="quote"></div>
+    <div id="quoteDisplay" class="quote">{{ quote }}</div>
         <!-- <script>
             console.log(quoteDisplay);
         </script> -->
 
         <div class="activities">
-          <a href="trivia.html"><button>Trivia</button></a>
-          <a href="journal.html"><button>Journal</button></a>
-          <a href="game.html"><button>Game</button></a>
+          <router-link to="/trivia"><button>Trivia</button></router-link>
+          <router-link to="/journal"><button>Journal</button></router-link>
+          <router-link to="/game"><button>Game</button></router-link>
         </div>
 
       </div>
