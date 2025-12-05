@@ -9,8 +9,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="back"><router-link to="/"><button>Back</button></router-link></div>
-  <div class="hotline-info">
+  <router-link to="/Homepage"><button>Back</button></router-link>
     <h2>Hotline Numbers</h2>
     <ul>
       <li>Suicide and Crisis Hotline: 988</li>
@@ -19,7 +18,7 @@ defineProps({
       <li>NAMI HelpLine: 1-800-950-6264</li>
       <li>Disaster Distress HotLine: 1-800-985-5990</li>
     </ul>
-  </div>
+  
 </template>
 
 <style scoped>

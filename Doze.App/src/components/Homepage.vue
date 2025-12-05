@@ -9,28 +9,29 @@ defineProps({
 
 
 
-<template>   
-   
-    <body>        
-        <div class="back"><a href="welcome.html"><button>Back</button></a></div>
-        <div class="info">
-            <a href="hotline.html"><button>Hotlines</button></a>
-        </div>
+<template>
 
-        <div id="quoteDisplay" class="quote"></div> 
+  <div class="homepage">
+
+    <div class="back"><router-link to="/"><button>Back</button></router-link></div>
+    <div class="info">
+      <router-link to="/hotlines"><button>Hotlines</button></router-link>
+    </div>
+
+    <div id="quoteDisplay" class="quote"></div>
         <!-- <script>
             console.log(quoteDisplay);
         </script> -->
 
         <div class="activities">
-            <a href="trivia.html"><button>Trivia</button></a>
-            <a href="journal.html"><button>Journal</button></a>
-            <a href="game.html"><button>Game</button></a>
+          <a href="trivia.html"><button>Trivia</button></a>
+          <a href="journal.html"><button>Journal</button></a>
+          <a href="game.html"><button>Game</button></a>
         </div>
 
-    </body>
-    
-</template>
+      </div>
+
+    </template>
 
 <style scoped>
 h1 {
