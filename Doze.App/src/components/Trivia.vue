@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from 'vue'
+
 defineProps({
   msg: {
     type: String,
@@ -6,35 +8,334 @@ defineProps({
   },
 })
 
+const questions = [
+  {
+    id: 1,
+    question: "Depression is just being sad and will go away on its own.",
+    answer: false,
+    explanation: "Depression is a serious mental health condition that often requires professional treatment. It's more than just sadness."
+  },
+  {
+    id: 2,
+    question: "Anxiety disorders are the most common mental health condition in adults.",
+    answer: true,
+    explanation: "Anxiety disorders affect millions of people worldwide and are highly treatable."
+  },
+  {
+    id: 3,
+    question: "Mental health issues are a sign of weakness.",
+    answer: false,
+    explanation: "Mental health conditions are medical conditions, not character flaws. Anyone can experience them regardless of strength or resilience."
+  },
+  {
+    id: 4,
+    question: "Exercise can help improve mental health and reduce stress.",
+    answer: true,
+    explanation: "Regular physical activity has been proven to reduce anxiety, depression, and stress while improving overall mental well-being."
+  },
+  {
+    id: 5,
+    question: "You can catch a mental health disorder from someone else.",
+    answer: false,
+    explanation: "Mental health conditions are not contagious. They result from a combination of genetic, biological, and environmental factors."
+  },
+  {
+    id: 6,
+    question: "Getting enough sleep is important for mental health.",
+    answer: true,
+    explanation: "Sleep plays a crucial role in emotional regulation and mental health. Lack of sleep can worsen depression and anxiety."
+  },
+  {
+    id: 7,
+    question: "People with mental health conditions cannot work or be successful.",
+    answer: false,
+    explanation: "Many successful people manage mental health conditions and lead productive, fulfilling lives with proper treatment and support."
+  },
+  {
+    id: 8,
+    question: "Mindfulness and meditation can help reduce stress and anxiety.",
+    answer: true,
+    explanation: "Research shows mindfulness and meditation techniques are effective for managing stress, anxiety, and promoting mental well-being."
+  },
+  {
+    id: 9,
+    question: "Therapy is only for people with serious mental health problems.",
+    answer: false,
+    explanation: "Therapy can benefit anyone seeking personal growth, stress management, or help with life challenges, regardless of severity."
+  },
+  {
+    id: 10,
+    question: "Social support and relationships are important for mental health.",
+    answer: true,
+    explanation: "Strong social connections and supportive relationships are key protective factors for mental health and well-being."
+  }
+]
+
+const currentQuestionIndex = ref(0)
+const answered = ref(false)
+const isCorrect = ref(null)
+const showExplanation = ref(false)
+const askedQuestions = ref(new Set())
+
+const currentQuestion = () => {
+  return questions[currentQuestionIndex.value]
+}
+
+const getRandomQuestion = () => {
+  let randomIndex
+  do {
+    randomIndex = Math.floor(Math.random() * questions.length)
+  } while (askedQuestions.value.has(randomIndex) && askedQuestions.value.size < questions.length)
+  
+  if (askedQuestions.value.size === questions.length) {
+    askedQuestions.value.clear()
+  }
+  
+  askedQuestions.value.add(randomIndex)
+  currentQuestionIndex.value = randomIndex
+}
+
+const answerQuestion = (userAnswer) => {
+  answered.value = true
+  isCorrect.value = userAnswer === currentQuestion().answer
+  showExplanation.value = true
+}
+
+const nextQuestion = () => {
+  getRandomQuestion()
+  answered.value = false
+  isCorrect.value = null
+  showExplanation.value = false
+}
+
+const skipQuestion = () => {
+  nextQuestion()
+}
 </script>
 
 <template>
     <div class="trivia">
         <div class="back"><router-link to="/homepage"><button>Back</button></router-link></div>
+        
+        <div class="quiz-container">
+          <div class="question-label">Mental Health Trivia</div>
+
+          <h2 class="question-text">{{ currentQuestion().question }}</h2>
+
+          <div v-if="!answered" class="button-group">
+            <button @click="answerQuestion(true)" class="btn btn-true">True</button>
+            <button @click="answerQuestion(false)" class="btn btn-false">False</button>
+          </div>
+
+          <div v-if="answered" class="feedback">
+            <div :class="['result', isCorrect ? 'correct' : 'incorrect']">
+              <span class="result-icon">{{ isCorrect ? '✓' : '✗' }}</span>
+              <span class="result-text">{{ isCorrect ? 'Correct!' : 'Incorrect' }}</span>
+            </div>
+            
+            <div v-if="showExplanation" class="explanation">
+              <strong>Explanation:</strong>
+              <p>{{ currentQuestion().explanation }}</p>
+            </div>
+
+            <div class="next-buttons">
+              <button @click="nextQuestion" class="btn btn-next">Next Question</button>
+            </div>
+          </div>
+
+          <button v-if="!answered" @click="skipQuestion" class="skip-btn">Skip</button>
+        </div>
     </div>
 </template>
 
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
+.trivia {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-h3 {
-  font-size: 1.2rem;
+.back {
+  margin-bottom: 20px;
 }
 
-.greetings h1,
-.greetings h3 {
+.quiz-container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.question-label {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.question-text {
+  color: #333;
+  margin: 20px 0 30px 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-true {
+  background-color: #81c784;
+  color: white;
+}
+
+.btn-true:hover {
+  background-color: #66bb6a;
+  transform: translateY(-2px);
+}
+
+.btn-false {
+  background-color: #ef5350;
+  color: white;
+}
+
+.btn-false:hover {
+  background-color: #e53935;
+  transform: translateY(-2px);
+}
+
+.btn-next {
+  background-color: #4CAF50;
+  color: white;
+  width: 100%;
+}
+
+.btn-next:hover {
+  background-color: #45a049;
+}
+
+.skip-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #9e9e9e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.skip-btn:hover {
+  background-color: #757575;
+}
+
+.feedback {
+  margin: 20px 0;
+}
+
+.result {
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.result.correct {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+}
+
+.result.incorrect {
+  background-color: #ffcdd2;
+  color: #c62828;
+}
+
+.result-icon {
+  font-size: 20px;
+}
+
+.explanation {
+  background-color: #fff9c4;
+  border-left: 4px solid #fbc02d;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.explanation strong {
+  color: #f57f17;
+}
+
+.explanation p {
+  margin: 8px 0 0 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.next-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.completion-screen {
   text-align: center;
+  padding: 40px 20px;
 }
 
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+.completion-screen h2 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.final-score {
+  font-size: 24px;
+  color: #4CAF50;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.score-number {
+  font-size: 32px;
+  color: #2196F3;
+}
+
+.score-message {
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #666;
+}
+
+.restart-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.restart-btn:hover {
+  background-color: #45a049;
 }
 </style>
