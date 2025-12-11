@@ -12,61 +12,112 @@ defineProps({
 const playerX = ref(50)
 const playerY = ref(50)
 const playerSize = 40
+const circleValue = ref(1)
 
 // Game state
 const score = ref(0)
 const triangles = ref([])
 const gameActive = ref(true)
+const maxTriangleValue = ref(10)
 let triangleIdCounter = 0
-const keys = {}
 
 // Arrow key movement speed
 const moveSpeed = 2
 
-const getRandomPosition = () => {
-  const x = Math.random() * 85 + 7.5
-  const y = Math.random() * 85 + 7.5
+const getRandomPosition = (existingTriangles = []) => {
+  let x, y, distanceFromPlayer, tooClose
+  // Keep generating until we find a position far from player and other triangles
+  do {
+    x = Math.random() * 85 + 7.5
+    y = Math.random() * 85 + 7.5
+    // Calculate distance from player's starting position
+    distanceFromPlayer = Math.sqrt((x - 50) ** 2 + (y - 50) ** 2)
+    
+    // Check distance from all existing triangles
+    tooClose = false
+    for (let triangle of existingTriangles) {
+      const distanceFromTriangle = Math.sqrt((x - triangle.x) ** 2 + (y - triangle.y) ** 2)
+      if (distanceFromTriangle < 15) { // Minimum distance of 15 units from other triangles
+        tooClose = true
+        break
+      }
+    }
+  } while (distanceFromPlayer < 15 || tooClose) // Must be far from player AND other triangles
+  
   return { x, y }
 }
 
+const getRandomValue = () => {
+  return Math.floor(Math.random() * maxTriangleValue.value) + 1 // Random value 1 to maxTriangleValue
+}
+
 const createTriangle = () => {
-  const pos = getRandomPosition()
+  const pos = getRandomPosition(triangles.value)
   return {
     id: triangleIdCounter++,
     x: pos.x,
     y: pos.y,
+    value: getRandomValue(),
     collected: false
+  }
+}
+
+const canEatTriangle = (triangle) => {
+  return triangle.value <= circleValue.value
+}
+
+const hasEatableTriangle = () => {
+  return triangles.value.some(t => canEatTriangle(t))
+}
+
+const spawnEatableTriangle = () => {
+  // Spawn a triangle with value equal to or less than current circle value
+  const triangleValue = Math.floor(Math.random() * circleValue.value) + 1
+  const pos = getRandomPosition(triangles.value)
+  triangles.value.push({
+    id: triangleIdCounter++,
+    x: pos.x,
+    y: pos.y,
+    value: triangleValue,
+    collected: false
+  })
+}
+
+const updateMaxTriangleValue = () => {
+  // If circle value exceeds max triangle value, increase exponentially
+  if (circleValue.value > maxTriangleValue.value) {
+    maxTriangleValue.value = Math.floor(maxTriangleValue.value * 1.5)
   }
 }
 
 const initializeTriangles = () => {
   triangles.value = []
-  for (let i = 0; i < 5; i++) {
+  // First triangle always has value 1 so player can eat it
+  const pos1 = getRandomPosition()
+  triangles.value.push({
+    id: triangleIdCounter++,
+    x: pos1.x,
+    y: pos1.y,
+    value: 1,
+    collected: false
+  })
+  // Rest are random
+  for (let i = 1; i < 5; i++) {
     triangles.value.push(createTriangle())
   }
 }
 
-const handleKeyDown = (e) => {
-  keys[e.key] = true
-}
-
-const handleKeyUp = (e) => {
-  keys[e.key] = false
-}
-
-const movePlayer = () => {
-  if (keys['ArrowUp'] || keys['w'] || keys['W']) {
-    playerY.value = Math.max(5, playerY.value - moveSpeed)
-  }
-  if (keys['ArrowDown'] || keys['s'] || keys['S']) {
-    playerY.value = Math.min(95, playerY.value + moveSpeed)
-  }
-  if (keys['ArrowLeft'] || keys['a'] || keys['A']) {
-    playerX.value = Math.max(5, playerX.value - moveSpeed)
-  }
-  if (keys['ArrowRight'] || keys['d'] || keys['D']) {
-    playerX.value = Math.min(95, playerX.value + moveSpeed)
-  }
+const handleGameAreaClick = (e) => {
+  const gameArea = document.querySelector('.game-area')
+  if (!gameArea) return
+  
+  const rect = gameArea.getBoundingClientRect()
+  const x = ((e.clientX - rect.left) / rect.width) * 100
+  const y = ((e.clientY - rect.top) / rect.height) * 100
+  
+  // Keep player within bounds
+  playerX.value = Math.max(5, Math.min(95, x))
+  playerY.value = Math.max(5, Math.min(95, y))
 }
 
 const checkCollisions = () => {
@@ -76,14 +127,21 @@ const checkCollisions = () => {
       const dy = playerY.value - triangle.y
       const distance = Math.sqrt(dx * dx + dy * dy)
       
-      if (distance < 8) {
+      if (distance < 8 && canEatTriangle(triangle)) {
         triangle.collected = true
+        circleValue.value += triangle.value
+        updateMaxTriangleValue()
         score.value++
         
         // Remove collected triangle and add new one
         setTimeout(() => {
           triangles.value = triangles.value.filter(t => t.id !== triangle.id)
           triangles.value.push(createTriangle())
+          
+          // Check if there are any eatable triangles left, if not spawn one
+          if (!hasEatableTriangle()) {
+            spawnEatableTriangle()
+          }
         }, 100)
       }
     }
@@ -92,32 +150,37 @@ const checkCollisions = () => {
 
 const gameLoop = () => {
   if (gameActive.value) {
-    movePlayer()
     checkCollisions()
     requestAnimationFrame(gameLoop)
   }
 }
 
 const resetGame = () => {
+  circleValue.value = 1
   score.value = 0
   playerX.value = 50
   playerY.value = 50
   triangleIdCounter = 0
+  maxTriangleValue.value = 10
   initializeTriangles()
   gameActive.value = true
 }
 
 onMounted(() => {
   initializeTriangles()
-  window.addEventListener('keydown', handleKeyDown)
-  window.addEventListener('keyup', handleKeyUp)
+  const gameArea = document.querySelector('.game-area')
+  if (gameArea) {
+    gameArea.addEventListener('click', handleGameAreaClick)
+  }
   gameLoop()
 })
 
 onUnmounted(() => {
   gameActive.value = false
-  window.removeEventListener('keydown', handleKeyDown)
-  window.removeEventListener('keyup', handleKeyUp)
+  const gameArea = document.querySelector('.game-area')
+  if (gameArea) {
+    gameArea.removeEventListener('click', handleGameAreaClick)
+  }
 })
 </script>
 
@@ -129,14 +192,18 @@ onUnmounted(() => {
           <h2>Circle Collection Game</h2>
           <div class="stats">
             <div class="stat">
-              <span class="stat-label">Score:</span>
+              <span class="stat-label">Circle Value:</span>
+              <span class="stat-value">{{ circleValue }}</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Eaten:</span>
               <span class="stat-value">{{ score }}</span>
             </div>
           </div>
         </div>
 
         <div class="instructions">
-          <p>Use <strong>Arrow Keys</strong> or <strong>WASD</strong> to move your circle and collect the triangles!</p>
+          <p><strong>Click</strong> anywhere on the game area to move your circle and eat triangles! You can only eat triangles with value ≤ your circle's value.</p>
         </div>
 
         <div class="game-area">
@@ -147,7 +214,7 @@ onUnmounted(() => {
               left: playerX + '%',
               top: playerY + '%'
             }">
-            🔵
+            <span class="player-value">{{ circleValue }}</span>
           </div>
           
           <!-- Triangles to collect -->
@@ -155,12 +222,12 @@ onUnmounted(() => {
             v-for="triangle in triangles"
             :key="triangle.id"
             class="triangle"
-            :class="{ collected: triangle.collected }"
+            :class="{ 'too-big': !canEatTriangle(triangle), collected: triangle.collected }"
             :style="{
               left: triangle.x + '%',
               top: triangle.y + '%'
             }">
-            △
+            <span class="triangle-value">{{ triangle.value }}</span>
           </div>
         </div>
 
@@ -241,6 +308,7 @@ onUnmounted(() => {
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .player {
@@ -254,6 +322,16 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
+  border: 3px solid #FFD700;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.player-value {
+  color: #2196F3;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .triangle {
@@ -266,8 +344,34 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease, filter 0.1s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.triangle-value {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.triangle::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 35px solid #FF6B6B;
+  z-index: -1;
+}
+
+.triangle.too-big {
+  opacity: 0.4;
+}
+
+.triangle.too-big::before {
+  border-bottom-color: #999;
 }
 
 .triangle.collected {
