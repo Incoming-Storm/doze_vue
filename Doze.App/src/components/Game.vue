@@ -86,7 +86,7 @@ const spawnEatableTriangle = () => {
 const updateMaxTriangleValue = () => {
   // If circle value exceeds max triangle value, increase exponentially
   if (circleValue.value > maxTriangleValue.value) {
-    maxTriangleValue.value = Math.floor(maxTriangleValue.value * 1.5)
+    maxTriangleValue.value = Math.floor(maxTriangleValue.value * 5)
   }
 }
 
@@ -112,12 +112,45 @@ const handleGameAreaClick = (e) => {
   if (!gameArea) return
   
   const rect = gameArea.getBoundingClientRect()
-  const x = ((e.clientX - rect.left) / rect.width) * 100
-  const y = ((e.clientY - rect.top) / rect.height) * 100
+  let targetX = ((e.clientX - rect.left) / rect.width) * 100
+  let targetY = ((e.clientY - rect.top) / rect.height) * 100
   
   // Keep player within bounds
-  playerX.value = Math.max(5, Math.min(95, x))
-  playerY.value = Math.max(5, Math.min(95, y))
+  targetX = Math.max(5, Math.min(95, targetX))
+  targetY = Math.max(5, Math.min(95, targetY))
+  
+  // Check for bigger triangles that would be overlapped
+  let closestBigger = null
+  let minDist = Infinity
+  triangles.value.forEach(triangle => {
+    if (!canEatTriangle(triangle)) {
+      const dx = targetX - triangle.x
+      const dy = targetY - triangle.y
+      const dist = Math.sqrt(dx * dx + dy * dy)
+      if (dist < minDist) {
+        minDist = dist
+        closestBigger = triangle
+      }
+    }
+  })
+  
+  if (closestBigger && minDist < 8) {
+    // Move to position at distance 8 from the closest bigger triangle
+    const dx = targetX - closestBigger.x
+    const dy = targetY - closestBigger.y
+    const dist = Math.sqrt(dx * dx + dy * dy)
+    if (dist > 0) {
+      const ratio = 8 / dist
+      targetX = closestBigger.x + dx * ratio
+      targetY = closestBigger.y + dy * ratio
+      // Clamp again
+      targetX = Math.max(5, Math.min(95, targetX))
+      targetY = Math.max(5, Math.min(95, targetY))
+    }
+  }
+  
+  playerX.value = targetX
+  playerY.value = targetY
 }
 
 const checkCollisions = () => {
