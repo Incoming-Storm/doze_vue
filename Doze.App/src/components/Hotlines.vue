@@ -18,7 +18,7 @@ defineProps({
       <li>NAMI HelpLine: 1-800-950-6264</li>
       <li>Disaster Distress HotLine: 1-800-985-5990</li>
     </ul>
-  
+    
 </template>
 
 <style scoped>

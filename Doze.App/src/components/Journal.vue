@@ -52,6 +52,7 @@ const deleteEntry = (id) => {
   entries.value = entries.value.filter(e => e.id !== id)
   localStorage.setItem('journalEntries', JSON.stringify(entries.value))
 }
+
 </script>
 
 <template>
@@ -98,6 +99,7 @@ const deleteEntry = (id) => {
           </div>
         </div>
     </div>
+    
 </template>
 
 <style scoped>

@@ -24,7 +24,6 @@ console.log(quote.value);
 
 
 <template>
-
   <div class="homepage">
 
     <div class="back"><router-link to="/"><button>Back</button></router-link></div>
@@ -33,19 +32,15 @@ console.log(quote.value);
     </div>
 
     <div id="quoteDisplay" class="quote">{{ quote }}</div>
-        <!-- <script>
-            console.log(quoteDisplay);
-        </script> -->
-
-        <div class="activities">
-          <router-link to="/trivia"><button>Trivia</button></router-link>
-          <router-link to="/journal"><button>Journal</button></router-link>
-          <router-link to="/game"><button>Game</button></router-link>
-        </div>
-
+      <div class="activities">
+        <router-link to="/trivia"><button>Trivia</button></router-link>
+        <router-link to="/journal"><button>Journal</button></router-link>
+        <router-link to="/game"><button>Game</button></router-link>
       </div>
 
-    </template>
+  </div>
+
+</template>
 
 <style scoped>
 h1 {

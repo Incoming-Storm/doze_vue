@@ -21,28 +21,25 @@ const gameActive = ref(true)
 const maxTriangleValue = ref(10)
 let triangleIdCounter = 0
 
-// Arrow key movement speed
-const moveSpeed = 2
-
 const getRandomPosition = (existingTriangles = []) => {
   let x, y, distanceFromPlayer, tooClose
   // Keep generating until we find a position far from player and other triangles
   do {
     x = Math.random() * 85 + 7.5
     y = Math.random() * 85 + 7.5
-    // Calculate distance from player's starting position
-    distanceFromPlayer = Math.sqrt((x - 50) ** 2 + (y - 50) ** 2)
+    // Calculate distance from player's current position
+    distanceFromPlayer = Math.sqrt((x - playerX.value) ** 2 + (y - playerY.value) ** 2)
     
     // Check distance from all existing triangles
     tooClose = false
     for (let triangle of existingTriangles) {
       const distanceFromTriangle = Math.sqrt((x - triangle.x) ** 2 + (y - triangle.y) ** 2)
-      if (distanceFromTriangle < 15) { // Minimum distance of 15 units from other triangles
+      if (distanceFromTriangle < 20) { // Minimum distance of 20 units from other triangles
         tooClose = true
         break
       }
     }
-  } while (distanceFromPlayer < 15 || tooClose) // Must be far from player AND other triangles
+  } while (distanceFromPlayer < 20 || tooClose) // Must be far from player AND other triangles
   
   return { x, y }
 }

@@ -111,6 +111,7 @@ const nextQuestion = () => {
 const skipQuestion = () => {
   nextQuestion()
 }
+
 </script>
 
 <template>
@@ -146,6 +147,7 @@ const skipQuestion = () => {
           <button v-if="!answered" @click="skipQuestion" class="skip-btn">Skip</button>
         </div>
     </div>
+    
 </template>
 
 <style scoped>

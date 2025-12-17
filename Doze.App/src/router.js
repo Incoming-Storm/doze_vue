@@ -15,37 +15,25 @@ import Journal from './components/Journal.vue';
 
 const routes = [
 
-  {path: '/', name: 'Homes', component: Welcome}
-
-  ,{path: '/homepage', name: 'Homepage', component: Homepage} 
-  ,{path: '/hotlines', name: 'Hotlines', component: Hotlines}
-  ,{path: '/game', name: 'Game', component: Game}
-  ,{path: '/trivia', name: 'Trivia', component: Trivia}
-  ,{path: '/journal', name: 'Journal', component: Journal}
-
-
+  {path: '/', name: 'Homes', component: Welcome},
+  {path: '/homepage', name: 'Homepage', component: Homepage},
+  {path: '/hotlines', name: 'Hotlines', component: Hotlines},
+  {path: '/game', name: 'Game', component: Game},
+  {path: '/trivia', name: 'Trivia', component: Trivia},
+  {path: '/journal', name: 'Journal', component: Journal}
 
   // Example of a dynamic route (e.g., /users/1)
-
-  
-
 ];
-
- 
 
 // 3. Create the router instance and pass the `routes` array
 
 // Use `createWebHistory()` for standard HTML5 History Mode
 
 const router = createRouter({
-
   history: createWebHistory(import.meta.env.BASE_URL),
-
   routes
 
 });
-
- 
 
 export default router;
 
