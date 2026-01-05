@@ -10,7 +10,7 @@ defineProps({
 
 <template>
 
-        <div class="welcome">
+        <div >
             <h1>Doze</h1>
             <router-link to="/homepage">
             <button>Continue</button>
@@ -21,6 +21,17 @@ defineProps({
 </template>
 
 <style scoped>
+
+  .welcome{
+  position: relative;
+  margin: 0 auto 10px auto; /* centers them and adds a little space below */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensures full screen height for vertical centering */
+}
+
 h1 {
   font-weight: 500;
   font-size: 100px;
@@ -32,14 +43,7 @@ h3 {
   font-size: 1.2rem;
 }
 
-.welcome{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh; /* Ensures full screen height for vertical centering */
-}
+
 
 .greetings h1,
 .greetings h3 {
