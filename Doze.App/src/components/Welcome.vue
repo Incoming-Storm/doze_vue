@@ -9,14 +9,10 @@ defineProps({
 </script>
 
 <template>
-
         <div >
             <h1>Doze</h1>
-            <router-link to="/homepage">
-            <button>Continue</button>
-            </router-link>
+            <router-link to="/homepage"><button>Continue</button></router-link>
         </div>
-
 
 </template>
 
