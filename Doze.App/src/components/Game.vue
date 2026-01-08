@@ -216,7 +216,7 @@ onUnmounted(() => {
 
 <template>
     <div class="game">
-        <div class="back"><router-link to="/homepage"><button>Back</button></router-link></div>
+        <div class="back"><router-link to="/homepage"><button>Home</button></router-link></div>
         
         <div class="game-header">
           <h2>Circle Collection Game</h2>

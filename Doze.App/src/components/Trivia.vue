@@ -116,7 +116,7 @@ const skipQuestion = () => {
 
 <template>
     <div class="trivia">
-        <div class="back"><router-link to="/homepage"><button>Back</button></router-link></div>
+        <div class="back"><router-link to="/homepage"><button>Home</button></router-link></div>
         
         <div class="quiz-container">
           <div class="question-label">Mental Health Trivia</div>

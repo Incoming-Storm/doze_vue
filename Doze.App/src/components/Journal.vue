@@ -57,7 +57,7 @@ const deleteEntry = (id) => {
 
 <template>
     <div class="journal">
-        <div class="back"><router-link to="/homepage"><button>Back</button></router-link></div>
+        <div class="back"><router-link to="/homepage"><button>Home</button></router-link></div>
         
         <div class="entry-form">
           <h2>New Entry</h2>
