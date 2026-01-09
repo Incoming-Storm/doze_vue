@@ -30,7 +30,7 @@ button:hover {
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: oklch(70.477% 0.15803 160.578);
   transition: 0.4s;
   padding: 3px;
 }
@@ -52,7 +52,6 @@ a,
   margin: 0 auto 10px auto;
   place-items: center;
   font-weight: normal;
-  display: grid;
   padding: 0 2rem;
   text-align: center;
   }
