@@ -1,5 +1,7 @@
 <script setup>
   import HomeButton from './HomeButton.vue';
+  import { ref } from 'vue'
+  const showMore = ref(false)
 
   defineProps({
     msg: {
@@ -30,8 +32,19 @@
 
   <div class="info links">
     <h2>More Information</h2>
-    <a href="https://www.cdc.gov/mental-health/about/index.html">Mental Health Through Life</a><br>
-    <a href="https://www.cdc.gov/mental-health/about/about-behavioral-health.html">Behavioral Health</a><br>
+    <a href="https://www.cdc.gov/mental-health/about/index.html">About Mental Health</a>
+    <button class="moreButton" @click="showMore = !showMore">
+      {{ showMore ? 'Hide details' : 'Show more' }}
+    </button>
+    
+    <transition name="fade">
+      <div v-if="showMore" class="details">
+        <!-- Put the extra information here -->
+        <p>Extra links, explanations, or contact info...</p>
+      </div>
+    </transition><br>
+
+    <a href="https://www.cdc.gov/mental-health/about/about-behavioral-health.html">About Behavioral Health</a><br>
     <a href="https://my.clevelandclinic.org/health/diseases/17843-mood-disorders">Mood Disorders</a><br>
     <a href="https://my.clevelandclinic.org/health/diseases/9536-anxiety-disorders">Anxiety Disorders</a><br>
   </div>
@@ -81,6 +94,19 @@ h2 {
   line-height: 1.6;
   text-align: left;
 }
+
+.moreButton {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background:#86aad9;
+  border:none;
+  cursor:pointer;
+}
+.details{ margin-top:10px; padding:10px; background:#f7f9fc; border-radius:6px; }
+
+/* optional transition */
+.fade-enter-active,.fade-leave-active{ transition: opacity .2s ease; }
+.fade-enter-from,.fade-leave-to{ opacity:0; }
 
 button:hover {
   background-color: #6b3780;
