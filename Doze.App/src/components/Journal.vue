@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import HomeButton from './HomeButton.vue';
 
 defineProps({
   msg: {
@@ -56,49 +57,49 @@ const deleteEntry = (id) => {
 </script>
 
 <template>
-    <div class="journal">
-        <div class="back"><router-link to="/homepage"><button>Home</button></router-link></div>
+  <div class="journal">
+    <HomeButton />
         
-        <div class="entry-form">
-          <h2>New Entry</h2>
-          <div class="mood-selector">
-            <label>How are you feeling?</label>
-            <div class="mood-buttons">
-              <button 
-                v-for="(emoji, mood) in moods" 
-                :key="mood"
-                @click="selectedMood = mood"
-                :class="['mood-btn', { active: selectedMood === mood }]"
-                type="button">
-                <span class="mood-emoji">{{ emoji }}</span>
-                <span class="mood-label">{{ mood.charAt(0).toUpperCase() + mood.slice(1) }}</span>
-              </button>
-            </div>
-          </div>
-          <textarea 
-            v-model="entryText" 
-            rows="6" 
-            cols="40" 
-            placeholder="Write your thoughts here...">
-          </textarea>
-          <button @click="saveEntry" class="save-btn">Save Entry</button>
+    <div class="entry-form">
+      <h2>New Entry</h2>
+      <div class="mood-selector">
+        <label>How are you feeling?</label>
+        <div class="mood-buttons">
+          <button 
+            v-for="(emoji, mood) in moods" 
+            :key="mood"
+            @click="selectedMood = mood"
+            :class="['mood-btn', { active: selectedMood === mood }]"
+            type="button">
+            <span class="mood-emoji">{{ emoji }}</span>
+            <span class="mood-label">{{ mood.charAt(0).toUpperCase() + mood.slice(1) }}</span>
+          </button>
         </div>
-
-        <div class="saved-entries">
-          <h2>Saved Entries</h2>
-          <div v-if="entries.length === 0" class="no-entries">
-            No entries yet. Start writing!
-          </div>
-          <div v-for="entry in entries" :key="entry.id" class="entry-card">
-            <div class="entry-header">
-              <span class="entry-mood">{{ entry.moodEmoji }}</span>
-              <div class="entry-date">{{ entry.date }}</div>
-            </div>
-            <div class="entry-text">{{ entry.text }}</div>
-            <button @click="deleteEntry(entry.id)" class="delete-btn">Delete</button>
-          </div>
-        </div>
+      </div>
+      <textarea 
+        v-model="entryText" 
+        rows="6" 
+        cols="40" 
+        placeholder="Write your thoughts here...">
+      </textarea>
+      <button @click="saveEntry" class="save-btn">Save Entry</button>
     </div>
+
+    <div class="saved-entries">
+      <h2>Saved Entries</h2>
+      <div v-if="entries.length === 0" class="no-entries">
+            No entries yet. Start writing!
+      </div>
+      <div v-for="entry in entries" :key="entry.id" class="entry-card">
+        <div class="entry-header">
+          <span class="entry-mood">{{ entry.moodEmoji }}</span>
+          <div class="entry-date">{{ entry.date }}</div>
+        </div>
+        <div class="entry-text">{{ entry.text }}</div>
+        <button @click="deleteEntry(entry.id)" class="delete-btn">Delete</button>
+      </div>
+    </div>
+  </div>
     
 </template>
 

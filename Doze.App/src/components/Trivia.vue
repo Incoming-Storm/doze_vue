@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import HomeButton from './HomeButton.vue';
 
 defineProps({
   msg: {
@@ -116,7 +117,7 @@ const skipQuestion = () => {
 
 <template>
     <div class="trivia">
-        <div class="back"><router-link to="/homepage"><button>Home</button></router-link></div>
+        <HomeButton />
         
         <div class="quiz-container">
           <div class="question-label">Mental Health Trivia</div>

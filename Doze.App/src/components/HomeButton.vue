@@ -1,34 +1,27 @@
 <script setup>
-    import { ref } from 'vue';
-    
-    defineProps({
-    msg: {
-        type: String,
-        required: true,
-    },
-    })
 </script>
 
 <template>
-    <div class="homeButton">
-        <router-link to="/homepage"><button>Home</button></router-link>
-    </div>
+    <router-link to="/homepage" class="homeButton">Home</router-link>
 </template>
 
 <style scoped>
     .homeButton {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         width: 150px;
         height: 50px;
         font-size: 1.2rem;
         padding: 10px;
-        border: none;
         border-radius: 5px;
         background-color: #86aad9;
         color: rgb(11, 8, 8);
         cursor: pointer;
         transition: background-color 0.3s;
+        margin-bottom: 20px;
     }
-    
+
     .homeButton:hover {
         background-color: #6b3780;
     }

@@ -6,7 +6,6 @@
   place-items: center;
   font-weight: normal;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   padding: 0 2rem;
   text-align: center;
 }
@@ -54,7 +53,6 @@ a,
   place-items: center;
   font-weight: normal;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   padding: 0 2rem;
   text-align: center;
   }

@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import HomeButton from './HomeButton.vue';
 
 defineProps({
   msg: {
@@ -216,7 +217,7 @@ onUnmounted(() => {
 
 <template>
     <div class="game">
-        <div class="back"><router-link to="/homepage"><button>Home</button></router-link></div>
+        <HomeButton />
         
         <div class="game-header">
           <h2>Circle Collection Game</h2>
