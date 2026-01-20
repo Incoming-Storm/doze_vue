@@ -44,15 +44,16 @@
       <div v-if="showAMH" class="details">
         <p>“Mental health is the component of behavioral health that includes our emotional, psychological, and social well-being. Mental health is a state of well-being that enables us to cope with the stresses of life, 
         realize our abilities, learn well and work well, and contribute to our community.” -CDC</p><br>
-        <p>Mental health is closely linked to physical health 
-        Depression can increase the risk of diabetes, heart disease, stroke, and long lasting chronic conditions. 
-        Tackling mental health and physical health can improve overall health. 
-        Help is available if you are suffering from mental health condition 
-        Mental health is the presence of well being and the ability to thrive NOT the absence of a mental health condition. 
-        Mental health can be influenced by the individual, family, community, and society levels. 
-        Even if you are living with a mental health condition you can still experience positive well being. Effective treatments can help manage symptoms along with safe, stable, and nurturing relationships and environments. 
-        People living without mental health conditions may face challenges to their mental health. 
-        </p>
+        <dl>
+          <dt>Mental health is closely linked to physical health </dt>
+          <dd>Depression can increase the risk of diabetes, heart disease, stroke, and long lasting chronic conditions. </dd>
+          <dd>Tackling mental health and physical health can improve overall health. </dd>
+          <dt>Help is available if you are suffering from mental health condition </dt>
+          <dt>Mental health is the presence of well being and the ability to thrive NOT the absence of a mental health condition. </dt>
+          <dd>Mental health can be influenced by the individual, family, community, and society levels. </dd>
+          <dd>Even if you are living with a mental health condition you can still experience positive well being. Effective treatments can help manage symptoms along with safe, stable, and nurturing relationships and environments. </dd>
+          <dd>People living without mental health conditions may face challenges to their mental health. </dd>
+        </dl>
       </div>
     </transition><br>
 
