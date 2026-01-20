@@ -183,6 +183,11 @@ h2 {
 .moreButton {
   width: 75px;
   height: 30px;
+  line-height: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 8px 12px;
   border-radius: 6px;
   background:#86aad9;
