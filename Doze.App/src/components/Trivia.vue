@@ -69,6 +69,86 @@ const questions = [
     question: "Social support and relationships are important for mental health.",
     answer: true,
     explanation: "Strong social connections and supportive relationships are key protective factors for mental health and well-being."
+  },
+  { id: 11,
+    question: "Mental health is closely linked to physical health.",
+    answer: true,
+    explanation: "Mental and physical health are deeply linked through the mind-body connection, where stress, emotions, and thoughts directly trigger physical responses."
+  },
+  { id: 12,
+    question: "Depression doesn’t increase the risk of long lasting chronic conditions.",
+    answer: false,
+    explanation: "Research shows that depression significantly increases the risk of developing conditions like heart disease, diabetes, stroke, and inflammation."
+  },
+  { id: 13,
+    question: "Help is available if you are suffering from mental health condition(s).",
+    answer: true,
+    explanation: "Please go to the Hotlines page on the app for more details."
+  },
+  { id: 14,
+    question: "People living without mental health conditions never face challenges to their mental health.",
+    answer: false,
+    explanation: "Mental health exists on a spectrum and everyone experiences stress, anxiety, or sadness at times, even if they are not diagnosed with a mental health condition."
+  },
+  { id: 15,
+    question: "Mental health is the presence of well being and the ability to thrive.",
+    answer: true,
+    explanation: ""
+  },
+  { id: 16,
+    question: "People with mental health conditions can’t experience positive well being.",
+    answer: false,
+    explanation: ""
+  },
+  { id: 17,
+    question: "Behavior health is a key element of overall well being.",
+    answer: true,
+    explanation: "Behavior health is crucial because it is intrinsically linked to physical health."
+  },
+  { id: 18,
+    question: "Behavioral health is not an umbrella term for mental health.",
+    answer: false,
+    explanation: ""
+  },
+  { id: 19,
+    question: "Suicide is one of the leading cause of death in the United States.",
+    answer: true,
+    explanation: ""
+  },
+  { id: 20,
+    question: "Substance use (drugs, alcohol, and etc.) is a leading cause of death in the United States.",
+    answer: false,
+    explanation: ""
+  },
+  { id: 21,
+    question: "It’s normal to have mood swings from time to time as long as they are temporary.",
+    answer: true,
+    explanation: "Emotions are designed to be fluid, acting as a natural, temporary response to internal and external stimuli."
+  },
+  { id: 22,
+    question: "People don’t turn to drugs and other substances to help them cope with their mental distress.",
+    answer: false,
+    explanation: ""
+  },
+  { id: 23,
+    question: "Mood disorders can affect the ability to perform daily tasks for work or school.",
+    answer: true,
+    explanation: "Moods can influence perception, motivation, decision-making, social interactions, and even basic cognitive processes like memory and attention."
+  },
+  { id: 24,
+    question: "Mood disorders can only cause extreme sadness.",
+    answer: false,
+    explanation: ""
+  },
+  { id: 25,
+    question: "Anxiety disorders may also have physical signs.",
+    answer: true,
+    explanation: "Anxiety disorders exhibit physical symptoms because they trigger the body's “fight for flight” response."
+  },
+  { id: 26,
+    question: "Men are twice as likely as women to have anxiety disorders.",
+    answer: false,
+    explanation: ""
   }
 ]
 
