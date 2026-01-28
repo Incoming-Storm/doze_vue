@@ -93,12 +93,12 @@ const questions = [
   { id: 15,
     question: "Mental health is the presence of well being and the ability to thrive.",
     answer: true,
-    explanation: ""
+    explanation: "Well-being and thriving involve feeling and functioning well, which is crucial because this state boosts overall physical and mental health."
   },
   { id: 16,
     question: "People with mental health conditions can’t experience positive well being.",
     answer: false,
-    explanation: ""
+    explanation: "Well-being and thriving involve feeling and functioning well, which is crucial because this state boosts overall physical and mental health."
   },
   { id: 17,
     question: "Behavior health is a key element of overall well being.",
@@ -108,47 +108,37 @@ const questions = [
   { id: 18,
     question: "Behavioral health is not an umbrella term for mental health.",
     answer: false,
-    explanation: ""
+    explanation: "Mental health pertains to a person's psychological state, while behavioral health entails a person's state of mind and their physical condition."
   },
   { id: 19,
-    question: "Suicide is one of the leading cause of death in the United States.",
-    answer: true,
-    explanation: ""
-  },
-  { id: 20,
-    question: "Substance use (drugs, alcohol, and etc.) is a leading cause of death in the United States.",
-    answer: false,
-    explanation: ""
-  },
-  { id: 21,
     question: "It’s normal to have mood swings from time to time as long as they are temporary.",
     answer: true,
     explanation: "Emotions are designed to be fluid, acting as a natural, temporary response to internal and external stimuli."
   },
-  { id: 22,
+  { id: 20,
     question: "People don’t turn to drugs and other substances to help them cope with their mental distress.",
     answer: false,
-    explanation: ""
+    explanation: "People might turn to substances to temporarily numb or manage painful emotions or effects of trauma."
   },
-  { id: 23,
+  { id: 21,
     question: "Mood disorders can affect the ability to perform daily tasks for work or school.",
     answer: true,
     explanation: "Moods can influence perception, motivation, decision-making, social interactions, and even basic cognitive processes like memory and attention."
   },
-  { id: 24,
+  { id: 22,
     question: "Mood disorders can only cause extreme sadness.",
     answer: false,
-    explanation: ""
+    explanation: "Mood disorders can include a broad spectrum of emotional disturbances, ranging from severe lows such as depression or extreme highs or a mix of both."
   },
-  { id: 25,
+  { id: 23,
     question: "Anxiety disorders may also have physical signs.",
     answer: true,
     explanation: "Anxiety disorders exhibit physical symptoms because they trigger the body's “fight for flight” response."
   },
-  { id: 26,
+  { id: 24,
     question: "Men are twice as likely as women to have anxiety disorders.",
     answer: false,
-    explanation: ""
+    explanation: "Women are twice as likely as men to have anxiety disorders and it could be because of differences in brain chemistry and hormone fluctuations"
   }
 ]
 
