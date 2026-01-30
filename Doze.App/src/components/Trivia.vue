@@ -83,7 +83,7 @@ const questions = [
   { id: 13,
     question: "Help is available if you are suffering from mental health condition(s).",
     answer: true,
-    explanation: "Please go to the Hotlines page on the app for more details."
+    explanation: "Please go to the app's Hotlines page for more details on mental health conditions."
   },
   { id: 14,
     question: "People living without mental health conditions never face challenges to their mental health.",
@@ -103,7 +103,7 @@ const questions = [
   { id: 17,
     question: "Behavior health is a key element of overall well being.",
     answer: true,
-    explanation: "Behavior health is crucial because it is intrinsically linked to physical health."
+    explanation: "Behavior health is is intrinsically linked to physical health."
   },
   { id: 18,
     question: "Behavioral health is not an umbrella term for mental health.",
