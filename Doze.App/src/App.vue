@@ -1,5 +1,6 @@
 <script setup>
   import audioFile from './assets/relax.mp3'
+  import {VueSound} from 'vue-sound'
 </script>
 
 <template>
