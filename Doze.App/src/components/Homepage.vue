@@ -101,13 +101,9 @@ button {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #86aad9;
   color: rgb(11, 8, 8);
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #6b3780;
-}
 </style>

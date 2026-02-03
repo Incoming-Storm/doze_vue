@@ -190,7 +190,6 @@ h2 {
   align-items: center;
   padding: 8px 12px;
   border-radius: 6px;
-  background:#86aad9;
   border:none;
   cursor:pointer;
 }

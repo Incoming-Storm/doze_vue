@@ -380,18 +380,6 @@ const skipQuestion = () => {
   font-size: 28px;
 }
 
-.final-score {
-  font-size: 24px;
-  color: #4CAF50;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.score-number {
-  font-size: 32px;
-  color: #2196F3;
-}
-
 .score-message {
   margin-bottom: 30px;
   font-size: 16px;
