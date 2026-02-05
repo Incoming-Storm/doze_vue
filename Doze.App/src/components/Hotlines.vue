@@ -29,14 +29,14 @@
 
   <div class="resources">
     <h2>Resources</h2>
-    <a href="https://cimhs.com/?redirect=0">CIMHS Free Online Therapy</a><br>
-    <a href="https://www.samhsa.gov/data/report/national-directory-of-mental-health-treatment-facilities">National Directory of Mental Health Treatment Facilities</a><br>
+    <a href="https://cimhs.com/?redirect=0" target="_blank" >CIMHS Free Online Therapy</a><br>
+    <a href="https://www.samhsa.gov/data/report/national-directory-of-mental-health-treatment-facilities" target="_blank" >National Directory of Mental Health Treatment Facilities</a><br>
   </div>
 
   <div class="info links">                                                                                          <!-- ARTICLE LINKS -->
     <h2>More Information</h2>
 
-    <a href="https://www.cdc.gov/mental-health/about/index.html">About Mental Health</a>                            <!-- AMH link -->
+    <a href="https://www.cdc.gov/mental-health/about/index.html" target="_blank" >About Mental Health</a>                            <!-- AMH link -->
     <button class="moreButton" @click="showAMH = !showAMH">                                                         <!-- AMH show more button -->
       {{ showAMH ? 'Less' : 'More' }}
     </button>
@@ -57,7 +57,7 @@
       </div>
     </transition><br>
 
-    <a href="https://www.cdc.gov/mental-health/about/about-behavioral-health.html">About Behavioral Health</a>      <!-- ABH link, button, and info -->
+    <a href="https://www.cdc.gov/mental-health/about/about-behavioral-health.html" target="_blank" >About Behavioral Health</a>      <!-- ABH link, button, and info -->
     <button class="moreButton" @click="showABH = !showABH">
       {{ showABH ? 'Less' : 'More' }}
     </button>
@@ -74,7 +74,7 @@
       </div>
     </transition><br>
 
-    <a href="https://my.clevelandclinic.org/health/diseases/17843-mood-disorders">Mood Disorders</a>                <!-- MD link, button, and info -->
+    <a href="https://my.clevelandclinic.org/health/diseases/17843-mood-disorders" target="_blank" >Mood Disorders</a>                <!-- MD link, button, and info -->
     <button class="moreButton" @click="showMD = !showMD">
       {{ showMD ? 'Less' : 'More' }}
     </button>
@@ -99,7 +99,7 @@
       </div>
     </transition><br>
 
-    <a href="https://my.clevelandclinic.org/health/diseases/9536-anxiety-disorders">Anxiety Disorders</a>           <!-- AD link, button, and info -->
+    <a href="https://my.clevelandclinic.org/health/diseases/9536-anxiety-disorders" target="_blank" >Anxiety Disorders</a>           <!-- AD link, button, and info -->
     <button class="moreButton" @click="showAD = !showAD">
       {{ showAD ? 'Less' : 'More' }}
     </button>
