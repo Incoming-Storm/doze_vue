@@ -38,7 +38,7 @@
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-sunrise-6);
+  --color-background: var(--vt-c-sunrise-2);
   --color-background-soft: var(--vt-c-sunrise-5);
   --color-background-mute: var(--vt-c-white-mute);
 
