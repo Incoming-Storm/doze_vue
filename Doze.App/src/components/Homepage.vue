@@ -94,6 +94,7 @@ console.log(quote.value);
   gap: 100px; /* Space between activity buttons */
 }
 
+
 button {
   width: 150px;
   height: 50px;
