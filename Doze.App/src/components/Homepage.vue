@@ -68,6 +68,17 @@ console.log(quote.value);
   min-height: 100vh; /* Ensures full screen height for vertical centering */
 }
 
+.homepage::before {
+  content: '';
+  position: fixed;
+  inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
+  background-image: url('@/assets/doze-background-2.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .back {
   position: absolute;
   top: 20px;

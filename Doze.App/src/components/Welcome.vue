@@ -28,12 +28,15 @@ defineProps({
   min-height: 100vh; /* Ensures full screen height for vertical centering */
 }
 
+
 h1 {
   font-weight: 500;
   font-size: 100px;
   position: relative;
   top: -10px;
+  font-family: 'Georgia', serif;  /* Add this line */
 }
+
 
 h3 {
   font-size: 1.2rem;
@@ -54,12 +57,12 @@ h3 {
 }
 
 button {
-  width: 150px;
-  height: 50px;
+  width: 200px;
+  height: 55px;
   font-size: 1.2rem;
   padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   color: rgb(11, 8, 8);
   cursor: pointer;
   transition: background-color 0.3s;
