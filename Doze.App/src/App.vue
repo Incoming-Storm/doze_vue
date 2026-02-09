@@ -42,5 +42,8 @@
 </template>
 
 <style scoped>
+  div {
+    cursor: pointer;
+  }
 
 </style>
