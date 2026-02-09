@@ -66,6 +66,8 @@ button {
   color: rgb(11, 8, 8);
   cursor: pointer;
   transition: background-color 0.3s;
+  font-family: 'Georgia', serif;
+  font-weight: 500;
 }
 
 </style>

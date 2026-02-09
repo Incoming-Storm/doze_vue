@@ -272,8 +272,8 @@ const skipQuestion = () => {
 }
 
 .btn-true {
-  background-color: #81c784;
-  color: white;
+  background-color: #065a0a;
+  color: rgb(255, 255, 255);
 }
 
 .btn-true:hover {
@@ -282,8 +282,8 @@ const skipQuestion = () => {
 }
 
 .btn-false {
-  background-color: #ef5350;
-  color: white;
+  background-color: #861412;
+  color: rgb(255, 255, 255);
 }
 
 .btn-false:hover {

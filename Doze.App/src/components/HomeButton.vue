@@ -15,7 +15,7 @@
         font-size: 1.2rem;
         padding: 10px;
         border-radius: 5px;
-        background-color: #BF84AE;
+        background-color: #8C88BA;
         color: rgb(11, 8, 8);
         cursor: pointer;
         transition: background-color 0.3s;
