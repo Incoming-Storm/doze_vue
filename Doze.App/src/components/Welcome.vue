@@ -9,7 +9,7 @@ defineProps({
 </script>
 
 <template>
-        <div >
+        <div class="welcome">
             <h1>Doze</h1>
             <router-link to="/homepage"><button>Continue</button></router-link>
         </div>
@@ -42,7 +42,16 @@ h3 {
   font-size: 1.2rem;
 }
 
-
+.welcome::before {
+  content: '';
+  position: fixed;
+  inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
+  background-image: url('@/assets/purple.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  pointer-events: none;
+}
 
 .greetings h1,
 .greetings h3 {
