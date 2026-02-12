@@ -17,7 +17,7 @@
 
 <template>
   <HomeButton />
-
+<div class="hotlines">
   <div class="numbers">                                                                                             <!-- HOTLINE NUMBERS -->
     <h2>Hotline Numbers</h2>
     <p>Suicide and Crisis Hotline: 988<br>
@@ -133,7 +133,7 @@
       </div>
     </transition><br>
   </div>
- 
+</div>
     
 </template>
 
@@ -151,12 +151,15 @@ h2 {
 
 }
 
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h2 {
-    text-align: left;
-  }
+.hotlines::before {
+  content: '';
+  position: fixed;
+  inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
+  background-image: url('@/assets/test.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .numbers {
@@ -198,7 +201,7 @@ h2 {
   margin-top:10px; 
   max-width: 600px;
   padding:10px; 
-  background:#f7f9fc; 
+  background:#fde4ca; 
   border-radius:6px; 
 }
 
