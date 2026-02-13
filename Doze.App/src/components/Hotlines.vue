@@ -198,12 +198,24 @@ h2 {
 }
 .details{ 
   color: black;
-  margin-top:10px; 
+  margin-top:10px;
   max-width: 600px;
-  padding:10px; 
-  background:#fde4ca; 
-  border-radius:6px; 
+  padding:10px;
+  background: transparent; /* use overlay pseudo-element for translucent background */
+  border-radius:6px;
+  position: relative; /* establish containing block for ::before */
 }
+
+.details::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(253,228,202,0.45); /* semi-transparent background; adjust alpha */
+  z-index: 0;
+  border-radius: inherit; /* match .details rounded corners */
+  pointer-events: none;
+}
+.details > * { position: relative; z-index: 1; }
 
 /* optional transition */
 .fade-enter-active,.fade-leave-active{ transition: opacity .2s ease; }
