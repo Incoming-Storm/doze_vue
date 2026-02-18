@@ -20,19 +20,20 @@
   <main>
     <RouterView />
 
-    <div>
-      <p @click="selectedSound = audioFile1">Relaxing Music</p>
-      <p @click="selectedSound = audioFile2">Fire Crackling</p>
-      <p @click="selectedSound = audioFile3">Leaf Rain</p>
-      <p @click="selectedSound = audioFile4">Loud Rain with Thunder</p>
-      <p @click="selectedSound = audioFile5">Ocean Waves</p>
-      <p @click="selectedSound = audioFile6">Rain with Birds</p>
-      <p @click="selectedSound = audioFile7">Rain on Roof</p>
-      <p @click="selectedSound = audioFile8">Rain with Thunder</p>
-      <p @click="selectedSound = audioFile9">Stream Water</p>
-      <p @click="selectedSound = audioFile10">Thunder</p>
-      <p @click="selectedSound = audioFile11">White Noise</p>
-    </div>
+    <select v-model="selectedSound">
+      <option :value="audioFile1">Relaxing Music</option>
+      <option :value="audioFile2">Fire Crackling</option>
+      <option :value="audioFile3">Leaf Rain</option>
+      <option :value="audioFile4">Loud Rain with Thunder</option>
+      <option :value="audioFile5">Ocean Waves</option>
+      <option :value="audioFile6">Rain with Birds</option>
+      <option :value="audioFile7">Rain on Roof</option>
+      <option :value="audioFile8">Rain with Thunder</option>
+      <option :value="audioFile9">Stream Water</option>
+      <option :value="audioFile10">Thunder</option>
+      <option :value="audioFile11">White Noise</option>
+    </select>
+
 
     <VueSound
       :file="selectedSound"
