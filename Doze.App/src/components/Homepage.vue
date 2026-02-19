@@ -51,6 +51,7 @@ console.log(quote.value);
         <router-link to="/trivia"><button><span class="material-icons">quiz</span><span class="button-text">Trivia</span></button></router-link>
         <router-link to="/journal"><button><span class="material-icons">layers</span><span class="button-text">Journal</span></button></router-link>
         <router-link to="/game"><button><span class="material-icons">sports_esports</span><span class="button-text">Game</span></button></router-link>
+        <router-link to="/audio"><button><span class="material-icons">audiotrack</span><span class="button-text">Audio</span></button></router-link>
       </div>
 
   </div>
