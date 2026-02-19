@@ -43,14 +43,14 @@ console.log(quote.value);
 
     <div class="back"><router-link to="/"><button>Back</button></router-link></div>
     <div class="info">
-      <router-link to="/hotlines"><button>Hotlines</button></router-link>
+      <router-link to="/hotlines"><button><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></button></router-link>
     </div>
 
     <div id="quoteDisplay" class="quote">{{ quote }}</div>
       <div class="activities">
-        <router-link to="/trivia"><button>Trivia</button></router-link>
-        <router-link to="/journal"><button>Journal</button></router-link>
-        <router-link to="/game"><button>Game</button></router-link>
+        <router-link to="/trivia"><button><span class="material-icons">quiz</span><span class="button-text">Trivia</span></button></router-link>
+        <router-link to="/journal"><button><span class="material-icons">layers</span><span class="button-text">Journal</span></button></router-link>
+        <router-link to="/game"><button><span class="material-icons">sports_esports</span><span class="button-text">Game</span></button></router-link>
       </div>
 
   </div>
@@ -116,6 +116,18 @@ button {
   color: rgb(11, 8, 8);
   cursor: pointer;
   transition: background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.material-icons {
+  font-size: 24px;
+}
+
+.button-text {
+  font-size: 0.8rem;
 }
 
 </style>

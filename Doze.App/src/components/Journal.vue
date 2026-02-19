@@ -61,7 +61,7 @@ const deleteEntry = (id) => {
     <HomeButton />
         
     <div class="entry-form">
-      <h2>New Entry</h2>
+      <h2><span class="material-icons">notes</span> New Entry</h2>
       <div class="mood-selector">
         <label>How are you feeling?</label>
         <div class="mood-buttons">
@@ -82,7 +82,7 @@ const deleteEntry = (id) => {
         cols="40" 
         placeholder="Write your thoughts here...">
       </textarea>
-      <button @click="saveEntry" class="save-btn">Save Entry</button>
+      <button @click="saveEntry" class="save-btn"><span class="material-icons">save</span></button>
     </div>
 
     <div class="saved-entries">
@@ -96,7 +96,7 @@ const deleteEntry = (id) => {
           <div class="entry-date">{{ entry.date }}</div>
         </div>
         <div class="entry-text">{{ entry.text }}</div>
-        <button @click="deleteEntry(entry.id)" class="delete-btn">Delete</button>
+        <button @click="deleteEntry(entry.id)" class="delete-btn"><span class="material-icons">delete</span></button>
       </div>
     </div>
   </div>
@@ -124,6 +124,9 @@ const deleteEntry = (id) => {
 .entry-form h2 {
   margin-top: 0;
   color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .mood-selector {
@@ -259,6 +262,10 @@ button:hover {
 
 .delete-btn:hover {
   background-color: #da190b;
+}
+
+.material-icons {
+  font-size: 24px;
 }
 
 h1 {
