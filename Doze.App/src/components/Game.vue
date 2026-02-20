@@ -220,7 +220,7 @@ onUnmounted(() => {
         <HomeButton />
         
         <div class="game-header">
-          <h2>Circle Collection Game</h2>
+          <h2>Calming Collection Game</h2>
           <div class="stats">
             <div class="stat">
               <span class="stat-label">Circle Value:</span>

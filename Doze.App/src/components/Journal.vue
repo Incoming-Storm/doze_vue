@@ -82,7 +82,7 @@ const deleteEntry = (id) => {
         cols="40" 
         placeholder="Write your thoughts here...">
       </textarea>
-      <button @click="saveEntry" class="save-btn"><span class="material-icons">save</span></button>
+      <button @click="saveEntry" class="save-btn">Save</button>
     </div>
 
     <div class="saved-entries">
