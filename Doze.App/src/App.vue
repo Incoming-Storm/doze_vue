@@ -47,7 +47,6 @@ const handleVolumeChange = (e) => {
 <template>
 
   <main>
-    <RouterView />
 
 <!--    <select v-model="selectedSound">
       <option :value="audioFile1">Relaxing Music</option>
@@ -67,7 +66,6 @@ const handleVolumeChange = (e) => {
     <VueSound
       :file="selectedSound"
     />-->
-    
                 <!-- Audio Player -->
             <div class="audio-player">
                 <div class="sound-select">
@@ -112,6 +110,7 @@ const handleVolumeChange = (e) => {
                     loop
                 ></audio>
             </div>
+            <RouterView />
   </main>
 </template>
 
@@ -129,6 +128,13 @@ const handleVolumeChange = (e) => {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 300px;
   text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: end;
 }
 
 .sound-select {

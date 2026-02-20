@@ -9,7 +9,7 @@ import HomeButton from './HomeButton.vue'
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
 .audio-player {
   max-width: 600px;
   margin: 0 auto;
