@@ -7,23 +7,16 @@
 
 <style scoped>
     .homeButton {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 150px;
-        height: 50px;
+        display: inline;
         font-size: 1.2rem;
-        padding: 10px;
-        border-radius: 5px;
-        background-color: #8C88BA;
         color: rgb(11, 8, 8);
         cursor: pointer;
-        transition: background-color 0.3s;
+        text-decoration: none;
         margin-bottom: 20px;
     }
 
     .homeButton:hover {
-        background-color: #6b3780;
+        text-decoration: underline;
     }
 
 </style>
