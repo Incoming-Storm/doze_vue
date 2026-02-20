@@ -303,4 +303,15 @@ button {
   transition: background-color 0.3s;
 }
 
+.journal::before {
+  content: '';
+  position: fixed;
+  inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
+  background-image: url('@/assets/test.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  pointer-events: none;
+}
+
 </style>
