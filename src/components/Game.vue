@@ -220,7 +220,7 @@ onUnmounted(() => {
         <HomeButton />
         
         <div class="game-header">
-          <h2>Circle Collection Game</h2>
+          <h2>Calming Collection Game</h2>
           <div class="stats">
             <div class="stat">
               <span class="stat-label">Circle Value:</span>
@@ -311,7 +311,7 @@ onUnmounted(() => {
 }
 
 .stat-value {
-  color: #4CAF50;
+  color: #4c5eaf;
   font-size: 20px;
   font-weight: bold;
 }
@@ -333,7 +333,7 @@ onUnmounted(() => {
 .game-area {
   width: 100%;
   height: 500px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #8093e9 0%, #9463c5 100%);
   border-radius: 8px;
   position: relative;
   overflow: hidden;
@@ -353,14 +353,14 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  border: 3px solid #FFD700;
+  background-color: #f1f9ed;
+  border: 3px solid #7820bb;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .player-value {
-  color: #2196F3;
+  color: #044a83;
   font-weight: bold;
   font-size: 14px;
 }
@@ -393,7 +393,7 @@ onUnmounted(() => {
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-bottom: 35px solid #FF6B6B;
+  border-bottom: 35px solid #0d02aa;
   z-index: -1;
 }
 
@@ -417,9 +417,9 @@ onUnmounted(() => {
 }
 
 .reset-btn {
-  background-color: #4CAF50;
+  background-color: #4c66af;
   color: white;
-  padding: 12px 30px;
+  padding: 8px 30px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -428,7 +428,7 @@ onUnmounted(() => {
 }
 
 .reset-btn:hover {
-  background-color: #45a049;
+  background-color: #59b35e;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -471,6 +471,16 @@ h3 {
   }
 }
 
+.game::before {
+  content: '';
+  position: fixed;
+  inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
+  background-image: url('@/assets/test.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  pointer-events: none;
+}
 
 
 </style>
