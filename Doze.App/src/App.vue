@@ -87,7 +87,7 @@ const handleVolumeChange = (e) => {
                 
                 <div class="controls">
                     <button @click="togglePlay" class="play-btn">
-                        {{ isPlaying ? '⏸ Pause' : '▶ Play' }}
+                        {{ isPlaying ? '|| Pause' : '▶ Play' }}
                     </button>
                 </div>
                 
@@ -123,9 +123,9 @@ const handleVolumeChange = (e) => {
 .audio-player {
   margin-top: 40px;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255,255,255,0.08–0.15);
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(147, 24, 200, 0.1);
   width: 220px;
   text-align: center;
 }
@@ -156,7 +156,7 @@ main {
   border-radius: 8px;
   font-family: 'Georgia', serif;
   cursor: pointer;
-  background-color: white;
+  background-color: rgba(246, 225, 249, 0.9);
 }
 
 .controls {
@@ -167,7 +167,7 @@ main {
   width: 100%;
   padding: 10px;
   border: 2px solid rgb(11, 8, 8);
-  background-color: white;
+  background-color: rgba(239, 221, 243, 0.9);
   font-family: 'Georgia', serif;
   font-weight: 600;
   border-radius: 8px;
