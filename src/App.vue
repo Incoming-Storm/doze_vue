@@ -11,6 +11,7 @@
   import audioFile10 from './assets/thunder.mp3'
   import audioFile11 from './assets/white-noise.mp3'
   import { ref } from 'vue'
+  import { RouterView } from 'vue-router'
 
   const selectedSound = ref(audioFile1)
 

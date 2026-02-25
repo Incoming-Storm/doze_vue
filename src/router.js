@@ -6,7 +6,6 @@ import Hotlines from './components/Hotlines.vue';
 import Game from './components/Game.vue';
 import Trivia from './components/Trivia.vue';
 import Journal from './components/Journal.vue';
-import AudioPlayer from './components/AudioPlayer.vue';
 
 // 1. Define route components.
 // These are the components that will be rendered when the URL matches the path.
@@ -21,8 +20,7 @@ const routes = [
   {path: '/hotlines', name: 'Hotlines', component: Hotlines},
   {path: '/game', name: 'Game', component: Game},
   {path: '/trivia', name: 'Trivia', component: Trivia},
-  {path: '/journal', name: 'Journal', component: Journal},
-  {path: '/audio', name: 'AudioPlayer', component: AudioPlayer}
+  {path: '/journal', name: 'Journal', component: Journal}
 
   // Example of a dynamic route (e.g., /users/1)
 ];
