@@ -6,7 +6,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import vueDevTools from 'vite-plugin-vue-devtools';
 
 export default defineConfig({
-  base: './', // Replace with your GitHub repository name
+  base: '/doze_vue/', // Replace with your GitHub repository name
   plugins: [
     vue(),
     vueJsx(),
