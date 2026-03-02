@@ -48,70 +48,51 @@ const handleVolumeChange = (e) => {
 <template>
 
   <main>
-
-<!--    <select v-model="selectedSound">
-      <option :value="audioFile1">Relaxing Music</option>
-      <option :value="audioFile2">Fire Crackling</option>
-      <option :value="audioFile3">Leaf Rain</option>
-      <option :value="audioFile4">Loud Rain with Thunder</option>
-      <option :value="audioFile5">Ocean Waves</option>
-      <option :value="audioFile6">Rain with Birds</option>
-      <option :value="audioFile7">Rain on Roof</option>
-      <option :value="audioFile8">Rain with Thunder</option>
-      <option :value="audioFile9">Stream Water</option>
-      <option :value="audioFile10">Thunder</option>
-      <option :value="audioFile11">White Noise</option>
-    </select>
-
-
-    <VueSound
-      :file="selectedSound"
-    />-->
-                <!-- Audio Player -->
-            <div class="audio-player">
-                <div class="sound-select">
-                    <label for="soundSelect">Choose Sound:</label>
-                    <select id="soundSelect" v-model="selectedSound">
-                        <option :value="audioFile1">Relaxing Music</option>
-                        <option :value="audioFile2">Fire Crackling</option>
-                        <option :value="audioFile3">Leaf Rain</option>
-                        <option :value="audioFile4">Loud Rain with Thunder</option>
-                        <option :value="audioFile5">Ocean Waves</option>
-                        <option :value="audioFile6">Rain with Birds</option>
-                        <option :value="audioFile7">Rain on Roof</option>
-                        <option :value="audioFile8">Rain with Thunder</option>
-                        <option :value="audioFile9">Stream Water</option>
-                        <option :value="audioFile10">Thunder</option>
-                        <option :value="audioFile11">White Noise</option>
-                    </select>
-                </div>
+        <!-- Audio Player -->
+    <div class="audio-player">
+      <div class="sound-select">
+        <label for="soundSelect">Choose Sound:</label>
+        <select id="soundSelect" v-model="selectedSound">
+          <option :value="audioFile1">Relaxing Music</option>
+          <option :value="audioFile2">Fire Crackling</option>
+          <option :value="audioFile3">Leaf Rain</option>
+          <option :value="audioFile4">Loud Rain with Thunder</option>
+          <option :value="audioFile5">Ocean Waves</option>
+          <option :value="audioFile6">Rain with Birds</option>
+          <option :value="audioFile7">Rain on Roof</option>
+          <option :value="audioFile8">Rain with Thunder</option>
+          <option :value="audioFile9">Stream Water</option>
+          <option :value="audioFile10">Thunder</option>
+          <option :value="audioFile11">White Noise</option>
+        </select>
+      </div>
                 
-                <div class="controls">
-                    <button @click="togglePlay" class="play-btn">
-                        {{ isPlaying ? '|| Pause' : '▶ Play' }}
-                    </button>
-                </div>
+      <div class="controls">
+        <button @click="togglePlay" class="play-btn">
+          {{ isPlaying ? '|| Pause' : '▶ Play' }}
+        </button>
+      </div>
                 
-                <div class="volume-control">
-                    <label for="volumeSlider">Volume:</label>
-                    <input 
-                        id="volumeSlider"
-                        type="range" 
-                        min="0" 
-                        max="1" 
-                        step="0.1" 
-                        :value="volume"
-                        @input="handleVolumeChange"
-                    />
-                </div>
+      <div class="volume-control">
+        <label for="volumeSlider">Volume:</label>
+        <input 
+          id="volumeSlider"
+          type="range" 
+          min="0" 
+          max="1" 
+          step="0.1" 
+          :value="volume"
+          @input="handleVolumeChange"
+        />
+      </div>
                 
-                <audio 
-                    ref="audioRef" 
-                    :src="selectedSound"
-                    loop
-                ></audio>
-            </div>
-            <RouterView />
+      <audio 
+        ref="audioRef" 
+        :src="selectedSound"
+        loop
+      ></audio>
+    </div>
+    <RouterView />
   </main>
 </template>
 
