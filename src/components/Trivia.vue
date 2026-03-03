@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import HomeButton from './HomeButton.vue';
+import AudioPlayer from '../AudioPlayer.vue';
 
 defineProps({
   msg: {
@@ -188,6 +189,7 @@ const skipQuestion = () => {
 <template>
     <div class="trivia">
         <HomeButton />
+        <AudioPlayer/>
         
         <div class="quiz-container">
           <div class="question-label">Mental Health Trivia</div>

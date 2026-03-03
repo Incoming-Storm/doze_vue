@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import AudioPlayer from '../AudioPlayer.vue';
 
 defineProps({
     msg: {
@@ -40,6 +41,7 @@ console.log(quote.value);
 
 <template>
   <div class="homepage">
+    <AudioPlayer/>
 
     <div class="back"><router-link to="/"><button>Back</button></router-link></div>
     <div class="info">

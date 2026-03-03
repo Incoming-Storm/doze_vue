@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import HomeButton from './HomeButton.vue';
+import AudioPlayer from '../AudioPlayer.vue';
 
 defineProps({
   msg: {
@@ -59,6 +60,7 @@ const deleteEntry = (id) => {
 <template>
   <div class="journal">
     <HomeButton />
+    <AudioPlayer/>
         
     <div class="entry-form">
       <h2><span class="material-icons">notes</span> New Entry</h2>

@@ -1,6 +1,7 @@
 <script setup>
   import HomeButton from './HomeButton.vue';
   import { ref } from 'vue'
+  import AudioPlayer from '../AudioPlayer.vue';
   const showAMH = ref(false)
   const showABH = ref(false)
   const showMD = ref(false)
@@ -18,6 +19,7 @@
 <template>
   <HomeButton />
 <div class="hotlines">
+  <AudioPlayer/>
   <div class="numbers">                                                                                             <!-- HOTLINE NUMBERS -->
     <h2>Hotline Numbers</h2>
     <p>Suicide and Crisis Hotline: 988<br>

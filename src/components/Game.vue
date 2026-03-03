@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import HomeButton from './HomeButton.vue';
+import AudioPlayer from '../AudioPlayer.vue';
 
 defineProps({
   msg: {
@@ -218,6 +219,7 @@ onUnmounted(() => {
 <template>
     <div class="game">
         <HomeButton />
+        <AudioPlayer/>
         
         <div class="game-header">
           <h2>Calming Collection Game</h2>
