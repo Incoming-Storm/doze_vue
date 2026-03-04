@@ -16,12 +16,12 @@ import IconHome from './icons/IconHome.vue'
         align-items: center;
         gap: 8px;
         font-size: 1.2rem;
-        background-color: rgb(57, 13, 119);
+        background-color: #362648;
         cursor: pointer;
         text-decoration: none;
         margin-bottom: 20px;
         border-radius: 8px;
-        color: white;
+        color: #BF84AE;
         border: none;
         transition: background-color 0.3s ease;
     }

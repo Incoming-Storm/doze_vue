@@ -33,6 +33,7 @@ const quotes = [
 ];
 
 const quote = ref(quotes[Math.floor(Math.random() * quotes.length)]);
+const showAudioPlayer = ref(true);
 console.log(quote.value);
 
 </script>
@@ -41,7 +42,7 @@ console.log(quote.value);
 
 <template>
   <div class="homepage">
-    <AudioPlayer/>
+
 
     <div class="back"><router-link to="/"><button>Back</button></router-link></div>
     <div class="info">
@@ -54,7 +55,11 @@ console.log(quote.value);
         <router-link to="/journal"><button><span class="material-icons">layers</span><span class="button-text">Journal</span></button></router-link>
         <router-link to="/game"><button><span class="material-icons">sports_esports</span><span class="button-text">Game</span></button></router-link>
       </div>
-
+      
+    <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+      {{ showAudioPlayer ? 'Hide Audio Player' : 'Show Audio Player' }}
+    </button>
+    <AudioPlayer v-if="showAudioPlayer" />
   </div>
 
 </template>
@@ -87,6 +92,10 @@ console.log(quote.value);
   left: 20px;
 }
 
+.audio-toggle {
+  margin-bottom: 12px;
+}
+
 
 .info {
   text-align: center;
@@ -115,7 +124,6 @@ button {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  color: rgb(11, 8, 8);
   cursor: pointer;
   transition: background-color 0.3s;
   display: flex;

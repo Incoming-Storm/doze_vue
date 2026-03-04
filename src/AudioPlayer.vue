@@ -1,69 +1,21 @@
 <script setup>
-  import audioFile1 from '/workspaces/doze_vue/src/assets/relax.mp3'
-  import audioFile2 from '/workspaces/doze_vue/src/assets/fire-crackling.mp3'
-  import audioFile3 from '/workspaces/doze_vue/src/assets/leaf-rain.mp3'
-  import audioFile4 from '/workspaces/doze_vue/src/assets/loud-rain-thunder.mp3'
-  import audioFile5 from '/workspaces/doze_vue/src/assets/ocean-waves.mp3'
-  import audioFile6 from '/workspaces/doze_vue/src/assets/rain-birds.mp3'
-  import audioFile7 from '/workspaces/doze_vue/src/assets/rain-roof.mp3'
-  import audioFile8 from '/workspaces/doze_vue/src/assets/rain-thunder.mp3'
-  import audioFile9 from '/workspaces/doze_vue/src/assets/stream-water.mp3'
-  import audioFile10 from '/workspaces/doze_vue/src/assets/thunder.mp3'
-  import audioFile11 from '/workspaces/doze_vue/src/assets/white-noise.mp3'
-  import { ref } from 'vue'
-  import { RouterView } from 'vue-router'
+  import { useAudioPlayer } from './composables/useAudioPlayer'
 
-  const selectedSound = ref(audioFile1)
-
-  defineProps({
-  msg: {
-    type: String,
-    required: true,
-  },
-})
-
-const audioRef = ref(null)
-const isPlaying = ref(false)
-const volume = ref(0.5)
-
-const togglePlay = () => {
-  if (audioRef.value) {
-    if (isPlaying.value) {
-      audioRef.value.pause()
-    } else {
-      audioRef.value.play()
-    }
-    isPlaying.value = !isPlaying.value
-  }
-}
+const { sounds, selectedSound, isPlaying, volume, togglePlay } = useAudioPlayer()
 
 const handleVolumeChange = (e) => {
   volume.value = parseFloat(e.target.value)
-  if (audioRef.value) {
-    audioRef.value.volume = volume.value
-  }
 }
 </script>
 
 <template>
-
-  <main>
-        <!-- Audio Player -->
-    <div class="audio-player">
+  <div class="audio-player">
       <div class="sound-select">
         <label for="soundSelect">Choose Sound:</label>
         <select id="soundSelect" v-model="selectedSound">
-          <option :value="audioFile1">Relaxing Music</option>
-          <option :value="audioFile2">Fire Crackling</option>
-          <option :value="audioFile3">Leaf Rain</option>
-          <option :value="audioFile4">Loud Rain with Thunder</option>
-          <option :value="audioFile5">Ocean Waves</option>
-          <option :value="audioFile6">Rain with Birds</option>
-          <option :value="audioFile7">Rain on Roof</option>
-          <option :value="audioFile8">Rain with Thunder</option>
-          <option :value="audioFile9">Stream Water</option>
-          <option :value="audioFile10">Thunder</option>
-          <option :value="audioFile11">White Noise</option>
+          <option v-for="sound in sounds" :key="sound.label" :value="sound.value">
+            {{ sound.label }}
+          </option>
         </select>
       </div>
                 
@@ -85,15 +37,7 @@ const handleVolumeChange = (e) => {
           @input="handleVolumeChange"
         />
       </div>
-                
-      <audio 
-        ref="audioRef" 
-        :src="selectedSound"
-        loop
-      ></audio>
-    </div>
-    <RouterView />
-  </main>
+  </div>
 </template>
 
 <style scoped>
@@ -107,16 +51,10 @@ const handleVolumeChange = (e) => {
   padding: 10px;
   background: rgba(255,255,255,0.08–0.15);
   border-radius: 15px;
+  border: 2px solid #8C88BA;
   box-shadow: 0 4px 6px rgba(147, 24, 200, 0.1);
   width: 220px;
   text-align: center;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: end;
 }
 
 .sound-select {

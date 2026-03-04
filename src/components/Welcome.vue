@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import AudioPlayer from '../AudioPlayer.vue';
 
 defineProps({
   msg: {
@@ -13,7 +12,6 @@ defineProps({
 
 <template>
     <div class="welcome">
-      <AudioPlayer/>
       <h1>Doze</h1>
       <router-link to="/homepage"><button>Continue</button></router-link>
             
@@ -71,7 +69,6 @@ button {
   padding: 10px;
   border: none;
   border-radius: 50px;
-  color: rgb(11, 8, 8);
   cursor: pointer;
   transition: background-color 0.3s;
   font-family: 'Georgia', serif;

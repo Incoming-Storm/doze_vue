@@ -60,7 +60,10 @@ const deleteEntry = (id) => {
 <template>
   <div class="journal">
     <HomeButton />
-    <AudioPlayer/>
+    <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+      {{ showAudioPlayer ? 'Hide Audio Player' : 'Show Audio Player' }}
+    </button>
+    <AudioPlayer v-if="showAudioPlayer" />
         
     <div class="entry-form">
       <h2><span class="material-icons">notes</span> New Entry</h2>
@@ -146,6 +149,10 @@ const deleteEntry = (id) => {
   display: flex;
   gap: 10px;
   justify-content: flex-start;
+}
+
+.audio-toggle {
+  margin-bottom: 12px;
 }
 
 .mood-btn {
