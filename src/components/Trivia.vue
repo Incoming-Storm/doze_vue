@@ -184,12 +184,17 @@ const skipQuestion = () => {
   nextQuestion()
 }
 
+const showAudioPlayer = ref(false);
+
 </script>
 
 <template>
     <div class="trivia">
         <HomeButton />
-        <AudioPlayer/>
+        <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+          {{ showAudioPlayer ? 'Hide Audio Player' : 'Show Audio Player' }}
+        </button>
+        <AudioPlayer v-if="showAudioPlayer" />
         
         <div class="quiz-container">
           <div class="question-label">Mental Health Trivia</div>

@@ -214,12 +214,17 @@ onUnmounted(() => {
     gameArea.removeEventListener('click', handleGameAreaClick)
   }
 })
+
+const showAudioPlayer = ref(false);
 </script>
 
 <template>
     <div class="game">
         <HomeButton />
-        <AudioPlayer/>
+        <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+          {{ showAudioPlayer ? 'Hide Audio Player' : 'Show Audio Player' }}
+        </button>
+        <AudioPlayer v-if="showAudioPlayer" />
         
         <div class="game-header">
           <h2>Calming Collection Game</h2>

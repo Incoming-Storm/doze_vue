@@ -27,7 +27,7 @@ import IconHome from './icons/IconHome.vue'
     }
 
     .homeButton:hover {
-        background-color: royalblue;
+        background-color: #090f2d;
     }
 
     svg {

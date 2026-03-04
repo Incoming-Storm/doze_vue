@@ -38,12 +38,6 @@ a,
   padding: 3px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: #9b3447;
-  }
-}
-
 @media (min-width: 1024px) {
   body {
     display: flex;

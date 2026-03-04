@@ -6,6 +6,7 @@
   const showABH = ref(false)
   const showMD = ref(false)
   const showAD = ref(false)
+  const showAudioPlayer = ref(false);
 
   defineProps({
     msg: {
@@ -19,7 +20,11 @@
 <template>
   <HomeButton />
 <div class="hotlines">
-  <AudioPlayer/>
+    <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+      {{ showAudioPlayer ? 'Hide Audio Player' : 'Show Audio Player' }}
+    </button>
+    <AudioPlayer v-if="showAudioPlayer" />
+
   <div class="numbers">                                                                                             <!-- HOTLINE NUMBERS -->
     <h2>Hotline Numbers</h2>
     <p>Suicide and Crisis Hotline: 988<br>
@@ -151,6 +156,10 @@ h2 {
   font-size: 1.6rem;  
   line-height: 1.4; /* Improve readability */
 
+}
+
+.audio-toggle {
+  margin-bottom: 12px;
 }
 
 .hotlines::before {

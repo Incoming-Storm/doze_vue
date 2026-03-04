@@ -55,6 +55,8 @@ const deleteEntry = (id) => {
   localStorage.setItem('journalEntries', JSON.stringify(entries.value))
 }
 
+const showAudioPlayer = ref(false);
+
 </script>
 
 <template>

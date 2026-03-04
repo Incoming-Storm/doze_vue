@@ -33,7 +33,7 @@ const quotes = [
 ];
 
 const quote = ref(quotes[Math.floor(Math.random() * quotes.length)]);
-const showAudioPlayer = ref(true);
+const showAudioPlayer = ref(false);
 console.log(quote.value);
 
 </script>
