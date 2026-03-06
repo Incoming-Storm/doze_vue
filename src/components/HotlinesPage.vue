@@ -20,8 +20,9 @@
 <template>
   <HomeButton />
 <div class="hotlines">
-    <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
-      {{ showAudioPlayer ? 'Hide Audio Player' : 'Show Audio Player' }}
+     <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+      <span class="material-icons">audiotrack</span>
+      <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
     </button>
     <AudioPlayer v-if="showAudioPlayer" />
 
@@ -49,7 +50,7 @@
     </button>
     <transition name="fade">                                                                                        <!-- AMH summary info -->
       <div v-if="showAMH" class="details">
-        <p>“Mental health is the component of behavioral health that includes our emotional, psychological, and social well-being. Mental health is a state of well-being that enables us to cope with the stresses of life, 
+        <p>“Mental health is the component of behavioral health that includes our emotional, psychological, and social well-being. Mental health is a state of well-being that enables us to cope with the stresses of life,
         realize our abilities, learn well and work well, and contribute to our community.” -CDC</p><br>
         <dl>
           <dt>Mental health is closely linked to physical health. </dt>
@@ -70,11 +71,11 @@
     </button>
     <transition name="fade">
       <div v-if="showABH" class="details">
-        <p>“Behavioral health refers to a state of mental, emotional, and social well-being or behaviors and actions that affect wellness. Behavioral health is a key component of overall health. 
+        <p>“Behavioral health refers to a state of mental, emotional, and social well-being or behaviors and actions that affect wellness. Behavioral health is a key component of overall health.
         The term is also used to describe the support systems that promote well-being, prevent mental distress, and provide access to treatments and services for mental health conditions.” -CDC</p><br>
-        <p>Behavior health is a key component of overall health 
-        Positive behavioral health includes social determinants of health, supporting the environments where we work, learn, and play. 
-        Behabioral health is an umbrella for mental health, suicidal thoughts or suicide attempt, and substance use or substance use disorders. 
+        <p>Behavior health is a key component of overall health
+        Positive behavioral health includes social determinants of health, supporting the environments where we work, learn, and play.
+        Behabioral health is an umbrella for mental health, suicidal thoughts or suicide attempt, and substance use or substance use disorders.
         Suicide is one of the leading cause of death in the United States.
         People may turn to drugs, alcohol, and other substances to help them cope with stress, trauma, or mental distress.
         </p>
@@ -87,19 +88,19 @@
     </button>
     <transition name="fade">
       <div v-if="showMD" class="details">
-        <p>“A mood disorder is a mental health condition that primarily affects your emotional state. They can cause persistent and intense sadness, elation and/or anger. 
-        Mood disorders are treatable — usually with a combination of medication and psychotherapy (talk therapy).” - Cleveland Clinic</p><br> 
+        <p>“A mood disorder is a mental health condition that primarily affects your emotional state. They can cause persistent and intense sadness, elation and/or anger.
+        Mood disorders are treatable — usually with a combination of medication and psychotherapy (talk therapy).” - Cleveland Clinic</p><br>
         <p>It’s normal for moods to change, however, for mood disorder diagnosis, symptoms must be present for several weeks or longer.
-        Can experience long periods of extreme happiness, extreme sadness or both. 
+        Can experience long periods of extreme happiness, extreme sadness or both.
         Certain mood disorders can involve other emotions, such as anger and irritability.
-        Cause changes in behavior and affect the ability to perform routine tasks, such as work or school. 
-        Mood disorders: 
+        Cause changes in behavior and affect the ability to perform routine tasks, such as work or school.
+        Mood disorders:
         Depression and its subtypes
-        Symptoms include feelings of sadness or hopelessness, and can cause difficulty with thinking, memory, eating, and sleeping. 
+        Symptoms include feelings of sadness or hopelessness, and can cause difficulty with thinking, memory, eating, and sleeping.
         Bipolar disorder and its subtypes
-        Lifelong mood disorder that causes intense shifts in mood, energy levels, thinking patterns and behavior. 
+        Lifelong mood disorder that causes intense shifts in mood, energy levels, thinking patterns and behavior.
         Premenstrual dysphoric disorder
-        Type of mood disorder that occurs seven to ten days before menstruation and goes away within a few days of the start of the menstrual period. 
+        Type of mood disorder that occurs seven to ten days before menstruation and goes away within a few days of the start of the menstrual period.
         Disruptive mood dysregulation disorder
         Affects children and adolescents, involves frequent anger outburst and irritability out of proportion to the situation.
         </p>
@@ -113,17 +114,17 @@
     <transition name="fade">
       <div v-if="showAD" class="details">
         <!-- Put the extra information here -->
-        <p>“Anxiety disorders are a group of mental health conditions that cause fear, dread and other symptoms that are out of proportion to the situation. There are several types, 
+        <p>“Anxiety disorders are a group of mental health conditions that cause fear, dread and other symptoms that are out of proportion to the situation. There are several types,
         including generalized anxiety disorder, specific phobias and social anxiety disorder. Treatment is effective and usually includes medication and psychotherapy (talk therapy).” - Cleveland Clinic
         </p><br>
-        <p>Respond to certain things or situations with fear and dread. May also experience physical signs of anxiety, such as sweating and pounding heart. 
+        <p>Respond to certain things or situations with fear and dread. May also experience physical signs of anxiety, such as sweating and pounding heart.
         Having some anxiety is normal, such as problems at work, taking a test or making an important decision.
-        Some can even be beneficial since it can help us notice dangerous situations and focuse our attention to stay safe. 
+        Some can even be beneficial since it can help us notice dangerous situations and focuse our attention to stay safe.
         Anxiety disorder happens when:
-        Interderes with the ability to function 
+        Interderes with the ability to function
         Overreactions
         Can’t control responses to situations
-        Women are twice as likely as men to have anxiety disorder. 
+        Women are twice as likely as men to have anxiety disorder.
         Psychological syptoms may include:
         Feeling panic, fear, dread, and uneasiness
         Feeling on edge or irritable
@@ -141,7 +142,7 @@
     </transition><br>
   </div>
 </div>
-    
+
 </template>
 
 <style scoped>
@@ -153,20 +154,37 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6rem;  
+  font-size: 1.6rem;
   line-height: 1.4; /* Improve readability */
 
 }
 
 .audio-toggle {
   margin-bottom: 12px;
+  background-color: #4e239d;
+  color: #f4cee1;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
 }
+
+.audio-toggle:hover {
+  background-color: #593f89;
+}
+
+.audio-toggle .button-text {
+  font-size: 0.85rem; /* make smaller */
+}
+
 
 .hotlines::before {
   content: '';
   position: fixed;
   inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
-  background-image: url('@/assets/purple.png');
+  background-image: url('@/assets/gradient-texture.png');
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -207,7 +225,7 @@ h2 {
   border:none;
   cursor:pointer;
 }
-.details{ 
+.details{
   color: black;
   margin-top:10px;
   max-width: 600px;

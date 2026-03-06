@@ -63,17 +63,18 @@ const showAudioPlayer = ref(false);
   <div class="journal">
     <HomeButton />
     <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
-      {{ showAudioPlayer ? 'Hide Audio Player' : 'Show Audio Player' }}
+      <span class="material-icons">audiotrack</span>
+      <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
     </button>
     <AudioPlayer v-if="showAudioPlayer" />
-        
+
     <div class="entry-form">
       <h2><span class="material-icons">notes</span> New Entry</h2>
       <div class="mood-selector">
         <label>How are you feeling?</label>
         <div class="mood-buttons">
-          <button 
-            v-for="(emoji, mood) in moods" 
+          <button
+            v-for="(emoji, mood) in moods"
             :key="mood"
             @click="selectedMood = mood"
             :class="['mood-btn', { active: selectedMood === mood }]"
@@ -83,10 +84,10 @@ const showAudioPlayer = ref(false);
           </button>
         </div>
       </div>
-      <textarea 
-        v-model="entryText" 
-        rows="6" 
-        cols="40" 
+      <textarea
+        v-model="entryText"
+        rows="6"
+        cols="40"
         placeholder="Write your thoughts here...">
       </textarea>
       <button @click="saveEntry" class="save-btn">Save</button>
@@ -107,7 +108,7 @@ const showAudioPlayer = ref(false);
       </div>
     </div>
   </div>
-    
+
 </template>
 
 <style scoped>
@@ -115,6 +116,35 @@ const showAudioPlayer = ref(false);
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+}
+
+.audio-toggle {
+  margin-bottom: 12px;
+  background-color: #4e239d; /* new button color */
+  color: #f4cee1;            /* text/icon color */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.audio-toggle:hover {
+  background-color: #593f89; /* hover color */
+}
+
+.play-btn {
+  background-color: #6b4ea2;
+  color: #ffffff;
+}
+
+.play-btn:hover {
+  background-color: #593f89;
+}
+
+.audio-toggle .button-text {
+  font-size: 0.85rem; /* make smaller */
 }
 
 .back {
@@ -151,10 +181,6 @@ const showAudioPlayer = ref(false);
   display: flex;
   gap: 10px;
   justify-content: flex-start;
-}
-
-.audio-toggle {
-  margin-bottom: 12px;
 }
 
 .mood-btn {

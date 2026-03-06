@@ -19,7 +19,7 @@ button {
   border: none;
   border-radius: 5px;
   background-color: #362648;
-  color: rgb(191, 130, 174);
+  color: #deacbe;
   cursor: pointer;
   transition: background-color 0.3s;
   font-family: 'Georgia', serif;
@@ -52,4 +52,19 @@ a,
   padding: 0 2rem;
   text-align: center;
   }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
 }

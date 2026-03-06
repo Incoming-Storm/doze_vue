@@ -21,7 +21,7 @@ import IconHome from './icons/IconHome.vue'
         text-decoration: none;
         margin-bottom: 20px;
         border-radius: 8px;
-        color: #BF84AE;
+        color: #f8f7f8;
         border: none;
         transition: background-color 0.3s ease;
     }

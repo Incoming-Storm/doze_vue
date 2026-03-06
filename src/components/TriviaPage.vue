@@ -158,11 +158,11 @@ const getRandomQuestion = () => {
   do {
     randomIndex = Math.floor(Math.random() * questions.length)
   } while (askedQuestions.value.has(randomIndex) && askedQuestions.value.size < questions.length)
-  
+
   if (askedQuestions.value.size === questions.length) {
     askedQuestions.value.clear()
   }
-  
+
   askedQuestions.value.add(randomIndex)
   currentQuestionIndex.value = randomIndex
 }
@@ -191,11 +191,12 @@ const showAudioPlayer = ref(false);
 <template>
     <div class="trivia">
         <HomeButton />
-        <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
-          {{ showAudioPlayer ? 'Hide Audio Player' : 'Show Audio Player' }}
-        </button>
-        <AudioPlayer v-if="showAudioPlayer" />
-        
+       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+      <span class="material-icons">audiotrack</span>
+      <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
+    </button>
+    <AudioPlayer v-if="showAudioPlayer" />
+
         <div class="quiz-container">
           <div class="question-label">Mental Health Trivia</div>
 
@@ -211,7 +212,7 @@ const showAudioPlayer = ref(false);
               <span class="result-icon">{{ isCorrect ? '✓' : '✗' }}</span>
               <span class="result-text">{{ isCorrect ? 'Correct!' : 'Incorrect' }}</span>
             </div>
-            
+
             <div v-if="showExplanation" class="explanation">
               <strong>Explanation:</strong>
               <p>{{ currentQuestion().explanation }}</p>
@@ -225,7 +226,7 @@ const showAudioPlayer = ref(false);
           <button v-if="!answered" @click="skipQuestion" class="skip-btn">Skip</button>
         </div>
     </div>
-    
+
 </template>
 
 <style scoped>
@@ -237,6 +238,35 @@ const showAudioPlayer = ref(false);
 
 .back {
   margin-bottom: 20px;
+}
+
+.audio-toggle {
+  margin-bottom: 12px;
+  background-color: #4e239d; /* new button color */
+  color: #f4cee1;            /* text/icon color */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.audio-toggle:hover {
+  background-color: #593f89; /* hover color */
+}
+
+.play-btn {
+  background-color: #6b4ea2;
+  color: #ffffff;
+}
+
+.play-btn:hover {
+  background-color: #593f89;
+}
+
+.audio-toggle .button-text {
+  font-size: 0.85rem; /* make smaller */
 }
 
 .quiz-container {

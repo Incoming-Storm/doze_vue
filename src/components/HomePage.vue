@@ -55,9 +55,10 @@ console.log(quote.value);
         <router-link to="/journal"><button><span class="material-icons">layers</span><span class="button-text">Journal</span></button></router-link>
         <router-link to="/game"><button><span class="material-icons">sports_esports</span><span class="button-text">Game</span></button></router-link>
       </div>
-      
+
     <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
-      {{ showAudioPlayer ? 'Hide Audio Player' : 'Show Audio Player' }}
+      <span class="material-icons">audiotrack</span>
+      <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
     </button>
     <AudioPlayer v-if="showAudioPlayer" />
   </div>
@@ -79,7 +80,7 @@ console.log(quote.value);
   content: '';
   position: fixed;
   inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
-  background-image: url('@/assets/purple.png');
+  background-image: url('@/assets/gradient-texture.png');
   background-size: cover;
   background-position: center;
   z-index: -1;

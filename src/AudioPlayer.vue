@@ -18,21 +18,21 @@ const handleVolumeChange = (e) => {
           </option>
         </select>
       </div>
-                
+
       <div class="controls">
         <button @click="togglePlay" class="play-btn">
           {{ isPlaying ? '|| Pause' : '▶ Play' }}
         </button>
       </div>
-                
+
       <div class="volume-control">
         <label for="volumeSlider">Volume:</label>
-        <input 
+        <input
           id="volumeSlider"
-          type="range" 
-          min="0" 
-          max="1" 
-          step="0.1" 
+          type="range"
+          min="0"
+          max="1"
+          step="0.1"
           :value="volume"
           @input="handleVolumeChange"
         />
@@ -55,6 +55,21 @@ const handleVolumeChange = (e) => {
   box-shadow: 0 4px 6px rgba(147, 24, 200, 0.1);
   width: 220px;
   text-align: center;
+}
+
+.play-btn {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid rgb(11, 8, 8);
+  background-color: #5385e9; /* unique color */
+  color: #43283d;
+  font-family: 'Georgia', serif;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.play-btn:hover {
+  background-color: #2458bd; /* hover shade */
 }
 
 .sound-select {

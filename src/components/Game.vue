@@ -31,7 +31,7 @@ const getRandomPosition = (existingTriangles = []) => {
     y = Math.random() * 85 + 7.5
     // Calculate distance from player's current position
     distanceFromPlayer = Math.sqrt((x - playerX.value) ** 2 + (y - playerY.value) ** 2)
-    
+
     // Check distance from all existing triangles
     tooClose = false
     for (let triangle of existingTriangles) {
@@ -42,7 +42,7 @@ const getRandomPosition = (existingTriangles = []) => {
       }
     }
   } while (distanceFromPlayer < 20 || tooClose) // Must be far from player AND other triangles
-  
+
   return { x, y }
 }
 
@@ -109,15 +109,15 @@ const initializeTriangles = () => {
 const handleGameAreaClick = (e) => {
   const gameArea = document.querySelector('.game-area')
   if (!gameArea) return
-  
+
   const rect = gameArea.getBoundingClientRect()
   let targetX = ((e.clientX - rect.left) / rect.width) * 100
   let targetY = ((e.clientY - rect.top) / rect.height) * 100
-  
+
   // Keep player within bounds
   targetX = Math.max(5, Math.min(95, targetX))
   targetY = Math.max(5, Math.min(95, targetY))
-  
+
   // Check for bigger triangles that would be overlapped
   let closestBigger = null
   let minDist = Infinity
@@ -132,7 +132,7 @@ const handleGameAreaClick = (e) => {
       }
     }
   })
-  
+
   if (closestBigger && minDist < 8) {
     // Move to position at distance 8 from the closest bigger triangle
     const dx = targetX - closestBigger.x
@@ -147,7 +147,7 @@ const handleGameAreaClick = (e) => {
       targetY = Math.max(5, Math.min(95, targetY))
     }
   }
-  
+
   playerX.value = targetX
   playerY.value = targetY
 }
@@ -158,18 +158,18 @@ const checkCollisions = () => {
       const dx = playerX.value - triangle.x
       const dy = playerY.value - triangle.y
       const distance = Math.sqrt(dx * dx + dy * dy)
-      
+
       if (distance < 8 && canEatTriangle(triangle)) {
         triangle.collected = true
         circleValue.value += triangle.value
         updateMaxTriangleValue()
         score.value++
-        
+
         // Remove collected triangle and add new one
         setTimeout(() => {
           triangles.value = triangles.value.filter(t => t.id !== triangle.id)
           triangles.value.push(createTriangle())
-          
+
           // Check if there are any eatable triangles left, if not spawn one
           if (!hasEatableTriangle()) {
             spawnEatableTriangle()
@@ -225,7 +225,7 @@ const showAudioPlayer = ref(false);
           {{ showAudioPlayer ? 'Hide Audio Player' : 'Show Audio Player' }}
         </button>
         <AudioPlayer v-if="showAudioPlayer" />
-        
+
         <div class="game-header">
           <h2>Calming Collection Game</h2>
           <div class="stats">
@@ -246,7 +246,7 @@ const showAudioPlayer = ref(false);
 
         <div class="game-area">
           <!-- Player (Circle) -->
-          <div 
+          <div
             class="player"
             :style="{
               left: playerX + '%',
@@ -254,9 +254,9 @@ const showAudioPlayer = ref(false);
             }">
             <span class="player-value">{{ circleValue }}</span>
           </div>
-          
+
           <!-- Triangles to collect -->
-          <div 
+          <div
             v-for="triangle in triangles"
             :key="triangle.id"
             class="triangle"
@@ -284,6 +284,22 @@ const showAudioPlayer = ref(false);
 
 .back {
   margin-bottom: 20px;
+}
+
+.audio-toggle {
+  margin-bottom: 12px;
+  background-color: #4e239d;
+  color: #f4cee1;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.audio-toggle:hover {
+  background-color: #593f89;
 }
 
 .game-header {
@@ -467,12 +483,12 @@ h3 {
   .game-area {
     height: 350px;
   }
-  
+
   .game-header {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .instructions {
     font-size: 12px;
   }
