@@ -242,7 +242,7 @@ const showAudioPlayer = ref(false);
 
 .audio-toggle {
   margin-bottom: 12px;
-  background-color: #4e239d; /* new button color */
+  background-color: #956ddf; /* new button color */
   color: #f4cee1;            /* text/icon color */
   border: none;
   border-radius: 4px;

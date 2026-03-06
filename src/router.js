@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Welcome from './components/Welcome.vue';
 import Homepage from './components/HomePage.vue';
 import Hotlines from './components/HotlinesPage.vue';
-import Game from './components/Game.vue';
+import Game from './components/GamePage.vue';
 import Trivia from './components/TriviaPage.vue';
 import Journal from './components/JournalPage.vue';
 
