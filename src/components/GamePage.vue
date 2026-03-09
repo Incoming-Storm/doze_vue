@@ -13,7 +13,6 @@ defineProps({
 // Player (circle)
 const playerX = ref(50)
 const playerY = ref(50)
-const playerSize = 40
 const circleValue = ref(1)
 
 // Game state
@@ -222,7 +221,8 @@ const showAudioPlayer = ref(false);
     <div class="game">
         <HomeButton />
         <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
-          {{ showAudioPlayer ? 'Hide Audio Player' : 'Show Audio Player' }}
+          <span class="material-icons">audiotrack</span>
+          <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
         </button>
         <AudioPlayer v-if="showAudioPlayer" />
 
@@ -288,7 +288,7 @@ const showAudioPlayer = ref(false);
 
 .audio-toggle {
   margin-bottom: 12px;
-  background-color: #4e239d;
+  background-color: rgb(78, 35, 157);
   color: #f4cee1;
   border: none;
   border-radius: 4px;
@@ -300,6 +300,10 @@ const showAudioPlayer = ref(false);
 
 .audio-toggle:hover {
   background-color: #593f89;
+}
+
+.audio-toggle .button-text {
+  font-size: 0.85rem;
 }
 
 .game-header {
@@ -498,7 +502,7 @@ h3 {
   content: '';
   position: fixed;
   inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
-  background-image: url('@/assets/test.png');
+  background-image: url('@/assets/gradient-texture.png');
   background-size: cover;
   background-position: center;
   z-index: -1;

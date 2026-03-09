@@ -120,7 +120,7 @@ const showAudioPlayer = ref(false);
 
 .audio-toggle {
   margin-bottom: 12px;
-  background-color: #4e239d; /* new button color */
+  background-color: rgb(78, 35, 157); /* new button color */
   color: #f4cee1;            /* text/icon color */
   border: none;
   border-radius: 4px;
@@ -344,7 +344,7 @@ button {
   content: '';
   position: fixed;
   inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
-  background-image: url('@/assets/test.png');
+  background-image: url('@/assets/gradient-texture.png');
   background-size: cover;
   background-position: center;
   z-index: -1;

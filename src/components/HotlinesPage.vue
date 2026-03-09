@@ -161,7 +161,7 @@ h2 {
 
 .audio-toggle {
   margin-bottom: 12px;
-  background-color: #4e239d;
+  background-color: rgb(78, 35, 157);
   color: #f4cee1;
   border: none;
   border-radius: 4px;
