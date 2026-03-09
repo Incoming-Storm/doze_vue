@@ -203,7 +203,7 @@ const showAudioPlayer = ref(false);
 }
 
 .mood-btn.active {
-  border-color: #4CAF50;
+  border-color: #5c4caf;
   background-color: #e8f5e9;
 }
 
@@ -227,7 +227,7 @@ textarea {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #5b4caf;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -238,7 +238,7 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #455aa0;
 }
 
 .save-btn {
@@ -246,7 +246,7 @@ button:hover {
 }
 
 .saved-entries h2 {
-  color: #333;
+  color: #300;
   margin-top: 0;
 }
 
@@ -291,7 +291,7 @@ button:hover {
 }
 
 .delete-btn {
-  background-color: #f44336;
+  background-color: #f8695f;
   padding: 5px 10px;
   font-size: 12px;
   width: auto;
