@@ -220,9 +220,9 @@ const showAudioPlayer = ref(false);
 <template>
     <div class="game">
         <HomeButton />
-        <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+        <button v-if="!showAudioPlayer" class="audio-toggle" @click="showAudioPlayer = true">
           <span class="material-icons">audiotrack</span>
-          <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
+          <span class="button-text">Audio Player</span>
         </button>
         <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
 

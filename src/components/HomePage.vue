@@ -56,9 +56,9 @@ console.log(quote.value);
         <router-link to="/game"><button><span class="material-icons">sports_esports</span><span class="button-text">Game</span></button></router-link>
       </div>
 
-    <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+    <button v-if="!showAudioPlayer" class="audio-toggle" @click="showAudioPlayer = true">
       <span class="material-icons">audiotrack</span>
-      <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
+      <span class="button-text">Audio Player</span>
     </button>
     <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
   </div>
