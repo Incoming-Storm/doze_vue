@@ -95,7 +95,7 @@ console.log(quote.value);
 
 .audio-toggle {
   margin-bottom: 12px;
-  background-color: rgb(78, 35, 157); /* new button color */
+  background-color: #362648; /* new button color */
   color: #f4cee1;            /* text/icon color */
   border: none;
   border-radius: 60px;
@@ -103,6 +103,8 @@ console.log(quote.value);
   cursor: pointer;
   margin-top: 10px;
   font-size: 14px;
+  width: 100px;
+  height: 60px;
 }
 
 

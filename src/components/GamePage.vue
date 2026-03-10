@@ -288,7 +288,7 @@ const showAudioPlayer = ref(false);
 
 .audio-toggle {
   margin-bottom: 12px;
-  background-color: rgb(78, 35, 157);
+  background-color: #362648;
   color: #f4cee1;
   border: none;
   border-radius: 60px;
@@ -297,7 +297,7 @@ const showAudioPlayer = ref(false);
   margin-top: 10px;
   font-size: 14px;
   position: fixed;
-  top: 20px;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
 }

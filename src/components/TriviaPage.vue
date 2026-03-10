@@ -191,9 +191,9 @@ const showAudioPlayer = ref(false);
 <template>
     <div class="trivia">
         <HomeButton />
-       <button v-if="!showAudioPlayer" class="audio-toggle" @click="showAudioPlayer = true">
+       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
       <span class="material-icons">audiotrack</span>
-      <span class="button-text">Audio Player</span>
+      <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
     </button>
     <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
 
@@ -242,7 +242,7 @@ const showAudioPlayer = ref(false);
 
 .audio-toggle {
   margin-bottom: 12px;
-  background-color: rgb(78, 35, 157);
+  background-color: #362648;
   color: #f4cee1;            /* text/icon color */
   border: none;
   border-radius: 60px;
@@ -251,7 +251,7 @@ const showAudioPlayer = ref(false);
   margin-top: 10px;
   font-size: 14px;
   position: fixed;
-  top: 60px;
+  top: 200px;
   left: 50%;
   transform: translateX(-50%);
 }
