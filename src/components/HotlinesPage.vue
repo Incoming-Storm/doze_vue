@@ -164,7 +164,7 @@ h2 {
   background-color: rgb(78, 35, 157);
   color: #f4cee1;
   border: none;
-  border-radius: 4px;
+  border-radius: 60px;
   padding: 10px 20px;
   cursor: pointer;
   margin-top: 10px;

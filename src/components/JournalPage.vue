@@ -123,7 +123,7 @@ const showAudioPlayer = ref(false);
   background-color: rgb(78, 35, 157); /* new button color */
   color: #f4cee1;            /* text/icon color */
   border: none;
-  border-radius: 4px;
+  border-radius: 60px;
   padding: 10px 20px;
   cursor: pointer;
   margin-top: 10px;
@@ -152,7 +152,8 @@ const showAudioPlayer = ref(false);
 }
 
 .entry-form {
-  background-color: #f5f5f5;
+  background-color:
+  #f5f5f5;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 30px;

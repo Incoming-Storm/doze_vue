@@ -291,7 +291,7 @@ const showAudioPlayer = ref(false);
   background-color: rgb(78, 35, 157);
   color: #f4cee1;
   border: none;
-  border-radius: 4px;
+  border-radius: 60px;
   padding: 10px 20px;
   cursor: pointer;
   margin-top: 10px;
@@ -455,7 +455,7 @@ const showAudioPlayer = ref(false);
 }
 
 .reset-btn:hover {
-  background-color: #59b35e;
+  background-color: #1518ba;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
