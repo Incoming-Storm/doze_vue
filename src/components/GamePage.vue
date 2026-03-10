@@ -224,7 +224,7 @@ const showAudioPlayer = ref(false);
           <span class="material-icons">audiotrack</span>
           <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
         </button>
-        <AudioPlayer v-if="showAudioPlayer" />
+        <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
 
         <div class="game-header">
           <h2>Calming Collection Game</h2>
@@ -296,6 +296,10 @@ const showAudioPlayer = ref(false);
   cursor: pointer;
   margin-top: 10px;
   font-size: 14px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .audio-toggle:hover {

@@ -19,7 +19,6 @@ import IconHome from './icons/IconHome.vue'
         background-color: #362648;
         cursor: pointer;
         text-decoration: none;
-        margin-bottom: 20px;
         border-radius: 8px;
         color: #f8f7f8;
         border: none;

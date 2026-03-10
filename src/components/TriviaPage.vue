@@ -195,7 +195,7 @@ const showAudioPlayer = ref(false);
       <span class="material-icons">audiotrack</span>
       <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
     </button>
-    <AudioPlayer v-if="showAudioPlayer" />
+    <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
 
         <div class="quiz-container">
           <div class="question-label">Mental Health Trivia</div>

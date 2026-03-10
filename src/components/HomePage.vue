@@ -60,7 +60,7 @@ console.log(quote.value);
       <span class="material-icons">audiotrack</span>
       <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
     </button>
-    <AudioPlayer v-if="showAudioPlayer" />
+    <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
   </div>
 
 </template>
