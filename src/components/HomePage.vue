@@ -58,7 +58,7 @@ console.log(quote.value);
 
     <button v-if="!showAudioPlayer" class="audio-toggle" @click="showAudioPlayer = true">
       <span class="material-icons">audiotrack</span>
-      <span class="button-text">Audio Player</span>
+      <span class="button-text"></span>
     </button>
     <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
   </div>
@@ -102,9 +102,9 @@ console.log(quote.value);
   padding: 10px 20px;
   cursor: pointer;
   margin-top: 10px;
-  font-size: 14px;
-  width: 90px;
-  height: 60px;
+  font-size: 5px;
+  width: 50px;
+  height: 50px;
 }
 
 
