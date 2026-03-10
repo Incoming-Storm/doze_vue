@@ -103,7 +103,7 @@ console.log(quote.value);
   cursor: pointer;
   margin-top: 10px;
   font-size: 14px;
-  width: 100px;
+  width: 90px;
   height: 60px;
 }
 
