@@ -191,11 +191,11 @@ const showAudioPlayer = ref(false);
 <template>
     <div class="trivia">
         <HomeButton />
-       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
-      <span class="material-icons">audiotrack</span>
-      <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
-    </button>
-    <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
+      <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+        <span class="material-icons">audiotrack</span>
+        <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
+      </button>
+      <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
 
         <div class="quiz-container">
           <div class="question-label">Mental Health Trivia</div>
@@ -251,7 +251,7 @@ const showAudioPlayer = ref(false);
   margin-top: 10px;
   font-size: 14px;
   position: fixed;
-  top: 200px;
+  top: 300px;
   left: 50%;
   transform: translateX(-50%);
 }

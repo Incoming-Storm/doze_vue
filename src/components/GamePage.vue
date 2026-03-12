@@ -220,11 +220,11 @@ const showAudioPlayer = ref(false);
 <template>
     <div class="game">
         <HomeButton />
-        <button v-if="!showAudioPlayer" class="audio-toggle" @click="showAudioPlayer = true">
-          <span class="material-icons">audiotrack</span>
-          <span class="button-text">Audio Player</span>
-        </button>
-        <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
+      <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+        <span class="material-icons">audiotrack</span>
+        <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
+      </button>
+      <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
 
         <div class="game-header">
           <h2>Calming Collection Game</h2>
@@ -297,7 +297,7 @@ const showAudioPlayer = ref(false);
   margin-top: 10px;
   font-size: 14px;
   position: fixed;
-  top: 60px;
+  top: 80px;
   left: 50%;
   transform: translateX(-50%);
 }

@@ -19,12 +19,12 @@
 
 <template>
   <HomeButton />
-<div class="hotlines">
-     <button v-if="!showAudioPlayer" class="audio-toggle" @click="showAudioPlayer = true">
-      <span class="material-icons">audiotrack</span>
-      <span class="button-text">Audio Player</span>
-    </button>
-    <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
+  <div class="hotlines">
+      <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+        <span class="material-icons">audiotrack</span>
+        <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
+      </button>
+      <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
 
   <div class="numbers">                                                                                             <!-- HOTLINE NUMBERS -->
     <h2>Hotline Numbers</h2>
@@ -44,10 +44,12 @@
   <div class="info links">                                                                                          <!-- ARTICLE LINKS -->
     <h2>More Information</h2>
 
-    <a href="https://www.cdc.gov/mental-health/about/index.html" target="_blank" >About Mental Health</a>                            <!-- AMH link -->
-    <button class="moreButton" @click="showAMH = !showAMH">                                                         <!-- AMH show more button -->
-      {{ showAMH ? 'Less' : 'More' }}
-    </button>
+    <div class="info-link-row">
+      <a href="https://www.cdc.gov/mental-health/about/index.html" target="_blank" >About Mental Health</a>                            <!-- AMH link -->
+      <button class="moreButton" @click="showAMH = !showAMH">                                                         <!-- AMH show more button -->
+        {{ showAMH ? 'Less' : 'More' }}
+      </button>
+    </div>
     <transition name="fade">                                                                                        <!-- AMH summary info -->
       <div v-if="showAMH" class="details">
         <p>“Mental health is the component of behavioral health that includes our emotional, psychological, and social well-being. Mental health is a state of well-being that enables us to cope with the stresses of life,
@@ -63,29 +65,33 @@
           <dd>People living without mental health conditions may still face challenges to their mental health. </dd>
         </dl>
       </div>
-    </transition><br>
+    </transition>
 
-    <a href="https://www.cdc.gov/mental-health/about/about-behavioral-health.html" target="_blank" >About Behavioral Health</a>      <!-- ABH link, button, and info -->
-    <button class="moreButton" @click="showABH = !showABH">
-      {{ showABH ? 'Less' : 'More' }}
-    </button>
+    <div class="info-link-row">
+      <a href="https://www.cdc.gov/mental-health/about/about-behavioral-health.html" target="_blank" >About Behavioral Health</a>      <!-- ABH link, button, and info -->
+      <button class="moreButton" @click="showABH = !showABH">
+        {{ showABH ? 'Less' : 'More' }}
+      </button>
+    </div>
     <transition name="fade">
       <div v-if="showABH" class="details">
         <p>“Behavioral health refers to a state of mental, emotional, and social well-being or behaviors and actions that affect wellness. Behavioral health is a key component of overall health.
         The term is also used to describe the support systems that promote well-being, prevent mental distress, and provide access to treatments and services for mental health conditions.” -CDC</p><br>
-        <p>Behavior health is a key component of overall health
+        <p>Behavioral health is a key component of overall health
         Positive behavioral health includes social determinants of health, supporting the environments where we work, learn, and play.
-        Behabioral health is an umbrella for mental health, suicidal thoughts or suicide attempt, and substance use or substance use disorders.
+        Behavioral health is an umbrella for mental health, suicidal thoughts or suicide attempt, and substance use or substance use disorders.
         Suicide is one of the leading cause of death in the United States.
         People may turn to drugs, alcohol, and other substances to help them cope with stress, trauma, or mental distress.
         </p>
       </div>
-    </transition><br>
+    </transition>
 
-    <a href="https://my.clevelandclinic.org/health/diseases/17843-mood-disorders" target="_blank" >Mood Disorders</a>                <!-- MD link, button, and info -->
-    <button class="moreButton" @click="showMD = !showMD">
-      {{ showMD ? 'Less' : 'More' }}
-    </button>
+    <div class="info-link-row">
+      <a href="https://my.clevelandclinic.org/health/diseases/17843-mood-disorders" target="_blank" >Mood Disorders</a>                <!-- MD link, button, and info -->
+      <button class="moreButton" @click="showMD = !showMD">
+        {{ showMD ? 'Less' : 'More' }}
+      </button>
+    </div>
     <transition name="fade">
       <div v-if="showMD" class="details">
         <p>“A mood disorder is a mental health condition that primarily affects your emotional state. They can cause persistent and intense sadness, elation and/or anger.
@@ -95,22 +101,24 @@
         Certain mood disorders can involve other emotions, such as anger and irritability.
         Cause changes in behavior and affect the ability to perform routine tasks, such as work or school.
         Mood disorders:
-        Depression and its subtypes
+        Depression and its Subtypes
         Symptoms include feelings of sadness or hopelessness, and can cause difficulty with thinking, memory, eating, and sleeping.
-        Bipolar disorder and its subtypes
+        Bipolar Disorder and its Subtypes
         Lifelong mood disorder that causes intense shifts in mood, energy levels, thinking patterns and behavior.
-        Premenstrual dysphoric disorder
+        Premenstrual Dysphoric Disorder
         Type of mood disorder that occurs seven to ten days before menstruation and goes away within a few days of the start of the menstrual period.
-        Disruptive mood dysregulation disorder
+        Disruptive Mood Dysregulation Disorder
         Affects children and adolescents, involves frequent anger outburst and irritability out of proportion to the situation.
         </p>
       </div>
-    </transition><br>
+    </transition>
 
-    <a href="https://my.clevelandclinic.org/health/diseases/9536-anxiety-disorders" target="_blank" >Anxiety Disorders</a>           <!-- AD link, button, and info -->
-    <button class="moreButton" @click="showAD = !showAD">
-      {{ showAD ? 'Less' : 'More' }}
-    </button>
+    <div class="info-link-row">
+      <a href="https://my.clevelandclinic.org/health/diseases/9536-anxiety-disorders" target="_blank" >Anxiety Disorders</a>           <!-- AD link, button, and info -->
+      <button class="moreButton" @click="showAD = !showAD">
+        {{ showAD ? 'Less' : 'More' }}
+      </button>
+    </div>
     <transition name="fade">
       <div v-if="showAD" class="details">
         <!-- Put the extra information here -->
@@ -139,9 +147,9 @@
         Nausea
         </p>
       </div>
-    </transition><br>
+    </transition>
   </div>
-</div>
+  </div>
 
 </template>
 
@@ -169,10 +177,13 @@ h2 {
   cursor: pointer;
   margin-top: 10px;
   font-size: 14px;
+  width: 120px;
+  height: 50px;
   position: fixed;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
+  text-align: center;
 }
 
 .audio-toggle:hover {
@@ -214,6 +225,14 @@ h2 {
   font-size: 1rem;
   line-height: 1.6;
   text-align: left;
+}
+
+.info-link-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .moreButton {

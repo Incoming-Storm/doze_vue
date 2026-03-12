@@ -62,11 +62,11 @@ const showAudioPlayer = ref(false);
 <template>
   <div class="journal">
     <HomeButton />
-    <button v-if="!showAudioPlayer" class="audio-toggle" @click="showAudioPlayer = true">
-      <span class="material-icons">audiotrack</span>
-      <span class="button-text">Audio Player</span>
-    </button>
-    <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
+      <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+        <span class="material-icons">audiotrack</span>
+        <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
+      </button>
+      <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
 
     <div class="entry-form">
       <h2><span class="material-icons">notes</span> New Entry</h2>
