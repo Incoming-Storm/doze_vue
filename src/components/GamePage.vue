@@ -219,12 +219,14 @@ const showAudioPlayer = ref(false);
 
 <template>
     <div class="game">
+        <div class="top-controls">
         <HomeButton />
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
         <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
       </button>
       <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
+        </div>
 
         <div class="game-header">
           <h2>Calming Collection Game</h2>
@@ -238,6 +240,10 @@ const showAudioPlayer = ref(false);
               <span class="stat-value">{{ score }}</span>
             </div>
           </div>
+        </div>
+
+        <div class="calming-description">
+          <p>This game is designed to be a <strong>calming experience</strong>. The gentle movement, soft visuals, and simple goal help quiet your mind — just breathe, focus, and let your circle grow at its own pace.</p>
         </div>
 
         <div class="instructions">
@@ -279,7 +285,7 @@ const showAudioPlayer = ref(false);
 .game {
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 190px 20px 20px;
 }
 
 .back {
@@ -296,10 +302,6 @@ const showAudioPlayer = ref(false);
   cursor: pointer;
   margin-top: 10px;
   font-size: 14px;
-  position: fixed;
-  top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .audio-toggle:hover {
@@ -308,6 +310,33 @@ const showAudioPlayer = ref(false);
 
 .audio-toggle .button-text {
   font-size: 0.85rem;
+}
+
+.top-controls {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-controls :deep(.audio-player) {
+  margin-top: 0;
+}
+
+.calming-description {
+  background: linear-gradient(135deg, #f4cee1, #e8d5f5);
+  border-left: 4px solid #9b70c2;
+  border-radius: 8px;
+  padding: 12px 18px;
+  margin-bottom: 16px;
+  color: #3e2a5a;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .game-header {

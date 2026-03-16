@@ -18,13 +18,15 @@
 </script>
 
 <template>
-  <HomeButton />
   <div class="hotlines">
+    <div class="top-controls">
+      <HomeButton />
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
         <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
       </button>
       <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
+    </div>
 
   <div class="numbers">                                                                                             <!-- HOTLINE NUMBERS -->
     <h2>Hotline Numbers</h2>
@@ -177,13 +179,6 @@ h2 {
   cursor: pointer;
   margin-top: 10px;
   font-size: 14px;
-  width: 120px;
-  height: 50px;
-  position: fixed;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
 }
 
 .audio-toggle:hover {
@@ -192,6 +187,22 @@ h2 {
 
 .audio-toggle .button-text {
   font-size: 0.85rem; /* make smaller */
+}
+
+.top-controls {
+  position: fixed;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-controls :deep(.audio-player) {
+  margin-top: 0;
 }
 
 
@@ -207,7 +218,7 @@ h2 {
 }
 
 .numbers {
-  margin-top: 20px;
+  margin-top: 190px;
   font-size: 1.1rem;
   line-height: 1.6;
   text-align: left;

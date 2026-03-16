@@ -55,7 +55,7 @@ const handleClose = () => {
   /* Audio Player Styles */
 .audio-player {
   position: relative;
-  margin-top: 40px;
+  margin-top: 12px;
   padding: 10px;
   background: rgba(255,255,255,0.08–0.15);
   border-radius: 15px;
