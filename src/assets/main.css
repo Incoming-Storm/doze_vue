@@ -68,3 +68,15 @@ a,
   opacity: 0;
   transform: translateY(-10px);
 }
+
+.activities{
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .activities {
+    flex-direction: column;
+  }
+}

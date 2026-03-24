@@ -42,9 +42,11 @@ console.log(quote.value);
 
 <template>
   <div class="homepage">
-
-
-    <div class="back"><router-link to="/"><button>Back</button></router-link></div>
+      <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+        <span class="material-icons">audiotrack</span>
+        <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
+      </button>
+      <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
     <div class="info">
       <router-link to="/hotlines"><button><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></button></router-link>
     </div>
@@ -56,11 +58,6 @@ console.log(quote.value);
         <router-link to="/game"><button><span class="material-icons">sports_esports</span><span class="button-text">Game</span></button></router-link>
       </div>
 
-    <button v-if="!showAudioPlayer" class="audio-toggle" @click="showAudioPlayer = true">
-      <span class="material-icons">audiotrack</span>
-      <span class="button-text">Audio Player</span>
-    </button>
-    <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
   </div>
 
 </template>
@@ -87,12 +84,6 @@ console.log(quote.value);
   pointer-events: none;
 }
 
-.back {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
 .audio-toggle {
   margin-bottom: 12px;
   background-color: #362648; /* new button color */
@@ -107,6 +98,9 @@ console.log(quote.value);
   height: 50px;
 }
 
+.audio-toggle:hover {
+  background-color: #593f89;
+}
 
 .info {
   text-align: center;

@@ -229,7 +229,7 @@ const showAudioPlayer = ref(false);
         </div>
 
         <div class="game-header">
-          <h2>Calming Collection Game</h2>
+          <h2>Calming Game</h2>
           <div class="stats">
             <div class="stat">
               <span class="stat-label">Circle Value:</span>
@@ -330,7 +330,6 @@ const showAudioPlayer = ref(false);
 
 .calming-description {
   background: linear-gradient(135deg, #f4cee1, #e8d5f5);
-  border-left: 4px solid #9b70c2;
   border-radius: 8px;
   padding: 12px 18px;
   margin-bottom: 16px;
@@ -348,7 +347,7 @@ const showAudioPlayer = ref(false);
 
 .game-header h2 {
   margin: 0;
-  color: #333;
+  color: #000000;
 }
 
 .stats {
@@ -378,7 +377,6 @@ const showAudioPlayer = ref(false);
 
 .instructions {
   background-color: #e3f2fd;
-  border-left: 4px solid #2196F3;
   padding: 12px 15px;
   border-radius: 4px;
   margin-bottom: 20px;

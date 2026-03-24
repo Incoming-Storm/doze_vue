@@ -185,10 +185,6 @@ h2 {
   background-color: #593f89;
 }
 
-.audio-toggle .button-text {
-  font-size: 0.85rem; /* make smaller */
-}
-
 .top-controls {
   position: fixed;
   top: 12%;

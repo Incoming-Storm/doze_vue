@@ -190,14 +190,14 @@ const showAudioPlayer = ref(false);
 
 <template>
     <div class="trivia">
-        <div class="top-controls">
+      <div class="top-controls">
         <HomeButton />
-      <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
-        <span class="material-icons">audiotrack</span>
-        <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
-      </button>
-      <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
-        </div>
+        <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+          <span class="material-icons">audiotrack</span>
+          <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
+        </button>
+        <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
+      </div>
 
         <div class="quiz-container">
           <div class="question-label">Mental Health Trivia</div>
@@ -235,7 +235,7 @@ const showAudioPlayer = ref(false);
 .trivia {
   max-width: 700px;
   margin: 0 auto;
-  padding: 190px 20px 20px;
+  padding: 200px 20px 20px;
 }
 
 .back {
@@ -273,7 +273,7 @@ const showAudioPlayer = ref(false);
 
 .top-controls {
   position: fixed;
-  top: 300px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
