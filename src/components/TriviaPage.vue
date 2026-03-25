@@ -192,11 +192,11 @@ const showAudioPlayer = ref(false);
     <div class="trivia">
       <div class="top-controls">
         <HomeButton />
-        <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
-          <span class="material-icons">audiotrack</span>
-          <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
-        </button>
-        <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
+      <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
+        <span class="material-icons">audiotrack</span>
+        <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
+      </button>
+      <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
       </div>
 
         <div class="quiz-container">
@@ -238,13 +238,9 @@ const showAudioPlayer = ref(false);
   padding: 200px 20px 20px;
 }
 
-.back {
-  margin-bottom: 20px;
-}
-
 .audio-toggle {
   margin-bottom: 12px;
-  background-color: #362648;
+  background-color: #362648; /* new button color */
   color: #f4cee1;            /* text/icon color */
   border: none;
   border-radius: 60px;
@@ -252,6 +248,10 @@ const showAudioPlayer = ref(false);
   cursor: pointer;
   margin-top: 10px;
   font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .audio-toggle:hover {
@@ -265,10 +265,6 @@ const showAudioPlayer = ref(false);
 
 .play-btn:hover {
   background-color: #593f89;
-}
-
-.audio-toggle .button-text {
-  font-size: 0.85rem; /* make smaller */
 }
 
 .top-controls {
@@ -459,7 +455,7 @@ const showAudioPlayer = ref(false);
   content: '';
   position: fixed;
   inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
-  background-image: url('@/assets/gradient-texture.png');
+  background-image: url('@/assets/galaxy.png');
   background-size: cover;
   background-position: center;
   z-index: -1;
