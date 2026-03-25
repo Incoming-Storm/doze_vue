@@ -19,6 +19,13 @@
 
 <template>
   <div class="hotlines">
+    <ul>
+      <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
+      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></button></router-link></li>
+      <li></li>
+      <li></li>
+    </ul>
+
     <div class="top-controls">
       <HomeButton />
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
@@ -169,6 +176,30 @@ h2 {
 
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
 .audio-toggle {
   margin-bottom: 12px;
   background-color: #362648;
@@ -207,15 +238,25 @@ h2 {
 
 
 .hotlines::before {
-  content: '';
-  position: fixed;
-  inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
-  background-image: url('@/assets/galaxy.png');
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  pointer-events: none;
-}
+ content: '';
+      position: fixed;
+        inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
+          background: radial-gradient(circle, #0e1f6c 0%, #a881cf 100%);
+            background-size: 200% 200%;
+              animation: animated-gradient-wave 8s ease-in-out infinite;
+                z-index: -1;
+                  pointer-events: none;
+                  }
+
+                  @keyframes animated-gradient-wave {
+                    0%,
+                      100% {
+                          background-position: 0% 50%;
+                            }
+                              50% {
+                                  background-position: 100% 50%;
+                                    }
+                                    }
 
 .numbers {
   margin-top: 190px;
