@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import HomeButton from './HomeButton.vue';
 import AudioPlayer from '../AudioPlayer.vue';
 
 defineProps({
@@ -225,13 +224,12 @@ const showAudioPlayer = ref(false);
       <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
       <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
       <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
-      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
     </ul>
-        <HomeButton />
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
         <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
       </button>
+        <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
       <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
         </div>
 

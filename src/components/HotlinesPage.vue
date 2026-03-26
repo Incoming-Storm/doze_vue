@@ -1,5 +1,4 @@
 <script setup>
-  import HomeButton from './HomeButton.vue';
   import { ref } from 'vue'
   import AudioPlayer from '../AudioPlayer.vue';
   const showAMH = ref(false)
@@ -26,8 +25,7 @@
       <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
       <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
       <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
-    </ul>      
-      <HomeButton />
+    </ul>
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
         <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
@@ -68,7 +66,7 @@
           <dd>Depression can increase the risk of diabetes, heart disease, stroke, and long lasting chronic conditions. </dd>
           <dd>Tackling mental health and physical health can improve overall health. </dd>
           <dt>Help is available if you are suffering from mental health condition. </dt>
-          <dt>Mental health is the presence of well being and the ability to thrive NOT the absence of a mental health condition. </dt>
+          <dt>Mental health is the presence of well being and the ability to thrive, NOT the absence of a mental health condition. </dt>
           <dd>Mental health can be influenced by the individual, family, community, and society levels. </dd>
           <dd>Even if you are living with a mental health condition you can still experience positive well being. Effective treatments can help manage symptoms along with safe, stable, and nurturing relationships and environments. </dd>
           <dd>People living without mental health conditions may still face challenges to their mental health. </dd>
@@ -86,9 +84,9 @@
       <div v-if="showABH" class="details">
         <p>“Behavioral health refers to a state of mental, emotional, and social well-being or behaviors and actions that affect wellness. Behavioral health is a key component of overall health.
         The term is also used to describe the support systems that promote well-being, prevent mental distress, and provide access to treatments and services for mental health conditions.” -CDC</p><br>
-        <p>Behavioral health is a key component of overall health
+        <p>Behavioral health is a key component of overall health.
         Positive behavioral health includes social determinants of health, supporting the environments where we work, learn, and play.
-        Behavioral health is an umbrella for mental health, suicidal thoughts or suicide attempt, and substance use or substance use disorders.
+        Behavioral health is an umbrella term for mental health, suicidal thoughts or attempts, and substance use/substance use disorders.
         Suicide is one of the leading cause of death in the United States.
         People may turn to drugs, alcohol, and other substances to help them cope with stress, trauma, or mental distress.
         </p>
@@ -105,20 +103,19 @@
       <div v-if="showMD" class="details">
         <p>“A mood disorder is a mental health condition that primarily affects your emotional state. They can cause persistent and intense sadness, elation and/or anger.
         Mood disorders are treatable — usually with a combination of medication and psychotherapy (talk therapy).” - Cleveland Clinic</p><br>
-        <p>It’s normal for moods to change, however, for mood disorder diagnosis, symptoms must be present for several weeks or longer.
-        Can experience long periods of extreme happiness, extreme sadness or both.
-        Certain mood disorders can involve other emotions, such as anger and irritability.
-        Cause changes in behavior and affect the ability to perform routine tasks, such as work or school.
-        Mood disorders:
-        Depression and its Subtypes
-        Symptoms include feelings of sadness or hopelessness, and can cause difficulty with thinking, memory, eating, and sleeping.
-        Bipolar Disorder and its Subtypes
-        Lifelong mood disorder that causes intense shifts in mood, energy levels, thinking patterns and behavior.
-        Premenstrual Dysphoric Disorder
-        Type of mood disorder that occurs seven to ten days before menstruation and goes away within a few days of the start of the menstrual period.
-        Disruptive Mood Dysregulation Disorder
-        Affects children and adolescents, involves frequent anger outburst and irritability out of proportion to the situation.
-        </p>
+        <p>It’s normal for moods to change, however, for a mood disorder diagnosis, symptoms must be present for several weeks or longer.</p>
+        <p>You can experience long periods of extreme happiness, extreme sadness or both.
+        Certain mood disorders can involve other emotions such as anger and irritability.
+        They can cause changes in behavior and affect your ability to perform routine tasks, such as work or school.</p><br>
+        <p>Mood disorders:</p>
+        <p>Depression and its Subtypes</p>
+        <blockquote>Symptoms include feelings of sadness or hopelessness, and can cause difficulty with thinking, memory, eating, and sleeping.</blockquote>
+        <p>Bipolar Disorder and its Subtypes</p>
+        <blockquote>Lifelong mood disorder that causes intense shifts in mood, energy levels, thinking patterns and behavior.</blockquote>
+        <p>Premenstrual Dysphoric Disorder</p>
+        <blockquote>Type of mood disorder that occurs seven to ten days before menstruation and goes away within a few days of the start of the menstrual period.</blockquote>
+        <p>Disruptive Mood Dysregulation Disorder</p>
+        <blockquote>Affects children and adolescents, involves frequent anger outburst and irritability out of proportion to the situation.</blockquote>
       </div>
     </transition>
 
@@ -136,24 +133,24 @@
         </p><br>
         <p>Respond to certain things or situations with fear and dread. May also experience physical signs of anxiety, such as sweating and pounding heart.
         Having some anxiety is normal, such as problems at work, taking a test or making an important decision.
-        Some can even be beneficial since it can help us notice dangerous situations and focuse our attention to stay safe.
-        Anxiety disorder happens when:
-        Interderes with the ability to function
-        Overreactions
-        Can’t control responses to situations
-        Women are twice as likely as men to have anxiety disorder.
-        Psychological syptoms may include:
-        Feeling panic, fear, dread, and uneasiness
-        Feeling on edge or irritable
-        Uncontrollable, obsessive thoughts
-        Difficulty concentrating
-        Physical symptoms may include:
-        Restlessness
-        Heart palpitaitions
-        Shortness of breath
-        Muscle tension
-        Cold or sweaty hands
-        Nausea
+        Some can even be beneficial since it can help us notice dangerous situations and focuse our attention to stay safe.</p><br>
+        <p>Anxiety is a disorder when:</p>
+        <p>It interferes with your ability to function</p>
+        <p>It causes overreactions</p>
+        <p>You can't control responses to situations</p>
+        <p>Plus, women are twice as likely as men to have an anxiety disorder</p><br>
+        <p>Psychological syptoms may include:</p>
+        <p>Feeling panic, fear, dread, and uneasiness</p>
+        <p>Feeling on edge or irritable</p>
+        <p>Uncontrollable, obsessive thoughts</p>
+        <p>Difficulty concentrating</p><br>
+        <p>Physical symptoms may include:</p>
+        <p>Restlessness</p>
+        <p>Heart palpitaitions</p>
+        <p>Shortness of breath</p>
+        <p>Muscle tension</p>
+        <p>Cold or sweaty hands</p>
+        <p>Nausea
         </p>
       </div>
     </transition>
@@ -198,6 +195,10 @@ ul li a {
 
 ul li a:hover {
   background-color: #111111;
+}
+
+blockquote {
+  margin-left: 5%;
 }
 
 .audio-toggle {
