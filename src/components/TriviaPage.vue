@@ -189,8 +189,8 @@ const showAudioPlayer = ref(false);
 </script>
 
 <template>
-    <div class="trivia">
-      <div class="top-controls">
+  <div class="trivia">
+    <div class="top-controls">
     <ul>
       <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
       <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
@@ -203,7 +203,7 @@ const showAudioPlayer = ref(false);
         <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
       </button>
       <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
-      </div>
+    </div>
 
         <div class="quiz-container">
           <div class="question-label">Mental Health Trivia</div>
@@ -233,7 +233,7 @@ const showAudioPlayer = ref(false);
 
           <button v-if="!answered" @click="skipQuestion" class="skip-btn">Skip</button>
         </div>
-    </div>
+  </div>
 
 </template>
 
