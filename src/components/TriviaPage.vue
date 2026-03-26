@@ -191,6 +191,13 @@ const showAudioPlayer = ref(false);
 <template>
     <div class="trivia">
       <div class="top-controls">
+    <ul>
+      <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
+      <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
+      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
+      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
+      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
+    </ul>
         <HomeButton />
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
@@ -232,6 +239,31 @@ const showAudioPlayer = ref(false);
 </template>
 
 <style scoped>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
 .trivia {
   max-width: 700px;
   margin: 0 auto;

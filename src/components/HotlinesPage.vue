@@ -19,14 +19,14 @@
 
 <template>
   <div class="hotlines">
-    <ul>
-      <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
-      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></button></router-link></li>
-      <li></li>
-      <li></li>
-    </ul>
 
     <div class="top-controls">
+    <ul>
+      <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
+      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
+      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
+      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
+    </ul>      
       <HomeButton />
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
