@@ -13,6 +13,7 @@
       required: true,
     },
   })
+  import IconHome from './icons/IconHome.vue'
 
 </script>
 
@@ -22,6 +23,7 @@
     <div class="top-controls">
     <ul>
       <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
+      <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
       <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
       <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
       <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
@@ -178,7 +180,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333333;
+  background-color: #362648;
 }
 
 ul li {
@@ -223,7 +225,7 @@ blockquote {
 
 .top-controls {
   position: fixed;
-  top: 12%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;

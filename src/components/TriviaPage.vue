@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import AudioPlayer from '../AudioPlayer.vue';
+import IconHome from './icons/IconHome.vue'
 
 defineProps({
   msg: {
@@ -83,7 +84,7 @@ const questions = [
   { id: 13,
     question: "Help is available if you are suffering from mental health condition(s).",
     answer: true,
-    explanation: "Please go to the app's Hotlines page for more details on mental health conditions."
+    explanation: "Please go to the Hotlines page for more details on mental health conditions."
   },
   { id: 14,
     question: "People living without mental health conditions never face challenges to their mental health.",
@@ -193,6 +194,7 @@ const showAudioPlayer = ref(false);
     <ul>
       <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
       <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
+      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
       <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
       <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
     </ul>
@@ -242,7 +244,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333333;
+  background-color: #362648;
 }
 
 ul li {
@@ -298,7 +300,7 @@ ul li a:hover {
 
 .top-controls {
   position: fixed;
-  top: 100px;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -357,7 +359,7 @@ ul li a:hover {
 }
 
 .btn-true:hover {
-  background-color: #66bb6a;
+  background-color: #3a853d;
   transform: translateY(-2px);
 }
 

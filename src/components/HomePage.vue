@@ -28,6 +28,7 @@ const quotes = [
 const quote = ref(quotes[Math.floor(Math.random() * quotes.length)]);
 const showAudioPlayer = ref(false);
 console.log(quote.value);
+import IconHome from './icons/IconHome.vue'
 
 </script>
 
@@ -35,11 +36,21 @@ console.log(quote.value);
 
 <template>
   <div class="homepage">
+    <div class="top-controls">
+    <ul>
+      <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
+      <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
+      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
+      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
+      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
+    </ul>
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
         <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
       </button>
       <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
+    </div>
+
     <div class="info">
       <router-link to="/hotlines"><button><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></button></router-link>
     </div>
@@ -56,6 +67,30 @@ console.log(quote.value);
 </template>
 
 <style scoped>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #362648;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
 
 .homepage {
   position: relative;
@@ -89,19 +124,37 @@ console.log(quote.value);
 .audio-toggle {
   margin-bottom: 12px;
   background-color: #362648; /* new button color */
-  color: #d6bbf0;            /* text/icon color */
+  color: #f4cee1;            /* text/icon color */
   border: none;
   border-radius: 60px;
   padding: 10px 20px;
   cursor: pointer;
   margin-top: 10px;
   font-size: 14px;
-  width: 120px;
-  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .audio-toggle:hover {
   background-color: #593f89;
+}
+
+.top-controls {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-controls :deep(.audio-player) {
+  margin-top: 0;
 }
 
 .info {

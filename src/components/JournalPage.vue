@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import AudioPlayer from '../AudioPlayer.vue';
+import IconHome from './icons/IconHome.vue'
 
 defineProps({
   msg: {
@@ -65,6 +66,7 @@ const showAudioPlayer = ref(false);
       <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
       <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
       <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
+      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
       <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
     </ul>
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
@@ -124,7 +126,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333333;
+  background-color: #362648;
 }
 
 ul li {
@@ -184,7 +186,7 @@ ul li a:hover {
 
 .top-controls {
   position: fixed;
-  top: 40px;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
