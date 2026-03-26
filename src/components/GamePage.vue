@@ -218,21 +218,21 @@ const showAudioPlayer = ref(false);
 </script>
 
 <template>
-    <div class="game">
-        <div class="top-controls">
-    <ul>
-      <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
-      <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
-      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
-      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
-      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
-    </ul>
+  <div class="game">
+    <div class="top-controls">
+      <ul>
+        <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
+        <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
+        <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
+        <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
+        <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
+      </ul>
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
         <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
       </button>
-        <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
-        </div>
+      <AudioPlayer v-if="showAudioPlayer" @close="showAudioPlayer = false" />
+    </div>
 
         <div class="game-header">
           <h2>Calming Game</h2>
@@ -284,7 +284,7 @@ const showAudioPlayer = ref(false);
         <div class="game-controls">
           <button @click="resetGame" class="reset-btn">Reset Game</button>
         </div>
-    </div>
+  </div>
 </template>
 
 <style scoped>
