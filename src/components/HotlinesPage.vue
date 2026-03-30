@@ -13,7 +13,6 @@
       required: true,
     },
   })
-  import IconHome from './icons/IconHome.vue'
 
 </script>
 
@@ -22,7 +21,7 @@
 
     <div class="top-controls">
     <ul>
-      <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
+      <li><router-link to="/homepage"><span class="material-icons">home</span><span>Home</span></router-link></li>
       <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
       <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
       <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
@@ -162,19 +161,6 @@
 </template>
 
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
-
-h2 {
-  font-size: 1.6rem;
-  line-height: 1.4; /* Improve readability */
-
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -189,7 +175,7 @@ ul li {
 
 ul li a {
   display: block;
-  color: white;
+  color: #f8f2ff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -197,6 +183,7 @@ ul li a {
 
 ul li a:hover {
   background-color: #111111;
+  color: #ffe082;
 }
 
 blockquote {
@@ -253,11 +240,35 @@ blockquote {
   text-align: left;
 }
 
+.resources a {
+  color: #1a73e8;
+}
+
+.resources a:hover {
+  color: #0b57d0;
+}
+
+.resources a:visited {
+  color: #6b21a8;
+}
+
 .info.links {
   margin-top: 20px;
   font-size: 1rem;
   line-height: 1.6;
   text-align: left;
+}
+
+.info.links a {
+  color: #0f766e;
+}
+
+.info.links a:hover {
+  color: #115e59;
+}
+
+.info.links a:visited {
+  color: #7c2d12;
 }
 
 .info-link-row {
@@ -295,7 +306,7 @@ blockquote {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(253,228,202,0.45); /* semi-transparent background; adjust alpha */
+  background: rgba(233, 241, 12, 0.5); /* semi-transparent background; adjust alpha */
   z-index: 0;
   border-radius: inherit; /* match .details rounded corners */
   pointer-events: none;

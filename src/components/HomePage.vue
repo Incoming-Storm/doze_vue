@@ -28,7 +28,6 @@ const quotes = [
 const quote = ref(quotes[Math.floor(Math.random() * quotes.length)]);
 const showAudioPlayer = ref(false);
 console.log(quote.value);
-import IconHome from './icons/IconHome.vue'
 
 </script>
 
@@ -38,7 +37,7 @@ import IconHome from './icons/IconHome.vue'
   <div class="homepage">
     <div class="top-controls">
     <ul>
-      <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
+      <li><router-link to="/homepage"><span class="material-icons">home</span><span>Home</span></router-link></li>
       <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
       <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
       <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>

@@ -94,7 +94,7 @@ const handleClose = () => {
   width: 100%;
   padding: 10px;
   border: 2px solid #fcfcfc;
-  background-color: #5385e9; /* unique color */
+  background-color: #e6ebf4; /* unique color */
   color: #43283d;
   font-family: 'Georgia', serif;
   font-weight: 600;

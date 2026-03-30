@@ -38,6 +38,18 @@
 </template>
 
 <style>
+h1 {
+  font-weight: 500;
+  font-size: 2.6rem;
+  position: relative;
+  top: -10px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  line-height: 1.4; /* Improve readability */
+}
+
 .app::before {
   content: '';
   position: fixed;

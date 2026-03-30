@@ -1,7 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import AudioPlayer from '../AudioPlayer.vue';
-import IconHome from './icons/IconHome.vue'
 
 defineProps({
   msg: {
@@ -221,7 +220,7 @@ const showAudioPlayer = ref(false);
   <div class="game">
     <div class="top-controls">
       <ul>
-        <li><router-link to="/homepage" class="homeButton"><IconHome /><span>Home</span></router-link></li>
+        <li><router-link to="/homepage"><span class="material-icons">home</span><span>Home</span></router-link></li>
         <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
         <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
         <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
