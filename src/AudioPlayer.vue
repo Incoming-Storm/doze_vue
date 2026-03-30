@@ -57,9 +57,9 @@ const handleClose = () => {
   position: relative;
   margin-top: 12px;
   padding: 10px;
-  background:rgb(186, 60, 75, .35);
+  background:rgba(253, 253, 253, 0.35);
   border-radius: 15px;
-  border: 2px solid #DB95AC;
+  border: 2px solid #ffffff;
   box-shadow: 0 4px 6px rgba(147, 24, 200, 0.1);
   width: 220px;
   text-align: center;
@@ -76,7 +76,7 @@ const handleClose = () => {
   height: 28px;
   padding: 0;
   line-height: 1;
-  border: 1px solid #DB95AC;
+  border: 1px solid #ffffff;
   border-radius: 50%;
   background-color: rgba(239, 221, 243);
   color: #43283d;
@@ -93,7 +93,7 @@ const handleClose = () => {
 .play-btn {
   width: 100%;
   padding: 10px;
-  border: 2px solid #DB95AC;
+  border: 2px solid #fcfcfc;
   background-color: #5385e9; /* unique color */
   color: #43283d;
   font-family: 'Georgia', serif;
