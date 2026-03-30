@@ -244,6 +244,8 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #362648;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(24, 12, 35, 0.28);
 }
 
 ul li {
@@ -450,35 +452,9 @@ ul li a:hover {
   gap: 10px;
 }
 
-.completion-screen {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.completion-screen h2 {
-  color: #333;
-  margin-bottom: 30px;
-  font-size: 28px;
-}
-
 .score-message {
   margin-bottom: 30px;
   font-size: 16px;
   color: #666;
 }
-
-.restart-btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.restart-btn:hover {
-  background-color: #45a049;
-}
-
 </style>

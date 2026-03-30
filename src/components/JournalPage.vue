@@ -126,6 +126,8 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #362648;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(24, 12, 35, 0.28);
 }
 
 ul li {
@@ -147,7 +149,7 @@ ul li a:hover {
 .journal {
   max-width: 800px;
   margin: 0 auto;
-  padding: 190px 20px 20px;
+  padding-top: 20px;
 }
 
 .audio-toggle {

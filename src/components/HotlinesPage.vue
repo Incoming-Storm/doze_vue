@@ -167,6 +167,8 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #362648;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(24, 12, 35, 0.28);
 }
 
 ul li {
@@ -183,7 +185,7 @@ ul li a {
 
 ul li a:hover {
   background-color: #111111;
-  color: #ffe082;
+  color: #fafafa;
 }
 
 blockquote {
@@ -241,15 +243,11 @@ blockquote {
 }
 
 .resources a {
-  color: #1a73e8;
+  color: #2debeb;
 }
 
 .resources a:hover {
-  color: #0b57d0;
-}
-
-.resources a:visited {
-  color: #6b21a8;
+  color: #bfd1ec;
 }
 
 .info.links {
@@ -260,15 +258,11 @@ blockquote {
 }
 
 .info.links a {
-  color: #0f766e;
+  color: #00f5fd;
 }
 
 .info.links a:hover {
-  color: #115e59;
-}
-
-.info.links a:visited {
-  color: #7c2d12;
+  color: #55afa9;
 }
 
 .info-link-row {
@@ -292,6 +286,7 @@ blockquote {
   border:none;
   cursor:pointer;
 }
+
 .details{
   color: black;
   margin-top:10px;

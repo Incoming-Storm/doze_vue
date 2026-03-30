@@ -73,6 +73,8 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #362648;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(24, 12, 35, 0.28);
 }
 
 ul li {
@@ -97,7 +99,6 @@ ul li a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Ensures full screen height for vertical centering */
 }
 
 .audio-toggle {
@@ -114,6 +115,8 @@ ul li a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 150px;
+  height: 50px;
 }
 
 .audio-toggle:hover {
@@ -155,14 +158,13 @@ ul li a:hover {
   gap: 100px; /* Space between activity buttons */
 }
 
-
 button {
-  width: 150px;
-  height: 50px;
-  font-size: 1.2rem;
+  width: 160px;
+  height: 60px;
+  font-size: 15px;
   padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 40px;
   cursor: pointer;
   transition: background-color 0.3s;
   display: flex;
@@ -174,9 +176,4 @@ button {
 .material-icons {
   font-size: 24px;
 }
-
-.button-text {
-  font-size: 0.8rem;
-}
-
 </style>
