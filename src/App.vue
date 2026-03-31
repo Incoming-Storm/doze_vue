@@ -50,6 +50,36 @@ h2 {
   line-height: 1.4; /* Improve readability */
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #362648;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(24, 12, 35, 0.28);
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
 .app::before {
   content: '';
   position: fixed;
