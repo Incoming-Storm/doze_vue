@@ -69,11 +69,16 @@ ul li {
 }
 
 ul li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+  color: #f8f2ff;
   text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  height: 90px;
+  width: 140px;
+  align-items: center;
+  justify-content: center;
 }
 
 ul li a:hover {

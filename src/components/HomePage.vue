@@ -36,12 +36,12 @@ console.log(quote.value);
 <template>
   <div class="homepage">
     <div class="top-controls">
-    <ul>
-      <li><router-link to="/homepage"><span class="material-icons">home</span><span>Home</span></router-link></li>
-      <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
-      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
-      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
-      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
+    <ul class="top-nav">
+      <li><router-link to="/homepage"><span class="material-icons">home</span><span></span></router-link></li>
+      <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text"></span></router-link></li>
+      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text"></span></router-link></li>
+      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text"></span></router-link></li>
+      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text"></span></router-link></li>
     </ul>
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
@@ -112,6 +112,10 @@ console.log(quote.value);
   margin-top: 0;
 }
 
+.top-nav {
+  width: 100%;
+}
+
 .info {
   text-align: center;
   margin-bottom: 20px; /* Space below the hotlines button */
@@ -148,5 +152,53 @@ button {
 
 .material-icons {
   font-size: 24px;
+}
+
+@media (max-width: 700px) {
+  .top-controls {
+    top: 10px;
+    width: calc(100% - 20px);
+    gap: 8px;
+  }
+
+  .top-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .top-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .top-nav li {
+    float: none;
+    flex: 0 0 auto;
+  }
+
+  .top-nav li a {
+    width: 58px;
+    height: 58px;
+    padding: 6px;
+    border-radius: 12px;
+  }
+
+  .top-nav .button-text,
+  .top-nav li a span:not(.material-icons) {
+    display: none;
+  }
+
+  .audio-toggle {
+    width: 100%;
+    max-width: 220px;
+    height: 44px;
+    margin-top: 0;
+    flex-direction: row;
+    gap: 8px;
+  }
 }
 </style>

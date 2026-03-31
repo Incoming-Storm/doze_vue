@@ -62,11 +62,11 @@ const showAudioPlayer = ref(false);
   <div class="journal">
     <div class="top-controls">
     <ul>
-      <li><router-link to="/homepage"><span class="material-icons">home</span><span>Home</span></router-link></li>
-      <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
-      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
-      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
-      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
+      <li><router-link to="/homepage"><span class="material-icons">home</span><span></span></router-link></li>
+      <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text"></span></router-link></li>
+      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text"></span></router-link></li>
+      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text"></span></router-link></li>
+      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text"></span></router-link></li>
     </ul>
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
@@ -323,6 +323,10 @@ button:hover {
   padding: 5px 10px;
   font-size: 12px;
   width: auto;
+}
+
+.top-nav {
+  width: 100%;
 }
 
 .delete-btn:hover {

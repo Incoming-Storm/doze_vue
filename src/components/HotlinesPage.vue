@@ -21,11 +21,11 @@
 
     <div class="top-controls">
     <ul>
-      <li><router-link to="/homepage"><span class="material-icons">home</span><span>Home</span></router-link></li>
-      <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text">Hotlines/Info</span></router-link></li>
-      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text">Trivia</span></router-link></li>
-      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text">Journal</span></router-link></li>
-      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text">Game</span></router-link></li>
+      <li><router-link to="/homepage"><span class="material-icons">home</span><span></span></router-link></li>
+      <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text"></span></router-link></li>
+      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text"></span></router-link></li>
+      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text"></span></router-link></li>
+      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text"></span></router-link></li>
     </ul>
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
@@ -161,6 +161,19 @@
 </template>
 
 <style scoped>
+h1 {
+  font-weight: 500;
+  font-size: 2.6rem;
+  position: relative;
+  top: -10px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  line-height: 1.4; /* Improve readability */
+
+}
+
 blockquote {
   margin-left: 5%;
 }
@@ -216,11 +229,15 @@ blockquote {
 }
 
 .resources a {
-  color: #2debeb;
+  color: #1a73e8;
 }
 
 .resources a:hover {
-  color: #bfd1ec;
+  color: #0b57d0;
+}
+
+.resources a:visited {
+  color: #6b21a8;
 }
 
 .info.links {
@@ -231,11 +248,15 @@ blockquote {
 }
 
 .info.links a {
-  color: #00f5fd;
+  color: #0f766e;
 }
 
 .info.links a:hover {
-  color: #55afa9;
+  color: #115e59;
+}
+
+.info.links a:visited {
+  color: #7c2d12;
 }
 
 .info-link-row {
@@ -245,6 +266,11 @@ blockquote {
   flex-wrap: wrap;
   margin-top: 10px;
 }
+
+.top-nav {
+  width: 100%;
+}
+
 
 .moreButton {
   width: 75px;
@@ -259,7 +285,6 @@ blockquote {
   border:none;
   cursor:pointer;
 }
-
 .details{
   color: black;
   margin-top:10px;
