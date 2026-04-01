@@ -75,7 +75,7 @@ ul li a {
   text-align: center;
   padding: 10px 16px;
   text-decoration: none;
-  height: 90px;
+  height: 60px;
   width: 140px;
   align-items: center;
   justify-content: center;
