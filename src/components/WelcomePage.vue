@@ -40,7 +40,7 @@ h1 {
 .welcome::before {
   content: '';
   position: fixed;
-  inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
+  inset: 0;             
   background: radial-gradient(circle, #0e1f6c 0%, #a881cf 100%);
   background-size: 200% 200%;
   animation: animated-gradient-wave 8s ease-in-out infinite;

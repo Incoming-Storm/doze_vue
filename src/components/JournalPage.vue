@@ -19,7 +19,6 @@ const moods = {
   sad: '😢'
 }
 
-// Load entries from local storage on component mount
 onMounted(() => {
   const saved = localStorage.getItem('journalEntries')
   if (saved) {
@@ -27,7 +26,6 @@ onMounted(() => {
   }
 })
 
-// Save entry to local storage
 const saveEntry = () => {
   if (entryText.value.trim() === '') {
     alert('Please write something before saving!')
@@ -48,7 +46,6 @@ const saveEntry = () => {
   selectedMood.value = 'meh'
 }
 
-// Delete an entry
 const deleteEntry = (id) => {
   entries.value = entries.value.filter(e => e.id !== id)
   localStorage.setItem('journalEntries', JSON.stringify(entries.value))
@@ -127,8 +124,8 @@ const showAudioPlayer = ref(false);
 
 .audio-toggle {
   margin-bottom: 12px;
-  background-color: #362648; /* new button color */
-  color: #f4cee1;            /* text/icon color */
+  background-color: #362648;
+  color: #f4cee1;
   border: none;
   border-radius: 60px;
   padding: 10px 20px;
@@ -142,7 +139,7 @@ const showAudioPlayer = ref(false);
 }
 
 .audio-toggle:hover {
-  background-color: #593f89; /* hover color */
+  background-color: #593f89;
 }
 
 .play-btn {
@@ -155,7 +152,7 @@ const showAudioPlayer = ref(false);
 }
 
 .audio-toggle .button-text {
-  font-size: 0.85rem; /* make smaller */
+  font-size: 0.85rem; 
 }
 
 .top-controls {

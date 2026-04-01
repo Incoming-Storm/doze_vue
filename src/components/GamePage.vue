@@ -23,29 +23,26 @@ let triangleIdCounter = 0
 
 const getRandomPosition = (existingTriangles = []) => {
   let x, y, distanceFromPlayer, tooClose
-  // Keep generating until we find a position far from player and other triangles
   do {
     x = Math.random() * 85 + 7.5
     y = Math.random() * 85 + 7.5
-    // Calculate distance from player's current position
     distanceFromPlayer = Math.sqrt((x - playerX.value) ** 2 + (y - playerY.value) ** 2)
 
-    // Check distance from all existing triangles
     tooClose = false
     for (let triangle of existingTriangles) {
       const distanceFromTriangle = Math.sqrt((x - triangle.x) ** 2 + (y - triangle.y) ** 2)
-      if (distanceFromTriangle < 20) { // Minimum distance of 20 units from other triangles
+      if (distanceFromTriangle < 20) {
         tooClose = true
         break
       }
     }
-  } while (distanceFromPlayer < 20 || tooClose) // Must be far from player AND other triangles
+  } while (distanceFromPlayer < 20 || tooClose)
 
   return { x, y }
 }
 
 const getRandomValue = () => {
-  return Math.floor(Math.random() * maxTriangleValue.value) + 1 // Random value 1 to maxTriangleValue
+  return Math.floor(Math.random() * maxTriangleValue.value) + 1
 }
 
 const createTriangle = () => {
@@ -68,7 +65,6 @@ const hasEatableTriangle = () => {
 }
 
 const spawnEatableTriangle = () => {
-  // Spawn a triangle with value equal to or less than current circle value
   const triangleValue = Math.floor(Math.random() * circleValue.value) + 1
   const pos = getRandomPosition(triangles.value)
   triangles.value.push({
@@ -81,7 +77,6 @@ const spawnEatableTriangle = () => {
 }
 
 const updateMaxTriangleValue = () => {
-  // If circle value exceeds max triangle value, increase exponentially
   if (circleValue.value > maxTriangleValue.value) {
     maxTriangleValue.value = Math.floor(maxTriangleValue.value * 5)
   }
@@ -89,7 +84,6 @@ const updateMaxTriangleValue = () => {
 
 const initializeTriangles = () => {
   triangles.value = []
-  // First triangle always has value 1 so player can eat it
   const pos1 = getRandomPosition()
   triangles.value.push({
     id: triangleIdCounter++,
@@ -98,7 +92,6 @@ const initializeTriangles = () => {
     value: 1,
     collected: false
   })
-  // Rest are random
   for (let i = 1; i < 5; i++) {
     triangles.value.push(createTriangle())
   }
@@ -112,11 +105,9 @@ const handleGameAreaClick = (e) => {
   let targetX = ((e.clientX - rect.left) / rect.width) * 100
   let targetY = ((e.clientY - rect.top) / rect.height) * 100
 
-  // Keep player within bounds
   targetX = Math.max(5, Math.min(95, targetX))
   targetY = Math.max(5, Math.min(95, targetY))
 
-  // Check for bigger triangles that would be overlapped
   let closestBigger = null
   let minDist = Infinity
   triangles.value.forEach(triangle => {
@@ -132,7 +123,6 @@ const handleGameAreaClick = (e) => {
   })
 
   if (closestBigger && minDist < 8) {
-    // Move to position at distance 8 from the closest bigger triangle
     const dx = targetX - closestBigger.x
     const dy = targetY - closestBigger.y
     const dist = Math.sqrt(dx * dx + dy * dy)
@@ -163,7 +153,6 @@ const checkCollisions = () => {
         updateMaxTriangleValue()
         score.value++
 
-        // Remove collected triangle and add new one
         setTimeout(() => {
           triangles.value = triangles.value.filter(t => t.id !== triangle.id)
           triangles.value.push(createTriangle())
@@ -256,7 +245,6 @@ const showAudioPlayer = ref(false);
         </div>
 
         <div class="game-area">
-          <!-- Player (Circle) -->
           <div
             class="player"
             :style="{
@@ -266,7 +254,6 @@ const showAudioPlayer = ref(false);
             <span class="player-value">{{ circleValue }}</span>
           </div>
 
-          <!-- Triangles to collect -->
           <div
             v-for="triangle in triangles"
             :key="triangle.id"

@@ -53,12 +53,12 @@
     <h2>More Information</h2>
 
     <div class="info-link-row">
-      <a href="https://www.cdc.gov/mental-health/about/index.html" target="_blank" >About Mental Health</a>                            <!-- AMH link -->
-      <button class="moreButton" @click="showAMH = !showAMH">                                                         <!-- AMH show more button -->
+      <a href="https://www.cdc.gov/mental-health/about/index.html" target="_blank" >About Mental Health</a>
+      <button class="moreButton" @click="showAMH = !showAMH">
         {{ showAMH ? 'Less' : 'More' }}
       </button>
     </div>
-    <transition name="fade">                                                                                        <!-- AMH summary info -->
+    <transition name="fade">
       <div v-if="showAMH" class="details">
         <p>“Mental health is the component of behavioral health that includes our emotional, psychological, and social well-being. Mental health is a state of well-being that enables us to cope with the stresses of life,
         realize our abilities, learn well and work well, and contribute to our community.” -CDC</p><br>
@@ -76,7 +76,7 @@
     </transition>
 
     <div class="info-link-row">
-      <a href="https://www.cdc.gov/mental-health/about/about-behavioral-health.html" target="_blank" >About Behavioral Health</a>      <!-- ABH link, button, and info -->
+      <a href="https://www.cdc.gov/mental-health/about/about-behavioral-health.html" target="_blank" >About Behavioral Health</a>
       <button class="moreButton" @click="showABH = !showABH">
         {{ showABH ? 'Less' : 'More' }}
       </button>
@@ -95,7 +95,7 @@
     </transition>
 
     <div class="info-link-row">
-      <a href="https://my.clevelandclinic.org/health/diseases/17843-mood-disorders" target="_blank" >Mood Disorders</a>                <!-- MD link, button, and info -->
+      <a href="https://my.clevelandclinic.org/health/diseases/17843-mood-disorders" target="_blank" >Mood Disorders</a>
       <button class="moreButton" @click="showMD = !showMD">
         {{ showMD ? 'Less' : 'More' }}
       </button>
@@ -121,7 +121,7 @@
     </transition>
 
     <div class="info-link-row">
-      <a href="https://my.clevelandclinic.org/health/diseases/9536-anxiety-disorders" target="_blank" >Anxiety Disorders</a>           <!-- AD link, button, and info -->
+      <a href="https://my.clevelandclinic.org/health/diseases/9536-anxiety-disorders" target="_blank" >Anxiety Disorders</a>
       <button class="moreButton" @click="showAD = !showAD">
         {{ showAD ? 'Less' : 'More' }}
       </button>
@@ -170,7 +170,7 @@ h1 {
 
 h2 {
   font-size: 1.6rem;
-  line-height: 1.4; /* Improve readability */
+  line-height: 1.4;
 
 }
 
@@ -236,9 +236,6 @@ blockquote {
   color: #0b57d0;
 }
 
-.resources a:visited {
-  color: #6b21a8;
-}
 
 .info.links {
   margin-top: 20px;
@@ -252,11 +249,7 @@ blockquote {
 }
 
 .info.links a:hover {
-  color: #115e59;
-}
-
-.info.links a:visited {
-  color: #7c2d12;
+  color: #2c615d;
 }
 
 .info-link-row {
@@ -290,18 +283,18 @@ blockquote {
   margin-top:10px;
   max-width: 600px;
   padding:10px;
-  background: transparent; /* use overlay pseudo-element for translucent background */
+  background: transparent;
   border-radius:6px;
-  position: relative; /* establish containing block for ::before */
+  position: relative;
 }
 
 .details::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(233, 241, 12, 0.5); /* semi-transparent background; adjust alpha */
+  background: rgba(233, 241, 12, 0.5);
   z-index: 0;
-  border-radius: inherit; /* match .details rounded corners */
+  border-radius: inherit;
   pointer-events: none;
 }
 .details > * { position: relative; z-index: 1; }

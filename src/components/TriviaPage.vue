@@ -245,8 +245,8 @@ const showAudioPlayer = ref(false);
 
 .audio-toggle {
   margin-bottom: 12px;
-  background-color: #362648; /* new button color */
-  color: #f4cee1;            /* text/icon color */
+  background-color: #362648;
+  color: #f4cee1;
   border: none;
   border-radius: 60px;
   padding: 10px 20px;
@@ -260,7 +260,7 @@ const showAudioPlayer = ref(false);
 }
 
 .audio-toggle:hover {
-  background-color: #593f89; /* hover color */
+  background-color: #593f89; 
 }
 
 .play-btn {

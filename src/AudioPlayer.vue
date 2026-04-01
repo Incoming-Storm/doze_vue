@@ -94,7 +94,7 @@ const handleClose = () => {
   width: 100%;
   padding: 10px;
   border: 2px solid #fcfcfc;
-  background-color: #e6ebf4; /* unique color */
+  background-color: #e6ebf4;
   color: #43283d;
   font-family: 'Georgia', serif;
   font-weight: 600;
@@ -102,7 +102,7 @@ const handleClose = () => {
 }
 
 .play-btn:hover {
-  background-color: #DB95AC; /* hover shade */
+  background-color: #DB95AC; 
 }
 
 .sound-select {

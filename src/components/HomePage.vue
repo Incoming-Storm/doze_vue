@@ -76,8 +76,8 @@ console.log(quote.value);
 
 .audio-toggle {
   margin-bottom: 12px;
-  background-color: #362648; /* new button color */
-  color: #f4cee1;            /* text/icon color */
+  background-color: #362648;
+  color: #f4cee1;
   border: none;
   border-radius: 60px;
   padding: 10px 20px;
@@ -118,21 +118,21 @@ console.log(quote.value);
 
 .info {
   text-align: center;
-  margin-bottom: 20px; /* Space below the hotlines button */
+  margin-bottom: 20px;
 }
 
 .quote {
   text-align: center;
   margin-bottom: 25px;
-  font-size: 1.2rem; /* Adjust quote size here */
-  font-style: italic; /* Optional: make it italic for quote style */
-  line-height: 1.4; /* Improve readability */
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.4;
 }
 
 .activities {
   display: flex;
   justify-content: center;
-  gap: 100px; /* Space between activity buttons */
+  gap: 100px; 
 }
 
 button {
