@@ -260,11 +260,6 @@ blockquote {
   margin-top: 10px;
 }
 
-.top-nav {
-  width: 100%;
-}
-
-
 .moreButton {
   width: 75px;
   height: 30px;

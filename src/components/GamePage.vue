@@ -447,11 +447,6 @@ const showAudioPlayer = ref(false);
   z-index: -1;
 }
 
-.top-nav {
-  width: 100%;
-}
-
-
 .triangle.too-big {
   opacity: 0.4;
 }

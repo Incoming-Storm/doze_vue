@@ -152,7 +152,7 @@ const showAudioPlayer = ref(false);
 }
 
 .audio-toggle .button-text {
-  font-size: 0.85rem; 
+  font-size: 0.85rem;
 }
 
 .top-controls {
@@ -320,10 +320,6 @@ button:hover {
   padding: 5px 10px;
   font-size: 12px;
   width: auto;
-}
-
-.top-nav {
-  width: 100%;
 }
 
 .delete-btn:hover {

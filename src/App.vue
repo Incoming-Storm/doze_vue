@@ -56,29 +56,23 @@ html {
 
 ul {
   list-style-type: none;
+  display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #362648;
   border-radius: 18px;
-  box-shadow: 0 10px 24px rgba(24, 12, 35, 0.28);
-}
-
-ul li {
-  float: left;
+  width: 100%;
 }
 
 ul li a {
   color: #f8f2ff;
   text-decoration: none;
   display: block;
-  text-align: center;
   padding: 10px 16px;
-  text-decoration: none;
   height: 60px;
   width: 140px;
-  align-items: center;
-  justify-content: center;
 }
 
 ul li a:hover {

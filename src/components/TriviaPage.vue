@@ -260,7 +260,7 @@ const showAudioPlayer = ref(false);
 }
 
 .audio-toggle:hover {
-  background-color: #593f89; 
+  background-color: #593f89;
 }
 
 .play-btn {
@@ -392,11 +392,6 @@ const showAudioPlayer = ref(false);
   background-color: #c8e6c9;
   color: #2e7d32;
 }
-
-.top-nav {
-  width: 100%;
-}
-
 
 .result.incorrect {
   background-color: #ffcdd2;

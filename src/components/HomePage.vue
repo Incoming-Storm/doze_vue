@@ -112,10 +112,6 @@ console.log(quote.value);
   margin-top: 0;
 }
 
-.top-nav {
-  width: 100%;
-}
-
 .info {
   text-align: center;
   margin-bottom: 20px;
@@ -132,7 +128,7 @@ console.log(quote.value);
 .activities {
   display: flex;
   justify-content: center;
-  gap: 100px; 
+  gap: 100px;
 }
 
 button {
@@ -154,51 +150,4 @@ button {
   font-size: 24px;
 }
 
-@media (max-width: 700px) {
-  .top-controls {
-    top: 10px;
-    width: calc(100% - 20px);
-    gap: 8px;
-  }
-
-  .top-nav {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .top-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .top-nav li {
-    float: none;
-    flex: 0 0 auto;
-  }
-
-  .top-nav li a {
-    width: 58px;
-    height: 58px;
-    padding: 6px;
-    border-radius: 12px;
-  }
-
-  .top-nav .button-text,
-  .top-nav li a span:not(.material-icons) {
-    display: none;
-  }
-
-  .audio-toggle {
-    width: 100%;
-    max-width: 220px;
-    height: 44px;
-    margin-top: 0;
-    flex-direction: row;
-    gap: 8px;
-  }
-}
 </style>
