@@ -28,21 +28,18 @@ const quotes = [
 const quote = ref(quotes[Math.floor(Math.random() * quotes.length)]);
 const showAudioPlayer = ref(false);
 console.log(quote.value);
-
 </script>
 
-
-
 <template>
+    <ul class="top-nav">
+      <li><router-link to="/homepage"><span class="material-icons">home</span></router-link></li>
+      <li><router-link to="/hotlines"><span class="material-icons">phone</span></router-link></li>
+      <li><router-link to="/trivia"><span class="material-icons">quiz</span></router-link></li>
+      <li><router-link to="/journal"><span class="material-icons">layers</span></router-link></li>
+      <li><router-link to="/game"><span class="material-icons">sports_esports</span></router-link></li>
+    </ul>
   <div class="homepage">
     <div class="top-controls">
-    <ul class="top-nav">
-      <li><router-link to="/homepage"><span class="material-icons">home</span><span></span></router-link></li>
-      <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text"></span></router-link></li>
-      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text"></span></router-link></li>
-      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text"></span></router-link></li>
-      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text"></span></router-link></li>
-    </ul>
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
         <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
@@ -55,14 +52,13 @@ console.log(quote.value);
     </div>
 
     <div id="quoteDisplay" class="quote">{{ quote }}</div>
-      <div class="activities">
+    <div class="activities">
         <router-link to="/trivia"><button><span class="material-icons">quiz</span><span class="button-text">Trivia</span></button></router-link>
         <router-link to="/journal"><button><span class="material-icons">layers</span><span class="button-text">Journal</span></button></router-link>
         <router-link to="/game"><button><span class="material-icons">sports_esports</span><span class="button-text">Game</span></button></router-link>
-      </div>
+    </div>
 
   </div>
-
 </template>
 
 <style scoped>
@@ -72,44 +68,6 @@ console.log(quote.value);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.audio-toggle {
-  margin-bottom: 12px;
-  background-color: #362648;
-  color: #f4cee1;
-  border: none;
-  border-radius: 60px;
-  padding: 10px 20px;
-  cursor: pointer;
-  margin-top: 10px;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 50px;
-}
-
-.audio-toggle:hover {
-  background-color: #593f89;
-}
-
-.top-controls {
-  position: fixed;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.top-controls :deep(.audio-player) {
-  margin-top: 0;
 }
 
 .info {
@@ -131,7 +89,22 @@ console.log(quote.value);
   gap: 100px;
 }
 
-button {
+.info button {
+  width: 160px;
+  height: 60px;
+  font-size: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.activities button {
   width: 160px;
   height: 60px;
   font-size: 15px;

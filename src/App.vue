@@ -56,27 +56,64 @@ html {
 
 ul {
   list-style-type: none;
+  background-color: #362648;
   display: flex;
   justify-content: center;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #362648;
-  border-radius: 18px;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  z-index: 1000;
 }
 
-ul li a {
-  color: #f8f2ff;
-  text-decoration: none;
+ul li {
   display: block;
-  padding: 10px 16px;
-  height: 60px;
-  width: 140px;
+  color: #f8f2ff;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 ul li a:hover {
   background-color: #111111;
+}
+
+.audio-toggle {
+  margin-bottom: 12px;
+  background-color: #362648;
+  color: #f4cee1;
+  border: none;
+  border-radius: 60px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+}
+
+.audio-toggle:hover {
+  background-color: #593f89;
+}
+
+.top-controls {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-controls :deep(.audio-player) {
+  margin-top: 0;
 }
 
 .app::before {

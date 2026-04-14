@@ -56,8 +56,6 @@ const showAudioPlayer = ref(false);
 </script>
 
 <template>
-  <div class="journal">
-    <div class="top-controls">
     <ul>
       <li><router-link to="/homepage"><span class="material-icons">home</span><span></span></router-link></li>
       <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text"></span></router-link></li>
@@ -65,6 +63,8 @@ const showAudioPlayer = ref(false);
       <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text"></span></router-link></li>
       <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text"></span></router-link></li>
     </ul>
+  <div class="journal">
+    <div class="top-controls">
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
         <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
@@ -122,26 +122,6 @@ const showAudioPlayer = ref(false);
   padding-top: 200px;
 }
 
-.audio-toggle {
-  margin-bottom: 12px;
-  background-color: #362648;
-  color: #f4cee1;
-  border: none;
-  border-radius: 60px;
-  padding: 10px 20px;
-  cursor: pointer;
-  margin-top: 10px;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.audio-toggle:hover {
-  background-color: #593f89;
-}
-
 .play-btn {
   background-color: #6b4ea2;
   color: #ffffff;
@@ -149,26 +129,6 @@ const showAudioPlayer = ref(false);
 
 .play-btn:hover {
   background-color: #593f89;
-}
-
-.audio-toggle .button-text {
-  font-size: 0.85rem;
-}
-
-.top-controls {
-  position: fixed;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.top-controls :deep(.audio-player) {
-  margin-top: 0;
 }
 
 .back {
@@ -251,7 +211,7 @@ textarea {
   box-sizing: border-box;
 }
 
-button {
+.save-btn {
   background-color: #5b4caf;
   color: white;
   padding: 10px 20px;
@@ -262,7 +222,7 @@ button {
   font-size: 14px;
 }
 
-button:hover {
+.save-btn button:hover {
   background-color: #455aa0;
 }
 
@@ -320,6 +280,7 @@ button:hover {
   padding: 5px 10px;
   font-size: 12px;
   width: auto;
+  color: black;
 }
 
 .delete-btn:hover {
@@ -356,13 +317,6 @@ h3 {
 button {
   width: 150px;
   height: 50px;
-  font-size: 1.2rem;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  color: rgb(11, 8, 8);
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 </style>

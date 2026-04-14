@@ -17,9 +17,6 @@
 </script>
 
 <template>
-  <div class="hotlines">
-
-    <div class="top-controls">
     <ul>
       <li><router-link to="/homepage"><span class="material-icons">home</span><span></span></router-link></li>
       <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text"></span></router-link></li>
@@ -27,6 +24,8 @@
       <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text"></span></router-link></li>
       <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text"></span></router-link></li>
     </ul>
+  <div class="hotlines">
+    <div class="top-controls">
       <button class="audio-toggle" @click="showAudioPlayer = !showAudioPlayer">
         <span class="material-icons">audiotrack</span>
         <span class="button-text">{{ showAudioPlayer ? 'Hide Audio' : 'Audio Player' }}</span>
@@ -178,42 +177,6 @@ blockquote {
   margin-left: 5%;
 }
 
-.audio-toggle {
-  margin-bottom: 12px;
-  background-color: #362648;
-  color: #f4cee1;
-  border: none;
-  border-radius: 60px;
-  padding: 10px 20px;
-  cursor: pointer;
-  margin-top: 10px;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.audio-toggle:hover {
-  background-color: #593f89;
-}
-
-.top-controls {
-  position: fixed;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.top-controls :deep(.audio-player) {
-  margin-top: 0;
-}
-
 .numbers {
   margin-top: 190px;
   font-size: 1.1rem;
@@ -273,6 +236,7 @@ blockquote {
   border:none;
   cursor:pointer;
 }
+
 .details{
   color: black;
   margin-top:10px;
