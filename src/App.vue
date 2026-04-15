@@ -65,13 +65,24 @@ ul {
   right: 0;
   align-items: center;
   z-index: 1000;
+  height: 75px;
+  overflow: hidden;
 }
 
 ul li {
   display: block;
   color: #f8f2ff;
-  padding: 14px 16px;
+  padding: 50px 20px;
   text-decoration: none;
+}
+
+ul li a {
+  color: inherit; /* Inherit color from li */
+  text-decoration: none; /* Remove underline */
+  padding: 20px 40px; /* Add padding for better click area */
+  border-radius: 5px; /* Round corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth hover */
+  align-items: center;
 }
 
 ul li a:hover {
@@ -86,7 +97,7 @@ ul li a:hover {
   border-radius: 60px;
   padding: 10px 20px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 0px;
   font-size: 14px;
   display: flex;
   flex-direction: column;
@@ -102,7 +113,7 @@ ul li a:hover {
 
 .top-controls {
   position: fixed;
-  top: 10%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;

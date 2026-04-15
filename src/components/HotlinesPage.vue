@@ -184,7 +184,7 @@ blockquote {
   text-align: left;
 }
 
-.resources {
+.resources, .info.links {
   margin-top: 20px;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -197,14 +197,6 @@ blockquote {
 
 .resources a:hover {
   color: #0b57d0;
-}
-
-
-.info.links {
-  margin-top: 20px;
-  font-size: 1rem;
-  line-height: 1.6;
-  text-align: left;
 }
 
 .info.links a {
