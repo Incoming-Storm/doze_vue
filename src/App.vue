@@ -72,7 +72,7 @@ ul {
 ul li {
   display: block;
   color: #f8f2ff;
-  padding: 50px 20px;
+  padding: 100px 3vw;
   text-decoration: none;
 }
 
