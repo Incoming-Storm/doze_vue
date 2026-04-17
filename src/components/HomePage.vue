@@ -119,8 +119,4 @@ console.log(quote.value);
   justify-content: center;
 }
 
-.material-icons {
-  font-size: 24px;
-}
-
 </style>

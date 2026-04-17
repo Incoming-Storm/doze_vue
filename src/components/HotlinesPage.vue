@@ -192,7 +192,7 @@ blockquote {
 }
 
 .resources a {
-  color: #1a73e8;
+  color: #f2c47f;
 }
 
 .resources a:hover {

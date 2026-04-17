@@ -189,11 +189,11 @@ const showAudioPlayer = ref(false);
 
 <template>
     <ul>
-      <li><router-link to="/homepage"><span class="material-icons">home</span><span></span></router-link></li>
-      <li><router-link to="/hotlines"><span class="material-icons">phone</span><span class="button-text"></span></router-link></li>
-      <li><router-link to="/trivia"><span class="material-icons">quiz</span><span class="button-text"></span></router-link></li>
-      <li><router-link to="/journal"><span class="material-icons">layers</span><span class="button-text"></span></router-link></li>
-      <li><router-link to="/game"><span class="material-icons">sports_esports</span><span class="button-text"></span></router-link></li>
+      <li><router-link to="/homepage"><span class="material-icons">home</span></router-link></li>
+      <li><router-link to="/hotlines"><span class="material-icons">phone</span></router-link></li>
+      <li><router-link to="/trivia"><span class="material-icons">quiz</span></router-link></li>
+      <li><router-link to="/journal"><span class="material-icons">layers</span></router-link></li>
+      <li><router-link to="/game"><span class="material-icons">sports_esports</span></router-link></li>
     </ul>
   <div class="trivia">
     <div class="top-controls">

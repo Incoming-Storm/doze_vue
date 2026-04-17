@@ -72,14 +72,14 @@ ul {
 ul li {
   display: block;
   color: #f8f2ff;
-  padding: 100px 3vw;
+  padding: 100px 10px;
   text-decoration: none;
 }
 
 ul li a {
   color: inherit; /* Inherit color from li */
   text-decoration: none; /* Remove underline */
-  padding: 20px 40px; /* Add padding for better click area */
+  padding: 20px 4vmin; /* Add padding for better click area */
   border-radius: 5px; /* Round corners */
   transition: background-color 0.3s, color 0.3s; /* Smooth hover */
   align-items: center;
@@ -87,6 +87,11 @@ ul li a {
 
 ul li a:hover {
   background-color: #111111;
+}
+
+ul li .material-icons{
+  font-size: 24px;
+  align-items: center;
 }
 
 .audio-toggle {
@@ -113,7 +118,7 @@ ul li a:hover {
 
 .top-controls {
   position: fixed;
-  top: 15%;
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
