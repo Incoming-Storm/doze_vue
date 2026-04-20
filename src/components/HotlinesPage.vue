@@ -170,7 +170,7 @@ h1 {
 h2 {
   font-size: 1.6rem;
   line-height: 1.4;
-
+  color: #8a6bb1;
 }
 
 blockquote {
@@ -191,20 +191,8 @@ blockquote {
   text-align: left;
 }
 
-.resources a {
-  color: #f2c47f;
-}
-
-.resources a:hover {
-  color: #0b57d0;
-}
-
-.info.links a {
-  color: #0f766e;
-}
-
-.info.links a:hover {
-  color: #2c615d;
+a:hover{
+  color:#b19cd9;
 }
 
 .info-link-row {
@@ -243,7 +231,7 @@ blockquote {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(233, 241, 12, 0.5);
+  background: #b19cd9;
   z-index: 0;
   border-radius: inherit;
   pointer-events: none;

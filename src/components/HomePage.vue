@@ -81,6 +81,7 @@ console.log(quote.value);
   font-size: 1.2rem;
   font-style: italic;
   line-height: 1.4;
+  color: #b19cd9;
 }
 
 .activities {

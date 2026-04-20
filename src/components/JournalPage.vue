@@ -117,7 +117,7 @@ const showAudioPlayer = ref(false);
 
 <style scoped>
 .journal {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-top: 200px;
 }
@@ -202,6 +202,7 @@ const showAudioPlayer = ref(false);
 }
 
 textarea {
+  max-width: 1000px;
   width: 100%;
   padding: 10px;
   font-family: Arial, sans-serif;
@@ -285,10 +286,6 @@ textarea {
 
 .delete-btn:hover {
   background-color: #da190b;
-}
-
-.material-icons {
-  font-size: 24px;
 }
 
 h1 {

@@ -56,7 +56,7 @@ html {
 
 ul {
   list-style-type: none;
-  background-color: #362648;
+  background-color: #1e1a4d;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -65,15 +65,16 @@ ul {
   right: 0;
   align-items: center;
   z-index: 1000;
-  height: 75px;
+  height: 90px;
   overflow: hidden;
 }
 
 ul li {
   display: block;
-  color: #f8f2ff;
-  padding: 100px 10px;
+  color: #add8e6;
+  padding: 10px 10px;
   text-decoration: none;
+  align-items: center;
 }
 
 ul li a {
@@ -90,14 +91,14 @@ ul li a:hover {
 }
 
 ul li .material-icons{
-  font-size: 24px;
+  font-size: 30px;
   align-items: center;
 }
 
 .audio-toggle {
   margin-bottom: 12px;
-  background-color: #362648;
-  color: #f4cee1;
+  background-color: #1e1a4d;
+  color: #add8e6;
   border: none;
   border-radius: 60px;
   padding: 10px 20px;
@@ -136,7 +137,7 @@ ul li .material-icons{
   content: '';
   position: fixed;
   inset: 0;              /* same as top: 0; left: 0; right: 0; bottom: 0; */
-  background: radial-gradient(circle, #0e1f6c 0%, #a881cf 100%);
+  background: radial-gradient(circle, #3b2d68 5%, #8a6bb1 90%);
   background-size: 200% 200%;
   animation: animated-gradient-wave 8s ease-in-out infinite;
   z-index: -1;

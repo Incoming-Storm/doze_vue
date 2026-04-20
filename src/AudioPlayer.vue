@@ -59,7 +59,7 @@ const handleClose = () => {
   padding: 10px;
   background:rgba(253, 253, 253, 0.35);
   border-radius: 15px;
-  border: 2px solid #ffffff;
+  border: 2px solid #b19cd9;
   box-shadow: 0 4px 6px rgba(147, 24, 200, 0.1);
   width: 220px;
   text-align: center;
@@ -76,10 +76,10 @@ const handleClose = () => {
   height: 28px;
   padding: 0;
   line-height: 1;
-  border: 1px solid #ffffff;
+  border: 1px solid #b19cd9;
   border-radius: 50%;
-  background-color: rgba(239, 221, 243);
-  color: #43283d;
+  background-color: #8a6bb1;
+  color: white;
   font-weight: 700;
   cursor: pointer;
   text-align: center;
@@ -87,22 +87,22 @@ const handleClose = () => {
 }
 
 .close-btn:hover {
-  background-color: rgb(240, 240, 240);
+  background-color: #b19cd9;
 }
 
 .play-btn {
   width: 100%;
   padding: 10px;
-  border: 2px solid #fcfcfc;
-  background-color: #e6ebf4;
-  color: #43283d;
+  border: 2px solid #b19cd9;
+  background-color: #8a6bb1;
+  color: white;
   font-family: 'Georgia', serif;
   font-weight: 600;
   border-radius: 8px;
 }
 
 .play-btn:hover {
-  background-color: #DB95AC; 
+  background-color: #b19cd9;
 }
 
 .sound-select {
@@ -113,18 +113,19 @@ const handleClose = () => {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: rgb(11, 8, 8);
+  color: white;
   font-family: 'Georgia', serif;
 }
 
 .sound-select select {
+  color: white;
   width: 100%;
   padding: 8px;
-  border: 2px solid #DB95AC;
+  border: 2px solid #b19cd9;
   border-radius: 8px;
   font-family: 'Georgia', serif;
   cursor: pointer;
-  background-color: rgba(246, 225, 249);
+  background-color: #8a6bb1;
 }
 
 .controls {
@@ -134,15 +135,15 @@ const handleClose = () => {
 .play-btn {
   width: 100%;
   padding: 10px;
-  border: 2px solid #DB95AC;
-  background-color: rgba(239, 221, 243);
+  border: 2px solid #b19cd9;
+  background-color: #8a6bb1;
   font-family: 'Georgia', serif;
   font-weight: 600;
   border-radius: 8px;
 }
 
 .play-btn:hover {
-  background-color: rgb(240, 240, 240);
+  background-color: #b19cd9;
 }
 
 .volume-control {
@@ -153,7 +154,7 @@ const handleClose = () => {
 
 .volume-control label {
   font-weight: 600;
-  color: rgb(11, 8, 8);
+  color: white;
   font-family: 'Georgia', serif;
   margin: 0;
 }
@@ -161,7 +162,7 @@ const handleClose = () => {
 .volume-control input[type="range"] {
   width: 100%;
   cursor: pointer;
-  color: #DB95AC;
+  color: #b19cd9;
   background-color: #DB95AC;
 }
 
