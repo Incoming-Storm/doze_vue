@@ -101,16 +101,16 @@ ul li .material-icons{
   color: #add8e6;
   border: none;
   border-radius: 60px;
-  padding: 10px 20px;
+  padding: 20px 20px;
   cursor: pointer;
-  margin-top: 0px;
+  margin-top: 90px;
   font-size: 14px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: centenr;
   justify-content: center;
   width: 150px;
-  height: 50px;
+  height: 60px;
 }
 
 .audio-toggle:hover {
@@ -119,7 +119,7 @@ ul li .material-icons{
 
 .top-controls {
   position: fixed;
-  top: 10%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;

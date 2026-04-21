@@ -203,6 +203,7 @@ a:hover{
   margin-top: 10px;
 }
 
+
 .moreButton {
   width: 75px;
   height: 30px;
@@ -231,7 +232,7 @@ a:hover{
   content: "";
   position: absolute;
   inset: 0;
-  background: #b19cd9;
+  background: #faf9fb;
   z-index: 0;
   border-radius: inherit;
   pointer-events: none;

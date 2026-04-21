@@ -232,7 +232,7 @@ textarea {
 }
 
 .saved-entries h2 {
-  color: #300;
+  color: rgb(255, 255, 255);
   margin-top: 0;
 }
 
@@ -277,7 +277,7 @@ textarea {
 }
 
 .delete-btn {
-  background-color: #f8695f;
+  background-color: #f4766d;
   padding: 5px 10px;
   font-size: 12px;
   width: auto;
@@ -285,7 +285,7 @@ textarea {
 }
 
 .delete-btn:hover {
-  background-color: #da190b;
+  background-color: #e04a3f;
 }
 
 h1 {
@@ -309,11 +309,6 @@ h3 {
   .greetings h3 {
     text-align: left;
   }
-}
-
-button {
-  width: 150px;
-  height: 50px;
 }
 
 </style>

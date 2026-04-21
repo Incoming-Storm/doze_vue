@@ -77,7 +77,7 @@ console.log(quote.value);
 
 .quote {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 65px;
   font-size: 1.2rem;
   font-style: italic;
   line-height: 1.4;
@@ -87,7 +87,6 @@ console.log(quote.value);
 .activities {
   display: flex;
   justify-content: center;
-  gap: 100px;
 }
 
 .info button {
@@ -118,6 +117,8 @@ console.log(quote.value);
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 </style>

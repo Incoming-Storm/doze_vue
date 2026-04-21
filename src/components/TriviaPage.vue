@@ -292,22 +292,22 @@ const showAudioPlayer = ref(false);
 }
 
 .btn-true {
-  background-color: #065a0a;
+  background-color: #207024;
   color: rgb(255, 255, 255);
 }
 
 .btn-true:hover {
-  background-color: #3a853d;
+  background-color: #58a05a;
   transform: translateY(-2px);
 }
 
 .btn-false {
-  background-color: #861412;
+  background-color: #e43936;
   color: rgb(255, 255, 255);
 }
 
 .btn-false:hover {
-  background-color: #e53935;
+  background-color: #f26662;
   transform: translateY(-2px);
 }
 
@@ -354,12 +354,12 @@ const showAudioPlayer = ref(false);
 
 .result.correct {
   background-color: #c8e6c9;
-  color: #2e7d32;
+  color: #6bad6e;
 }
 
 .result.incorrect {
   background-color: #ffcdd2;
-  color: #c62828;
+  color: #c26666;
 }
 
 .result-icon {

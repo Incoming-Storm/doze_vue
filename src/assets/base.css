@@ -46,7 +46,7 @@
   --color-border-hover: var(--vt-c-divider-light-1);
 
   --color-heading: var(--vt-c-sunrise-1);
-  --color-text: var(--vt-c-sunrise-6);
+  --color-text: var(white);
 
   --section-gap: 160px;
 }
