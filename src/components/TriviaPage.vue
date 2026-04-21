@@ -243,17 +243,8 @@ const showAudioPlayer = ref(false);
   padding: 200px 20px 20px;
 }
 
-.play-btn {
-  background-color: #6b4ea2;
-  color: #ffffff;
-}
-
-.play-btn:hover {
-  background-color: #593f89;
-}
-
 .quiz-container {
-  background-color: #f9f9f9;
+  background-color: #d2c6e4;
   border-radius: 8px;
   padding: 30px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -261,14 +252,14 @@ const showAudioPlayer = ref(false);
 
 .question-label {
   font-size: 14px;
-  color: #999;
+  color: #3b3e66;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .question-text {
-  color: #333;
+  color: #1d1f4c;
   margin: 20px 0 30px 0;
   font-size: 18px;
   line-height: 1.6;
@@ -292,17 +283,17 @@ const showAudioPlayer = ref(false);
 }
 
 .btn-true {
-  background-color: #207024;
+  background-color: #76c27a;
   color: rgb(255, 255, 255);
 }
 
 .btn-true:hover {
-  background-color: #58a05a;
+  background-color: #6fc472;
   transform: translateY(-2px);
 }
 
 .btn-false {
-  background-color: #e43936;
+  background-color: #c8837e;
   color: rgb(255, 255, 255);
 }
 
@@ -367,15 +358,15 @@ const showAudioPlayer = ref(false);
 }
 
 .explanation {
-  background-color: #fff9c4;
-  border-left: 4px solid #fbc02d;
+  background-color: #a2a0d5;
+  border-left: 4px solid #5a5b8b;
   padding: 15px;
   border-radius: 4px;
   margin-bottom: 15px;
 }
 
 .explanation strong {
-  color: #f57f17;
+  color: black;
 }
 
 .explanation p {
@@ -389,9 +380,4 @@ const showAudioPlayer = ref(false);
   gap: 10px;
 }
 
-.score-message {
-  margin-bottom: 30px;
-  font-size: 16px;
-  color: #666;
-}
 </style>

@@ -223,7 +223,7 @@ a:hover{
   margin-top:10px;
   max-width: 600px;
   padding:10px;
-  background: transparent;
+  background: white;
   border-radius:6px;
   position: relative;
 }
@@ -232,7 +232,7 @@ a:hover{
   content: "";
   position: absolute;
   inset: 0;
-  background: #faf9fb;
+  background: rgb(151, 120, 183);
   z-index: 0;
   border-radius: inherit;
   pointer-events: none;

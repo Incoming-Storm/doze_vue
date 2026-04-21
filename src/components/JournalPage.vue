@@ -117,27 +117,15 @@ const showAudioPlayer = ref(false);
 
 <style scoped>
 .journal {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding-top: 200px;
 }
 
-.play-btn {
-  background-color: #6b4ea2;
-  color: #ffffff;
-}
-
-.play-btn:hover {
-  background-color: #593f89;
-}
-
-.back {
-  margin-bottom: 20px;
-}
-
 .entry-form {
-  background-color:
-  #f5f5f5;
+  min-width: 500px;
+  width: 600px;
+  background-color: #d2c6e4;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 30px;
@@ -158,7 +146,7 @@ const showAudioPlayer = ref(false);
 .mood-selector label {
   display: block;
   margin-bottom: 10px;
-  color: #333;
+  color: #5a5b8b;
   font-weight: bold;
 }
 
@@ -202,7 +190,7 @@ const showAudioPlayer = ref(false);
 }
 
 textarea {
-  max-width: 1000px;
+  max-width: 900px;
   width: 100%;
   padding: 10px;
   font-family: Arial, sans-serif;
@@ -213,8 +201,8 @@ textarea {
 }
 
 .save-btn {
-  background-color: #5b4caf;
-  color: white;
+  background-color: #3b2d68;
+  color: #add8e6;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -277,7 +265,7 @@ textarea {
 }
 
 .delete-btn {
-  background-color: #f4766d;
+  background-color: #ff9088;
   padding: 5px 10px;
   font-size: 12px;
   width: auto;
@@ -285,7 +273,7 @@ textarea {
 }
 
 .delete-btn:hover {
-  background-color: #e04a3f;
+  background-color: #ff5f53;
 }
 
 h1 {
