@@ -123,12 +123,14 @@ const showAudioPlayer = ref(false);
 }
 
 .entry-form {
-  min-width: 500px;
-  width: 600px;
+  width: fit-content;
+  min-width: 300px;
+  max-width: 50vw;
   background-color: #d2c6e4;
   padding: 20px;
   border-radius: 8px;
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
+  box-sizing: border-box;
 }
 
 .entry-form h2 {
@@ -190,8 +192,8 @@ const showAudioPlayer = ref(false);
 }
 
 textarea {
-  max-width: 900px;
   width: 100%;
+  max-width: 100%;
   padding: 10px;
   font-family: Arial, sans-serif;
   font-size: 14px;
