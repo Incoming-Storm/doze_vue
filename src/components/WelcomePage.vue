@@ -35,6 +35,7 @@ h1 {
   position: relative;
   top: -10px;
   font-family: 'Georgia', serif;  /* Add this line */
+  color: white;
 }
 
 .greetings h1,

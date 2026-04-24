@@ -150,6 +150,7 @@ const showAudioPlayer = ref(false);
   margin-bottom: 10px;
   color: #5a5b8b;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .mood-buttons {
@@ -169,7 +170,7 @@ const showAudioPlayer = ref(false);
   background-color: white;
   cursor: pointer;
   transition: all 0.2s;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .mood-btn:hover {
@@ -196,7 +197,7 @@ textarea {
   max-width: 100%;
   padding: 10px;
   font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-size: 24px;
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
@@ -210,7 +211,7 @@ textarea {
   border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .save-btn button:hover {
@@ -264,14 +265,17 @@ textarea {
   white-space: pre-wrap;
   word-wrap: break-word;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .delete-btn {
   background-color: #ff9088;
-  padding: 5px 10px;
+  padding: 5px 30px;
   font-size: 12px;
   width: auto;
   color: black;
+  position: relative;
+  left: 40%;
 }
 
 .delete-btn:hover {

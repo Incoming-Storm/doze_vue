@@ -223,7 +223,7 @@ const showAudioPlayer = ref(false);
     </div>
 
         <div class="game-header">
-          <h2>Calming Game</h2>
+
           <div class="stats">
             <div class="stat">
               <span class="stat-label">Circle Value:</span>
@@ -285,7 +285,7 @@ const showAudioPlayer = ref(false);
 }
 
 .calming-description {
-  background: linear-gradient(135deg, #f4cee1, #e8d5f5);
+  background: linear-gradient(135deg, #d2c6e4, #d2c6e4);
   border-radius: 8px;
   padding: 12px 18px;
   margin-bottom: 16px;
@@ -442,7 +442,7 @@ const showAudioPlayer = ref(false);
 }
 
 .reset-btn:hover {
-  background-color: #1518ba;
+  background-color: #3b3e66;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

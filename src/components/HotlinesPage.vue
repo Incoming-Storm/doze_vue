@@ -170,7 +170,8 @@ h1 {
 h2 {
   font-size: 1.6rem;
   line-height: 1.4;
-  color: #8a6bb1;
+  color: #1d1f4c;
+  font-weight: 500;
 }
 
 blockquote {
@@ -182,6 +183,10 @@ blockquote {
   font-size: 1.1rem;
   line-height: 1.6;
   text-align: left;
+  color: white;
+  border-radius: 40px;
+  padding: 20px;
+  background-color: rgb(210, 198, 228, 0.25);
 }
 
 .resources, .info.links {
@@ -189,6 +194,9 @@ blockquote {
   font-size: 1.1rem;
   line-height: 1.6;
   text-align: left;
+  border-radius: 40px;
+  padding: 20px;
+  background-color: rgb(210, 198, 228, 0.25);
 }
 
 a:hover{
@@ -223,8 +231,8 @@ a:hover{
   margin-top:10px;
   max-width: 600px;
   padding:10px;
-  background: white;
-  border-radius:6px;
+  background: #d2c6e4;
+  border-radius: 20px;
   position: relative;
 }
 
@@ -232,7 +240,7 @@ a:hover{
   content: "";
   position: absolute;
   inset: 0;
-  background: rgb(151, 120, 183);
+  background: rgb(210, 198, 228, 0.15);
   z-index: 0;
   border-radius: inherit;
   pointer-events: none;
@@ -243,8 +251,5 @@ a:hover{
 .fade-enter-active,.fade-leave-active{ transition: opacity .2s ease; }
 .fade-enter-from,.fade-leave-to{ opacity:0; }
 
-button:hover {
-  background-color: #6b3780;
-}
 
 </style>

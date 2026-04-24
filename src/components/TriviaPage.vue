@@ -251,7 +251,7 @@ const showAudioPlayer = ref(false);
 }
 
 .question-label {
-  font-size: 14px;
+  font-size: 20px;
   color: #3b3e66;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -259,9 +259,9 @@ const showAudioPlayer = ref(false);
 }
 
 .question-text {
-  color: #1d1f4c;
+  color: black;
   margin: 20px 0 30px 0;
-  font-size: 18px;
+  font-size: 25px;
   line-height: 1.6;
 }
 
@@ -276,7 +276,7 @@ const showAudioPlayer = ref(false);
   padding: 15px;
   border: none;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s;
@@ -288,7 +288,7 @@ const showAudioPlayer = ref(false);
 }
 
 .btn-true:hover {
-  background-color: #6fc472;
+  background-color: #63c966;
   transform: translateY(-2px);
 }
 
@@ -303,13 +303,13 @@ const showAudioPlayer = ref(false);
 }
 
 .btn-next {
-  background-color: #4CAF50;
+  background-color: #4c66af;
   color: white;
   width: 100%;
 }
 
 .btn-next:hover {
-  background-color: #45a049;
+  background-color: #3b3e66;
 }
 
 .skip-btn {
@@ -320,7 +320,7 @@ const showAudioPlayer = ref(false);
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 20px;
   margin-top: 10px;
 }
 
