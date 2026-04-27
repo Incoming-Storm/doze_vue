@@ -203,6 +203,22 @@ onUnmounted(() => {
 })
 
 const showAudioPlayer = ref(false);
+
+const formatNumber = (num) => {
+  if (num >= 1000000000000) {
+    return (num / 1000000000000).toFixed(1).replace(/\.0$/, '') + 'T';
+  }
+  if (num >= 1000000000) {
+    return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'B';
+  }
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+  }
+  if (num >= 1000) {
+    return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+  }
+  return num.toString();
+};
 </script>
 
 <template>
@@ -227,11 +243,11 @@ const showAudioPlayer = ref(false);
           <div class="stats">
             <div class="stat">
               <span class="stat-label">Circle Value:</span>
-              <span class="stat-value">{{ circleValue }}</span>
+              <span class="stat-value">{{ formatNumber(circleValue) }}</span>
             </div>
             <div class="stat">
               <span class="stat-label">Eaten:</span>
-              <span class="stat-value">{{ score }}</span>
+              <span class="stat-value">{{ formatNumber(score) }}</span>
             </div>
           </div>
         </div>
@@ -251,7 +267,7 @@ const showAudioPlayer = ref(false);
               left: playerX + '%',
               top: playerY + '%'
             }">
-            <span class="player-value">{{ circleValue }}</span>
+            <span class="player-value">{{ formatNumber(circleValue) }}</span>
           </div>
 
           <div
@@ -263,7 +279,7 @@ const showAudioPlayer = ref(false);
               left: triangle.x + '%',
               top: triangle.y + '%'
             }">
-            <span class="triangle-value">{{ triangle.value }}</span>
+            <span class="triangle-value">{{ formatNumber(triangle.value) }}</span>
           </div>
         </div>
 
