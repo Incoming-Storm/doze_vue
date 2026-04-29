@@ -103,7 +103,6 @@ ul li .material-icons{
   border-radius: 60px;
   padding: 20px 20px;
   cursor: pointer;
-  margin-top: 90px;
   font-size: 14px;
   display: flex;
   flex-direction: column;
@@ -119,12 +118,10 @@ ul li .material-icons{
 
 .top-controls {
   position: fixed;
-  top: 5%;
+  margin-top: 90px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 10px;
 }

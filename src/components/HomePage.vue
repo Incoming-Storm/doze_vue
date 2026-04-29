@@ -31,7 +31,7 @@ console.log(quote.value);
 </script>
 
 <template>
-    <ul class="top-nav">
+    <ul>
       <li><router-link to="/homepage"><span class="material-icons">home</span></router-link></li>
       <li><router-link to="/hotlines"><span class="material-icons">phone</span></router-link></li>
       <li><router-link to="/trivia"><span class="material-icons">quiz</span></router-link></li>

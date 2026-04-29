@@ -57,7 +57,7 @@ const handleClose = () => {
   position: relative;
   margin-top: 12px;
   padding: 10px;
-  background:rgba(253, 253, 253, 0.35);
+  background:rgb(162, 160, 213, 0.50);
   border-radius: 15px;
   border: 2px solid #b19cd9;
   box-shadow: 0 4px 6px rgba(147, 24, 200, 0.1);
