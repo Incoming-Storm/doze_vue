@@ -64,7 +64,7 @@ ul {
   left: 0;
   right: 0;
   align-items: center;
-  z-index: 1000;
+  z-index: 2000;
   height: 90px;
   overflow: hidden;
 }
@@ -103,6 +103,7 @@ ul li .material-icons{
   border-radius: 60px;
   padding: 20px 20px;
   cursor: pointer;
+  margin-top: 90px;
   font-size: 14px;
   display: flex;
   flex-direction: column;
@@ -118,7 +119,7 @@ ul li .material-icons{
 
 .top-controls {
   position: fixed;
-  margin-top: 90px;
+  top: 4%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
